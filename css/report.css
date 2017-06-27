@@ -1,18 +1,44 @@
-.choose-date{
+.heading{
+    width: 1000px;
+    height: 100px;
+    background:rgba(131,165,165,0.76);
+    margin: auto;
+    font-size: xx-large;
+
+}
+
+.Choose-date{
     background: rgba(165,118,143,0.76);
-    width: 700px;
+    width: 1200px;
     height: 200px;
     margin: auto;
+
 }
-.start-date{
+.Start-date{
     float: left;
     background: rgba(143,157,165,0.76);
-    position: relative;
-    left: 10px;
+    width: 450px;
+    height: 80px;
+
 }
-.end-date{
-    background: rgba(165,118,143,0.76);
-    position: relative;
-    left: 300px;
+.End-date{
+    background: rgba(143,157,165,0.76);
+    width: 450px;
+    height: 80px;
     float: right;
+}
+.generate{
+    background: rgba(165,118,143,0.76);
+    width: 1200px;
+    height: 60px;
+    margin: auto;
+}
+.generate button{
+    float: right;
+}
+.Report-results{
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    background: rgba(165,110,113,0.76);
 }
