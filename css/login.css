@@ -1,0 +1,49 @@
+img{
+    margin: 10px;
+}
+a{
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+.top-bar{
+    width: 1000px;
+}
+.top-bar-links ul{
+    list-style: none;
+
+}
+.top-bar-links ul li a{
+    color: gold;
+    font-size: 300%;
+}
+.login{
+    margin-left: 10px;
+    width :400px;
+    height: 220px;
+    background: rgba(53,58,61,0.76);
+    position: relative;
+    left: 650px;
+    top: 150px;
+}
+
+.login ul form{
+    margin-top: 10px;
+    text-align: left;
+
+}
+.login ul form input{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.logo{
+    position: relative;
+    top: 40px;
+}

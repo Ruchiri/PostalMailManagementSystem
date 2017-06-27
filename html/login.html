@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>Postal Managemnet System</title>
+    <style>
+        body{
+            background-image: url("img/image5.jpg");
+            background-size: 100%;
+            border-width: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="main-img">
+
+        <div class="top-bar">
+            <div class="top-bar-links">
+                <ul>
+                    <li><a href="#">Bope-Poddala Divisional Secretariat</a></li>
+                    <li><a href="#">Postal Mail Management System</a></li>
+                </ul>
+            </div> <!--top-bar-links-->
+        </div><!--top-bar-->
+
+    </div><!--main-image-->
+</div> <!-- wrapper -->
+
+
+
+<div class="login">
+    <ul>
+        <form action="welcome.php" method="post">
+            <ul>
+                <input type="text" list="sections">
+                <datalist id="sections">
+                    <option> Main User</option>
+                    <option> Ayathana</option>
+                    <option> Ginum</option>
+                    <option> Sanwardana</option>
+                    <option> Idam</option>
+                    <option> Samaja Sewa</option>
+                    <option> DiviNaguma</option>
+                    <option> Kshethra</option>
+                    <option> Liyapadinchi thepela</option>
+                    <option> Mudal haa checkpath</option>
+                    <option> Head</option>
+                </datalist>
+                <input id="password" name="password" type="password" placeholder="Password">
+                <input type="Submit" value="Log in" name="Submit" id="btn"><br>
+                <a href="#"> Forgot Password?</a>
+            </ul>
+        </form>
+    </ul>
+</div>
+
+
+
+</body>
+</html>
