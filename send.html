@@ -5,12 +5,54 @@
     <title>නව පණිවිඩය</title>
     <link  rel="stylesheet" href="css/sendTitleBar.css" type="text/css">
     <link  rel="stylesheet" href="css/sendBody.css" type="text/css">
+    <style>
+        input,select{
+            font-size:120%; margin-left:20px; width:290px; margin-bottom:10px;
+        }
+        label{
+            width: 160px; display: block; float:left; clear:left;
+        }
+    </style>
 </head>
 <body>
 <div class = "sendTitleBar.css" id = "titlebar" style = "color:white">
     නව පණිවිඩය
 </div>
 <div class = "sendBody.css" id = "body" style="color: black">
+    <form action="post">
+        <fieldset>
+            <label for = "cmbSelect">අංශය තේරීම :
+                <select id = "cmbSelect">
+                    <option> ප්‍රධාන පරිශීලක</option>
+                    <option> ආයතන</option>
+                    <option> ගිනුම් අංශය</option>
+                    <option> සංවර්ධන අංශය</option>
+                    <option> ඉඩම් අංශය</option>
+                    <option> සමාජ සේවා අංශය</option>
+                    <option> දිවි නැගුම අංශය</option>
+                    <option> ක්ෂේත්‍ර</option>
+                    <option> ලියාපදිංචි අංශය</option>
+                    <option> මුදල් හා චෙක්පත් අංශය</option>
+                    <option> ප්‍රධාන නිලධාරී</option>
+                </select>
+            </label><br>
+
+            <label for = "date">දිනය            :
+                <input type="text" id = "date" name ="letterDate">
+            </label><br>
+            <label for ="sender">ලිපිය එවූ පාර්ශවය:
+                <input type="text" id = "sender" name ="senderOfLetter">
+            </label><br>
+            <label for ="subject">විෂය            :
+                <input type="text" id = "subject" name ="letterSubject">
+            </label><br>
+            <label for = "send" >යැවීම           :
+                <input type="text" id = "send" name ="sendLSetter">
+            </label><br>
+        </fieldset>
+    </form>
+
+
 
    </div>
 
