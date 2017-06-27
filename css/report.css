@@ -1,0 +1,18 @@
+.choose-date{
+    background: rgba(165,118,143,0.76);
+    width: 700px;
+    height: 200px;
+    margin: auto;
+}
+.start-date{
+    float: left;
+    background: rgba(143,157,165,0.76);
+    position: relative;
+    left: 10px;
+}
+.end-date{
+    background: rgba(165,118,143,0.76);
+    position: relative;
+    left: 300px;
+    float: right;
+}
