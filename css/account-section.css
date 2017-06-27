@@ -1,0 +1,31 @@
+@charset "UTF-8";
+*{margin: 0; padding :0; }
+
+.Wrapper{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.site-search{
+    padding: 3px 5px 3px 10px;
+    margin: 15px;
+    float: right;
+    background: magenta;
+    border-radius: 10px;
+}
+
+.site-search input{
+    padding: 2px 2px;
+    margin: 2px;
+    border: 0;
+    float:left;
+}
+
+.site-search button{
+    padding: 2px 2px;
+    margin:2px;
+    float: right;
+    width: 70px;
+    height: 18px;
+    border:0;
+}
