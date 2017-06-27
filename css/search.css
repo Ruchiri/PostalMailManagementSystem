@@ -1,0 +1,22 @@
+table{
+    text-align: left;
+}
+
+table th{
+    align-content: left;
+    padding: 5px 10px 5px 10px;
+
+}
+
+#headings{
+    background-color: #ffd4ff;
+}
+
+input[type=text]{
+    padding: 5px 10px 5px 10px;
+}
+
+input[type=date]{
+    padding: 5px 10px 5px 10px;
+    alignment: left;
+}
