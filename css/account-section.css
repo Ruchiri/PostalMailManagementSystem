@@ -1,9 +1,14 @@
 @charset "UTF-8";
-*{margin: 0; padding :0; }
+
 
 .Wrapper{
     margin: 0 auto;
     width: 1000px;
+}
+
+.topbar h1{
+    color:blueviolet;
+    text-align: center;
 }
 
 .site-search{
@@ -28,4 +33,45 @@
     width: 70px;
     height: 18px;
     border:0;
+    background-color: burlywood;
+
+}
+.core{
+    margin-top:150px;
+    margin-left: 10px;
+    width:950px;
+    background: #ffd4ff;
+}
+
+.tobereply{
+    float: right;
+    width: 630px;
+    height:800px;
+    background: #9fff99;
+    text-align: center;
+}
+
+.buttons{
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+    width:300px;
+}
+
+.buttons input{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 290px;
+    height: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color:bisque;
+    font-size: 18px;
+    display: table-column;
+
+}
+
+.buttons script{
+
 }
