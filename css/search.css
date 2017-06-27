@@ -1,3 +1,9 @@
+.top-bar-search{
+    width: 1000px;
+    margin: auto;
+    text-align: start;
+}
+
 table{
     text-align: left;
 }
@@ -19,4 +25,16 @@ input[type=text]{
 input[type=date]{
     padding: 5px 10px 5px 10px;
     alignment: left;
+}
+
+.search-button{
+  /*  background-color: antiquewhite;
+    color: darkred;
+    width: auto;
+*/
+
+}
+
+.search-button:hover{
+    text-decoration: underline;
 }
