@@ -1,11 +1,19 @@
-.top-bar-search{
-    width: 1000px;
+.wrapper{
     margin: auto;
+}
+
+.top-bar-search{
+    width: 1100px;
+    height: 50px;
+    margin-left: 100px;
     text-align: start;
+    background-color:navajowhite;
 }
 
 table{
+    width: 1100px;
     text-align: left;
+    margin-left: 100px;
 }
 
 table th{
@@ -14,27 +22,38 @@ table th{
 
 }
 
-#headings{
+tr.headings{
     background-color: #ffd4ff;
 }
 
+th{
+    align-content: flex-start;
+}
+
 input[type=text]{
-    padding: 5px 10px 5px 10px;
+    padding:5px 10px 5px 10px;
+    align-self: flex-start;
+    width: 150px;
+    height: 10px;
 }
 
 input[type=date]{
     padding: 5px 10px 5px 10px;
-    alignment: left;
+    align-self: flex-start;
+    width: 150px;
+    height: 10px;
 }
 
 .search-button{
-  /*  background-color: antiquewhite;
-    color: darkred;
-    width: auto;
-*/
-
+    padding: 10px;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-left: auto;
 }
 
-.search-button:hover{
-    text-decoration: underline;
+.search-results{
+    margin-left: 100px;
+    width: 1100px;
+    height: 900px;
+    background-color: lightgray;
 }

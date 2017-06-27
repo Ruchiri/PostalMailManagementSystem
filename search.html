@@ -7,13 +7,14 @@
 
 </head>
 <body>
+<div class="wrapper">
 <div class="top-bar-search">
     <h1>තැපැල්පත් සෙවීම</h1>
 
 </div>
-<table>
 
-    <tr id="headings">
+<table>
+    <tr class="headings">
         <th>තැපැල්පත් අංකය</th>
         <th>දිනය</th>
         <th>අංශය</th>
@@ -21,11 +22,10 @@
         <th>ලිපිය එවූ පාර්ශවය</th>
     </tr>
 
-
+    <tr>
     <th><input type="text" name="Letter number"/></th>
     <th><input type="date"/></th>
     <th>
-
         <ul>
             <input type="text" list="sections">
             <datalist id="sections">
@@ -49,12 +49,21 @@
 
     </tr>
 
+    <tr>
+        <td>
+            <div class="search-button">
+                <button type="button" >සොයන්න</button>
+            </div>
+
+        </td>
+    </tr>
+
 </table>
-<div class="search-button">
-    <button type="button">සොයන්න</button>
+
+<div class="search-results">
+    <p>searching results...............................</p>
 </div>
 
-
-
+</div>
 </body>
 </html>
