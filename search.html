@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Search</title>
     <link rel="stylesheet" href="css/search.css">
-    <div class="search heading">
-        <h1>තැපැල්පත් සෙවීම</h1>
 
-    </div>
 </head>
 <body>
-<table>
+<div class="wrapper">
+<div class="top-bar-search">
+    <h1>තැපැල්පත් සෙවීම</h1>
 
-    <tr id="headings">
+</div>
+
+<table>
+    <tr class="headings">
         <th>තැපැල්පත් අංකය</th>
         <th>දිනය</th>
         <th>අංශය</th>
@@ -20,11 +22,10 @@
         <th>ලිපිය එවූ පාර්ශවය</th>
     </tr>
 
-
+    <tr>
     <th><input type="text" name="Letter number"/></th>
     <th><input type="date"/></th>
     <th>
-
         <ul>
             <input type="text" list="sections">
             <datalist id="sections">
@@ -48,8 +49,21 @@
 
     </tr>
 
+    <tr>
+        <td>
+            <div class="search-button">
+                <button type="button" >සොයන්න</button>
+            </div>
+
+        </td>
+    </tr>
+
 </table>
 
+<div class="search-results">
+    <p>searching results...............................</p>
+</div>
 
+</div>
 </body>
 </html>
