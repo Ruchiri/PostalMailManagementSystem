@@ -43,6 +43,7 @@ input[type="text"] {
     alignment: left;
     width: 150px;
     height: 10px;
+    font-family: Madura;
 }
 
 input[type="date"] {

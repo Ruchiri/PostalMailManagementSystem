@@ -39,6 +39,9 @@
                 </select>
             </label><br>
 
+            <label for="registeredNo">ලියාපදිංචි අංකය
+                <input type="text" id = "registeredNo" name ="letterRegNo">
+            </label><br>
             <label for = "date">දිනය:
                 <input type="date" id = "date" name ="letterDate">
             </label><br>
@@ -48,13 +51,16 @@
             <label for ="subject">විෂය:
                 <input type="text" id = "subject" name ="letterSubject">
             </label><br>
+
         </fieldset>
     </form>
   </div>
   <div class = "sendDataSheet.css" id = "sendSection" style = "color:black">
         <button style="background-color: mistyrose; width: 100px; height: 30px;">යැවීම</button>
-        <button style="background-color: mistyrose; width: 100px; height: 30px;"></button>
-        <button style="background-color: mistyrose; width: 100px; height: 30px;"></button>
+        <button style="background-color: mistyrose; width: 150px; height: 30px;">ගොනු අමුනන්න</button>
+        <button style="background-color: mistyrose; width: 100px; height: 30px;">මකන්න</button>
+
+
   </div>
 
 </body>
