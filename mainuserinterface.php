@@ -13,18 +13,41 @@
     </div>
     <div class = "mainbody">
     <div class="core">
-        <div class="actBtn1">
-            <button style="background-color:powderblue  ; width: 250px; height: 80px;">යවන්න</button>
-
+        <div class="actBtn1"><button style="background-color:powderblue  ; width: 250px; height: 80px;"  onclick="openSendDataSheet()">යවන්න</button>
+            <Script>
+                function openSendDataSheet() {
+                    window.open("send.php");
+                }
+            </Script>
         </div>
-        <div class ="actbtn2">
-            <button style="background-color: powderblue; width: 250px; height: 80px;">නව අංශය ඇතුලත් කිරීම</button>
-
+        <div class ="actbtn2"><button style="background-color: powderblue; width: 250px; height: 80px;" onclick="openAddSec()">නව අංශය ඇතුලත් කිරීම</button>
+            <Script>
+                function openAddSec() {
+                    window.open("add-new-section.php");
+                }
+            </Script>
         </div>
-
-        <div class="actbtn3"><button style="background-color: powderblue; width: 250px; height: 80px;">සොයන්න</button></div>
-        <div class="actbtn4"><button style="background-color: powderblue; width: 250px; height: 80px;">වාර්තා ලබා ගැනීම</button></div>
-        <div class="actbtn5"><button style="background-color: powderblue; width: 250px; height: 80px;">සැකසුම්</button></div>
+        <div class="actbtn3"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openSearch()">සොයන්න</button>
+            <Script>
+                function openSearch() {
+                    window.open("search.php");
+                }
+            </Script>
+        </div>
+        <div class="actbtn4"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openReport()">වාර්තා ලබා ගැනීම</button>
+            <Script>
+                function openReport() {
+                    window.open("report_main_user.php");
+                }
+            </Script>
+        </div>
+        <div class="actbtn5"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openSettings()">සැකසුම්</button>
+            <Script>
+                function openSettings() {
+                    window.open("reset-password-section.php");
+                }
+            </Script>
+        </div>
 
 
     </div>
