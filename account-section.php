@@ -13,7 +13,7 @@
         <h1>බෝපෙ-පෝද්දල ප්‍රාදේශීය ලේකම් කාර්යාලය
             <br>ගිණුම් අංශය</h1>
         <div class="site-search">
-            <form method ="get"   action = account-section.html>
+            <form method ="get"   action = account-section.php>
                 <input type ="search"  name="search-box"  title="සොයන්න">
                 <button type="submit">සොයන්න</button>
             </form>

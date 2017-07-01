@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>වාර්තා ලබා ගැනීම</title>
-    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="css/report_section.css">
 
 
 </head>
