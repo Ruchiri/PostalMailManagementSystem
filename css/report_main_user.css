@@ -1,0 +1,71 @@
+.heading{
+    width: 1000px;
+    height: 90px;
+    background:rgba(131,265,165,0.56);
+    margin: auto;
+    font-size: xx-large;
+    text-align: center;
+}
+.selection{
+    float: inherit;
+    background:rgba(165,118,143,0.76);
+    width:730px;
+    height:230px;
+    margin:auto;
+}
+
+.Choose-date{
+    background: rgba(165,118,143,0.76);
+    width: 730px;
+    height: 160px;
+    margin: auto;
+
+}
+.Start-date{
+    float: left;
+    background: rgba(143,157,165,0.76);
+    width: 300px;
+    height: 80px;
+    margin:auto;
+
+}
+.End-date{
+    background: rgba(143,157,165,0.76);
+    width: 290px;
+    height: 80px;
+    float: right;
+    margin:auto;
+    margin-right: 40px;
+}
+
+.section{
+    float: left;
+    background: rgba(143,157,165,0.76);
+    width: 300px;
+    height: 80px;
+    margin:auto;
+}
+
+.generate{
+    background: rgba(165,118,143,0.76);
+    width: 730px;
+    height: 60px;
+    margin: auto;
+}
+.generate button{
+    margin-right: 40px;
+    float: right;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    color: darkred;
+    text-decoration-style: solid;
+    font-size: medium;
+    background-color: lightcoral;
+}
+.Report-results{
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    background: rgba(198,176,186,0.76);
+}
