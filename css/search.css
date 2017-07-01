@@ -35,6 +35,7 @@ input[type=text]{
     align-self: flex-start;
     width: 150px;
     height: 10px;
+    font-family: Madura;
 }
 
 input[type=date]{
