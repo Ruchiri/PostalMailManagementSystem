@@ -41,7 +41,7 @@
 input[type="text"] {
     padding:5px 10px 5px 10px;
     alignment: left;
-    width: 150px;
+    width: 175px;
     height: 10px;
     font-family: Madura;
 }
@@ -49,7 +49,7 @@ input[type="text"] {
 input[type="date"] {
     padding: 5px 10px 5px 10px;
     alignment: left;
-    width: 150px;
+    width: 175px;
     height: 10px;
 }
 

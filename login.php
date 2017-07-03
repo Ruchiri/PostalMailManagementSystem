@@ -1,22 +1,12 @@
 <?php
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="yasara96";
-$dbname="pmms";
-$connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-if(mysqli_connect_errno()){
-    die("database connection failed:".
-        mysqli_connect_error().
-        "(".mysqli_connect_errno().")"
+include ("inc/login.inc.php");
 
-    );
-
-}
 ?>
-<!DOCTYPE>
+
+<!doctype html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Postal Managemnet System</title>
     <style>
         body{
             background-image: url("img/image5.jpg");
@@ -27,6 +17,7 @@ if(mysqli_connect_errno()){
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+
 <div class="wrapper">
     <div class="main-img">
 
@@ -47,13 +38,13 @@ if(mysqli_connect_errno()){
 
 <div class="login">
     <ul>
-        <form action="login.php" method="post">
+        <form action="" method="POST">
             <ul>
-                <input type="text" list="sections">
-                <datalist id="sections">
+                <input type="text" list="username">
+                <datalist id="username">
                     <option> ප්‍රධාන පරිශීලක</option>
                     <option> ආයතන</option>
-                    <option> ගිනුම් අංශය</option>
+                    <option> ගිණුම් අංශය</option>
                     <option> සංවර්ධන අංශය</option>
                     <option> ඉඩම් අංශය</option>
                     <option> සමාජ සේවා අංශය</option>
@@ -64,7 +55,7 @@ if(mysqli_connect_errno()){
                     <option> ප්‍රධාන නිලධාරී</option>
                 </datalist>
                 <input id="password" name="password" type="password" placeholder="Password">
-                <input type="Submit" value="Log in" name="Submit" id="btn"><br>
+                <input type="Submit" value="Log in" name="Submit" id="Submit"><br>
                 <a href="#"> Forgot Password?</a>
             </ul>
         </form>
@@ -72,8 +63,8 @@ if(mysqli_connect_errno()){
 </div>
 
 
+<span> <?php
+    echo $error;
+    ?></span>
 </body>
 </html>
-<?php
-    mysqli_close($connection);
-?>
