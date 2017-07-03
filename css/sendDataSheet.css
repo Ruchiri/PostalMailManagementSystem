@@ -1,11 +1,23 @@
+#whole{
+    background-color: lightsalmon;
+    width: 936px;
+    height: 548px;
+}
 #titlebar {
     background: black;
+    width: 936px;
+    height: 20px;
+
 }
 #body{
     background: sandybrown;
+    width: 936px;
+    height: 300px;
 }
 #sendSection{
     background: #dc7a95;
+    width: 936px;
+    height: 50px;
 
 }
 
