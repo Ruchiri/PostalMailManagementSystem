@@ -12,7 +12,7 @@ class user
 
     }
 
-    function search($mailNumber, $date, $section, $subject, $sender)
+    function search($mailNum, $date, $section, $subject, $sender)
     {
 
     }
