@@ -1,7 +1,22 @@
-<!doctype html>
+<?php
+$dbhost="localhost";
+$dbuser="root";
+$dbpass="yasara96";
+$dbname="pmms";
+$connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+if(mysqli_connect_errno()){
+    die("database connection failed:".
+        mysqli_connect_error().
+        "(".mysqli_connect_errno().")"
+
+    );
+
+}
+?>
+<!DOCTYPE>
 <html>
 <head>
-    <title>Postal Managemnet System</title>
+    <title>Login</title>
     <style>
         body{
             background-image: url("img/image5.jpg");
@@ -12,7 +27,6 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-
 <div class="wrapper">
     <div class="main-img">
 
@@ -33,7 +47,7 @@
 
 <div class="login">
     <ul>
-        <form action="welcome.php" method="post">
+        <form action="login.php" method="post">
             <ul>
                 <input type="text" list="sections">
                 <datalist id="sections">
@@ -58,6 +72,8 @@
 </div>
 
 
-
 </body>
 </html>
+<?php
+    mysqli_close($connection);
+?>
