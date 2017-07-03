@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,16 +7,18 @@
 </head>
 <body>
 <div id="wrapper">
+
     <div id="banner" style="color: green">
         <h1>බෝපෙ-පෝද්දල ප්‍රාදේශීය ලේකම් කාර්යාලය
             <br>ප්‍රධාන අංශය</h1>
     </div>
     <div id="menuTop"></div>
     <div id="columnleft">
-        <div class="actBtn1"><button style="background-color:powderblue  ; width: 250px; height: 80px;"  onclick="openSendDataSheet()">යවන්න</button>
+        <div class="actBtn1"><button style="background-color:powderblue  ; width: 250px; height: 80px;"  onclick="">යවන්න</button>
             <Script>
+
                 function openSendDataSheet() {
-                    page = "send.php";
+                     var page = "send";
 //                    window.open("send.php");
                 }
             </Script>
@@ -24,7 +26,7 @@
         <div class ="actbtn2"><button style="background-color: powderblue; width: 250px; height: 80px;" onclick="openAddSec()">නව අංශය ඇතුලත් කිරීම</button>
             <Script>
                 function openAddSec() {
-                    page = "add-new-section.php";
+                      var page = "add-new-section";
 //                    window.open("add-new-section.php");
                 }
             </Script>
@@ -32,7 +34,7 @@
         <div class="actbtn3"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openSearch()">සොයන්න</button>
             <Script>
                 function openSearch() {
-                      page = search.php;
+                         var page = "search";
 //                    window.open("search.php");
                 }
             </Script>
@@ -40,7 +42,7 @@
         <div class="actbtn4"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openReport()">වාර්තා ලබා ගැනීම</button>
             <Script>
                 function openReport() {
-                    page = "report_main_user.php";
+                       var page = "report_main_user";
 //                    window.open("report_main_user.php");
                 }
             </Script>
@@ -48,7 +50,7 @@
         <div class="actbtn5"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openSettings()">සැකසුම්</button>
             <Script>
                 function openSettings() {
-                    page = "reset-password-section.php";
+                       var page = "reset-password-section";
 //                    window.open("reset-password-section.php");
                 }
             </Script>
@@ -101,12 +103,14 @@
                include ("home.php");
            }else{
                $page=$_GET['page'];
-               $_GET
+
                include ("$page.php");
            }
            ?>
     </div>
     <div id="footer"></div>
+
 </div>
+
 </body>
 </html>
