@@ -30,10 +30,13 @@ if(mysqli_connect_errno()){
                 die("database query failed ".mysqli_error($connection));
             }
         }else{
+            header("Location:add-new-section.php");
             echo "Please confirm the password again!";
+
         }
 
     }else{
+        header("Location:add-new-section.php");
         echo "Please check your name and password!";
     }
 
