@@ -9,7 +9,7 @@
 .Details{
     background: rgba(165,118,143,0.76);
     width: 700px;
-    height: 160px;
+    height: 220px;
     margin: auto;
 
 }
@@ -23,6 +23,7 @@
     height: 40px;
     border-radius: 5px;
     margin-left: 40px;
+    margin-bottom: 20px;
 }
 .Details ul form label{
     width: 200px;

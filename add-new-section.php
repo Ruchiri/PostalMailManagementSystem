@@ -1,4 +1,3 @@
-<?php include 'connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +15,13 @@
         <?php if(isset($_GET['error'])) : ?>
             <div class="error"><?php echo $_GET['error']; ?></div>
         <?php endif; ?>
-        <form action="add-section-submit.php" method="post">
-            <label for="name1">අංශයේ නම</label><br>
-            <input id="name" name="name" type="text" placeholder="අංශයේ නම ඇතුලත් කරන්න"><br>
-            <label for="password1">මුර පදය</label><br>
-            <input id="password" name="password" type="password" placeholder="මුර පදය ඇතුලත් කරන්න">
-
-            <input type="Submit" value="ඇතුලත් කිරීම" name="Submit" id="btn"><br>
+        <form action="add-section-submit.php" method="get">
+            <label for="name">අංශයේ නම</label><br>
+            <input id="name" name="username" type="text" placeholder="අංශයේ නම ඇතුලත් කරන්න"><br>
+            <label for="password">මුර පදය</label><br>
+            <input id="password1" name="password1" type="password" placeholder="මුර පදය ඇතුලත් කරන්න">
+            <input id="password2" name="password2" type="password" placeholder="මුර පදය තහවුරු කරන්න">
+            <input type="submit" value="ඇතුලත් කිරීම" name="submit" id="btn"><br>
         </form>
     </ul>
 
