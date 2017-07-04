@@ -1,6 +1,7 @@
 /**
  * Created by user on 7/4/2017.
  */
+
 function getText(id) {
     var ele = document.getElementById(id).value;
     //alert("Function called "+ele);
@@ -8,15 +9,17 @@ function getText(id) {
 }
 
 function getCriterialist() {
+    // alert("Function called ");
     var inp = [];
-    inp[0] = getText('letterno');
+    inp['letterno'] = getText('letterno');
     inp[1] = getText('date');
     inp[2] = getText('section');
     inp[3] = getText('subject');
     inp[4] = getText('sender');
     alert(inp);
-    // alert("Function called ");
 
-    return inp;
+
+    document.getElementById('hidden').value = inp.toString();
 
 }
+
