@@ -1,3 +1,48 @@
+<?php
+    $dbhost="localhost";
+    $dbuser="root";
+    $dbpass="yasara96";
+    $dbname="pmms";
+    $connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+    if(mysqli_connect_errno()){
+        die("database connection failed:".
+            mysqli_connect_error().
+            "(".mysqli_connect_errno().")"
+
+        );
+
+    }
+    if(isset($_GET['submit'])){
+        $message='';
+        if(!($_GET['username']=="") && !($_GET['password1']=="") && !($_GET['password2']=="")){
+            if($_GET['password1']==$_GET['password2']){
+                $name=$_GET['username'];
+                $password=$_GET['password1'];
+                $query ="INSERT INTO login (";
+                $query .= "username,password";
+                $query .=") VALUES (";
+                $query .=" '{$name}','{$password}";
+                $query .="')";
+                $result=mysqli_query($connection,$query);
+                if($result){
+                    $message="Successfully added to the database!";
+                }else{
+                    die("database query failed ".mysqli_error($connection));
+                }
+            }else{
+                $message="Please confirm the password again!";
+            }
+
+        }else{
+            $message="Please check your name and password!";
+
+        }
+    }
+    if(!empty($message)){
+        echo $message;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +60,8 @@
         <?php if(isset($_GET['error'])) : ?>
             <div class="error"><?php echo $_GET['error']; ?></div>
         <?php endif; ?>
-        <form action="add-section-submit.php" method="get">
+
+        <form action="#" method="get">
             <label for="name">අංශයේ නම</label><br>
             <input id="name" name="username" type="text" placeholder="අංශයේ නම ඇතුලත් කරන්න"><br>
             <label for="password">මුර පදය</label><br>
@@ -24,6 +70,8 @@
             <input type="submit" value="ඇතුලත් කිරීම" name="submit" id="btn"><br>
         </form>
     </ul>
+
+
 
 
 </div><!--Details-->
