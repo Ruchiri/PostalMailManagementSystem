@@ -66,6 +66,10 @@ input[type="date"] {
     background-color: lightgray;
 }
 
+ul {
+    list-style-type: none;
+}
+
 
 
 

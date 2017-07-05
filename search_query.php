@@ -6,13 +6,14 @@
  * Time: 11:28 AM
  */
 
-function connect()
+function search($fields, $terms)
 {
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "123";
     $dbname = "pmms";
 
+    //connection established
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     if (mysqli_connect_errno()) {
@@ -20,53 +21,59 @@ function connect()
 
     }
 
-}
-
-function search($fields, $terms, $connection)
-{
     $size = sizeof($terms);
     $l = $size - 1;
 
     //sanitized each search term
-    $sanitized = $terms;
-    /*
+    $sanitized = [];
     for($i=0;$i<$size;$i++){
-        echo $terms[$i];
         $sanitized[$i]= mysqli_real_escape_string($connection,$terms[$i]);
-    }*/
+    }
+    //echo var_dump($sanitized);
+
 
     //creating sql command according to the searching criterias & values
     $query = "SELECT ";
-    $query .= "*FROM letter_details WHERE ";
+    $query .= "*FROM letter WHERE ";
 
     if ($size == 1) {
-        $query .= "{$fields[0]} LIKE %{$sanitized[0]}%";
+        $query .= "{$fields[0]} ={$sanitized[0]}";
 
     } else {
         for ($j = 0; $j < $size - 1; $j++) {
-            $query .= "{$fields[$j]} LIKE %{$sanitized[$j]}% OR";
+            $query .= "{$fields[$j]} = '{$sanitized[$j]}' OR ";
 
         }
-        $query .= "{$fields[$l]} LIKE %{$sanitized[$l]}%";
+        $query .= "{$fields[$l]} =' {$sanitized[$l]}'";
     }
-    echo $query;
+    //echo $query.'<br>';
 
-
+    //get query according to given criterias
     $results = mysqli_query($connection, $query);
+    mysqli_set_charset($connection, 'utf8');
+    //echo mysqli_character_set_name($connection);
 
-    echo $results;
+    if ($results) {
+        // echo "sucess!!!";
+    } else {
+        die("database query failed." .
+            mysqli_error($connection));
+    }
 
-    //check results
-    /*  if(!$results->num_rows){
+    //when there is no letters that follow the given criterias,return false
+    if (!$results->num_rows) {
+
           return false;
       }
 
-      while($row=$results->fetch_object()){
-          $rows[]=$row;
-      }
+    //take search results as array of rows
+    $rows = [];
+    while ($row = $results->fetch_array()) {
+        $rows[] = $row;
 
-      $search_results=array('count'=>$query->num_rows, 'results'=>$rows);
-      return $search_results;*/
+    }
+    $search_results = array('count' => $results->num_rows, 'results' => $rows);
+    return $search_results;
 }
 
 

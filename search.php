@@ -1,13 +1,37 @@
 <?php
-$select = FALSE;
+$search_results = [];
 if (isset($_GET['btn'])) {
-    include 'search_query.php';
+    if ($_GET['hidden2'] == "YES") {
+        include 'search_query.php';
+        echo $_GET['section'] . '<br/>';
+        echo '<script>alert("submit pressed")</script>';
+        $fields = explode(',', $_GET['hidden1']);
+        $terms = [];
+        $i = 0;
+        if ($_GET['reg_no'] != '') {
+            $terms[$i] = $_GET['reg_no'];
+            $i++;
+        }
+        if ($_GET['date'] != '') {
+            $terms[$i] = $_GET['date'];
+            $i++;
+        }
+        if ($_GET['section'] != '') {
+            $terms[$i] = $_GET['section'];
+            $i++;
+        }
+        if ($_GET['subject'] != '') {
+            $terms[$i] = $_GET['subject'];
+            $i++;
+        }
+        if ($_GET['sender'] != '') {
+            $terms[$i] = $_GET['sender'];
+            $i++;
+        }
 
-    echo '<script>alert("submit pressed")</script>';
-    $connec = connect();
-    $fields = explode(',', $_GET['hidden1']);
-    $terms = explode(',', $_GET['hidden2']);
-    search($fields, $terms, $connec);
+        $search_results = search($fields, $terms);
+
+    }
 }
 
 
@@ -18,6 +42,7 @@ if (isset($_GET['btn'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
     <title>Search</title>
     <link rel="stylesheet" href="css/search.css">
@@ -102,7 +127,28 @@ if (isset($_GET['btn'])) {
     </div>
 
     <div class="search-results">
-        <p>searching results...............................</p>
+        <?php if (!empty($search_results)): ?>
+            <div><?php echo $search_results['count']; ?> results found.................</div>
+            <hr>
+            <hr>
+            <div class="result table">
+                <div clas="search_record">
+                    <?php for ($i = 0; $i < $search_results['count']; $i++): ?>
+                        <?php $result = $search_results['results'][$i]; ?>
+                        <ul>
+
+                            <li><?php echo "Register Number :" . $result["reg_no"] ?></li>
+                            <li><?php echo "Date :" . $result["date"] ?></li>
+                            <li><?php echo "Section :" . $result["section"] ?></li>
+                            <li><?php echo "Subject :" . $result["subject"] ?></li>
+                            <li><?php echo "Sender :" . $result["sender"] ?></li>
+
+                        </ul>
+                        <hr>
+                    <?php endfor; ?>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 
 
