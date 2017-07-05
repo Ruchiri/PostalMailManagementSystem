@@ -1,17 +1,19 @@
 <?php
-    $dbhost="localhost";
-    $dbuser="root";
-    $dbpass="yasara96";
-    $dbname="pmms";
-    $connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-    if(mysqli_connect_errno()){
-        die("database connection failed:".
-            mysqli_connect_error().
-            "(".mysqli_connect_errno().")"
+$dbhost="localhost";
+$dbuser="root";
+$dbpass="yasara96";
+$dbname="pmms";
+$connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+if(mysqli_connect_errno()){
+    die("database connection failed:".
+        mysqli_connect_error().
+        "(".mysqli_connect_errno().")"
 
-        );
+    );
 
-    }
+}
+?>
+<?php
     if(isset($_GET['submit'])){
         $message='';
         if(!($_GET['username']=="") && !($_GET['password1']=="") && !($_GET['password2']=="")){
