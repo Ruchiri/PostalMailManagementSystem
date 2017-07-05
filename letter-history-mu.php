@@ -1,3 +1,18 @@
+<?php
+    $dbhost="localhost";
+    $dbuser="root";
+    $dbpass="yasara96";
+    $dbname="pmms";
+    $connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+    if(mysqli_connect_errno()){
+        die("database connection failed:".
+            mysqli_connect_error().
+            "(".mysqli_connect_errno().")"
+
+        );
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +24,11 @@
     <h1>ලිපියේ ඉතිහාසය</h1>
 </div>
 <div class="history">
-    <table border="=1" cellpadding="10" cellspacing="3" width="100%">
+    <?php
+        $query ="SELECT id,reg_no,date,sender,subject,section,replied FROM letter WHERE ref_id=1";
+        $result=mysqli_query($connection,$query);
+    ?>
+    <table border="=1" cellpadding="10"  width="100%">
         <tr>
             <th>අනු අංකය</th>
             <th>ලියාපදිංචි අංකය</th>
@@ -20,6 +39,23 @@
             <th>පිලිතුරු සපයා ඇත්ද</th>
 
         </tr>
+        <tbody>
+            <?php
+            if($result){
+                while ($row=mysqli_fetch_array($result)){
+                    echo "<tr>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$row['reg_no']."</td>";
+                    echo "<td>".$row['date']."</td>";
+                    echo "<td>".$row['sender']."</td>";
+                    echo "<td>".$row['subject']."</td>";
+                    echo "<td>".$row['section']."</td>";
+                    echo "<td>".$row['replied']."</td>";
+                }
+            }
+
+            ?>
+        </tbody>
     </table>
 </div>
 
