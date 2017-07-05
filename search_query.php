@@ -48,9 +48,10 @@ function search($fields, $terms)
     }
     //echo $query.'<br>';
 
+    mysqli_set_charset($connection, 'utf8');
     //get query according to given criterias
     $results = mysqli_query($connection, $query);
-    mysqli_set_charset($connection, 'utf8');
+
     //echo mysqli_character_set_name($connection);
 
     if ($results) {
