@@ -10,16 +10,42 @@ function getText(id) {
 
 function getCriterialist() {
     // alert("Function called ");
+    var crt = [];
     var inp = [];
-    inp['letterno'] = getText('letterno');
-    inp[1] = getText('date');
-    inp[2] = getText('section');
-    inp[3] = getText('subject');
-    inp[4] = getText('sender');
-    alert(inp);
+    var i = 0;
 
+    if (getText('reg_no') != '') {
+        crt[i] = 'reg_no';
+        inp[i] = getText('reg_no');
+        i++;
+    }
+    if (getText('date') != '') {
+        crt[i] = 'date';
+        inp[i] = getText('date');
+        i++;
+    }
+    if (getText('section') != '') {
+        crt[i] = 'section';
+        inp[i] = getText('section');
+        i++;
+    }
+    if (getText('subject') != '') {
+        crt[i] = 'subject';
+        inp[3] = getText('subject');
+        i++;
+    }
+    if (getText('sender') != '') {
+        crt[i] = 'sender';
+        inp[4] = getText('sender');
+        i++;
+    }
+    //when user does not give any searching criteria
+    if (crt.length == 0) {
+        alert("Give valied searching criteria");
+    }
 
-    document.getElementById('hidden').value = inp.toString();
+    document.getElementById('hidden1').value = crt.toString();
+    document.getElementById('hidden2').value = inp.toString();
 
 }
 

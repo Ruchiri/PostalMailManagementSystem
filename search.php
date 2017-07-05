@@ -1,19 +1,13 @@
 <?php
-include 'search_query.php';
 $select = FALSE;
 if (isset($_GET['btn'])) {
+    include 'search_query.php';
 
-    $select = $_GET['letterno'] || $_GET['date'] || $_GET['section'] || $_GET['subject'] || $_GET['sender'];
     echo '<script>alert("submit pressed")</script>';
-    echo var_dump($_GET);
-    echo "hidden value:" . var_dump($_GET['hidden']);
-    get_query($_GET['hidden']);
-}
-if ($select && isset($GET['btn'])) {
-    echo '<script>alert(var_dump())</script>';
-    exit();
-} elseif (!empty($GET)) {
-    echo '<script>alert("INPUT IS NOT SET");</script>';
+    $connec = connect();
+    $fields = explode(',', $_GET['hidden1']);
+    $terms = explode(',', $_GET['hidden2']);
+    search($fields, $terms, $connec);
 }
 
 
@@ -65,7 +59,7 @@ if ($select && isset($GET['btn'])) {
     <div class="search-bottom-bar">
         <form action="<?php $_PHP_SELF ?>" method="GET">
             <div class="txtLetterNo">
-                <input type="text" name="letterno" id="letterno"/>
+                <input type="text" name="reg_no" id="reg_no"/>
             </div>
             <div class="dDate">
                 <input type="date" name="date" id="date"/>
@@ -96,7 +90,8 @@ if ($select && isset($GET['btn'])) {
                 <input type="text" name="sender" id="sender"/>
             </div>
             <br>
-            <input type="hidden" name="hidden" id="hidden" value=""/>
+            <input type="hidden" name="hidden1" id="hidden1" value=""/>
+            <input type="hidden" name="hidden2" id="hidden2" value=""/>
             <div class="search-button" type="button">
                 <input type="submit" name="btn" id="btn" onclick="getCriterialist()" value="ොයන්න">
 
