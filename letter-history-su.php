@@ -24,6 +24,10 @@ if(mysqli_connect_errno()){
     <h1>ලිපියේ ඉතිහාසය</h1>
 </div>
 <div class="history">
+    <?php
+        $query ="SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE ref_id=1";
+        $result=mysqli_query($connection,$query);
+    ?>
     <table border="=1" cellpadding="10" cellspacing="3" width="100%">
         <tr>
             <th>අනු අංකය</th>
@@ -34,6 +38,21 @@ if(mysqli_connect_errno()){
             <th>පිලිතුරු සපයා ඇත්ද</th>
 
         </tr>
+        <tbody>
+        <?php
+        if($result){
+            while ($row=mysqli_fetch_array($result)){
+                echo "<tr>";
+                echo "<td>".$row['id']."</td>";
+                echo "<td>".$row['reg_no']."</td>";
+                echo "<td>".$row['date']."</td>";
+                echo "<td>".$row['sender']."</td>";
+                echo "<td>".$row['subject']."</td>";
+                echo "<td>".$row['replied']."</td>";
+            }
+        }
+
+        ?>
     </table>
 </div>
 
