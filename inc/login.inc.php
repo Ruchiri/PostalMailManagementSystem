@@ -26,10 +26,13 @@ function SignIn()
 
             session_start();
             $_SESSION['page'] = $row['username'];
-
-            //$page= $row['username'];
-           header('Location:..\section.php');
-            //echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
+            if ( $row['username']=="ප්‍රධාන පරිශීලක"){
+                header('Location:..\main-user-window.php');
+            }
+            else {
+                header('Location:..\section.php');
+                //echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
+            }
 
         }
         else
