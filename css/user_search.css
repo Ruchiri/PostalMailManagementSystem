@@ -1,0 +1,77 @@
+.wrapper {
+    margin: auto;
+}
+
+.top-bar-search {
+    width: 1100px;
+    height: 50px;
+    margin-left: 100px;
+    text-align: start;
+    background-color: navajowhite;
+    padding: 10px 10px 10px 10px;
+    border-style: inset;
+    border-color: navajowhite;
+}
+
+.seach-Model {
+    margin-left: 100px;
+    width: 1100px;
+}
+
+.search-bar, .search-bottom-bar {
+    padding: 10px 10px 10px 10px;
+}
+
+.txtLetterNo, .dDate, .txtSection, .txtSubject, .lstSender {
+    width: 250px;
+    height: 50px;
+    padding: 5px 20px 5px 0px;
+    align-content: center;
+    display: table-cell;
+}
+
+.criteria1, .criteria2, .criteria3, .criteria4 {
+    width: 250px;
+    height: 50px;
+    padding: 5px 20px 5px 0px;
+    background-color: antiquewhite;
+    display: table-cell;
+}
+
+input[type="text"] {
+    padding: 5px 10px 5px 10px;
+    alignment: left;
+    width: 175px;
+    height: 10px;
+    font-family: Madura;
+}
+
+input[type="date"] {
+    padding: 5px 10px 5px 10px;
+    alignment: left;
+    width: 175px;
+    height: 10px;
+}
+
+.search-button {
+    padding: 10px;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.search-results {
+    width: 1100px;
+    height: 900px;
+    background-color: lightgray;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+
+
+
