@@ -100,18 +100,19 @@
 
     </div>
     <div id="content">
-        <?php
-            if(!isset($_GET["myidnew"])){
-                 echo $_GET["myidnew"];
-                 include("home.php");
-            }else{
-                $page = $_GET["myidnew"];
+   <!--
+         <?php
+   if(!isset($_GET["myidnew"])){
+       echo $_GET["myidnew"];
+       include("home.php");
+   }else{
+       $page = $_GET["myidnew"];
 
-                include ("$page.php");
-            }
+       include ("$page.php");
+   }
 
 
-           ?>
+   ?>-->
     </div>
     <div id="footer"></div>
 
