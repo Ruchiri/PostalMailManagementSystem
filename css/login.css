@@ -24,7 +24,7 @@ a{
 .login{
     margin-left: 10px;
     width :400px;
-    height: 220px;
+    height: 270px;
     background: rgba(53,58,61,0.76);
     position: relative;
     left: 650px;
@@ -44,6 +44,12 @@ a{
     margin-left: 20px;
 
 }
+
+.login ul form p{
+    color: crimson;
+    font-style: italic;
+}
+
 .logo{
     position: relative;
     top: 40px;
