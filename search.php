@@ -2,8 +2,7 @@
 $search_results = [];
 if (isset($_GET['btn'])) {
     if ($_GET['hidden2'] == "YES") {
-        include 'search_query.php';
-        echo $_GET['section'] . '<br/>';
+        include 'search_query.inc.php';
         echo '<script>alert("submit pressed")</script>';
         $fields = explode(',', $_GET['hidden1']);
         $terms = [];
@@ -118,7 +117,7 @@ if (isset($_GET['btn'])) {
             <input type="hidden" name="hidden1" id="hidden1" value=""/>
             <input type="hidden" name="hidden2" id="hidden2" value=""/>
             <div class="search-button" type="button">
-                <input type="submit" name="btn" id="btn" onclick="getCriterialist()" value="ොයන්න">
+                <input type="submit" name="btn" id="btn" onclick="return getCriterialist()" value="සොයන්න">
 
             </div>
             <br>
@@ -128,7 +127,9 @@ if (isset($_GET['btn'])) {
 
     <div class="search-results">
         <?php if (!empty($search_results)): ?>
-            <div><?php echo $search_results['count']; ?> results found.................</div>
+            <div>
+                <p>ගැළපෙන ප්‍රථිපල <?php echo $search_results['count']; ?>ක් සොයා ගන්නා ලදි.</p>
+            </div>
             <hr>
             <hr>
             <div class="result table">
@@ -137,16 +138,20 @@ if (isset($_GET['btn'])) {
                         <?php $result = $search_results['results'][$i]; ?>
                         <ul>
 
-                            <li><?php echo "Register Number :" . $result["reg_no"] ?></li>
-                            <li><?php echo "Date :" . $result["date"] ?></li>
-                            <li><?php echo "Section :" . $result["section"] ?></li>
-                            <li><?php echo "Subject :" . $result["subject"] ?></li>
-                            <li><?php echo "Sender :" . $result["sender"] ?></li>
+                            <li><?php echo "ලියාපදිංචි අංකය :" . $result["reg_no"] ?></li>
+                            <li><?php echo "දිනය :" . $result["date"] ?></li>
+                            <li><?php echo "අංශය :" . $result["section"] ?></li>
+                            <li><?php echo "විෂය :" . $result["subject"] ?></li>
+                            <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result["sender"] ?></li>
 
                         </ul>
                         <hr>
                     <?php endfor; ?>
                 </div>
+            </div>
+        <?php elseif (isset($_GET['btn'])): ?>
+            <div>
+                <p>ගැළපෙන ප්‍රථිපල නොමැත.</p>
             </div>
         <?php endif; ?>
     </div>

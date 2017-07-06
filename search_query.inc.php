@@ -37,16 +37,15 @@ function search($fields, $terms)
     $query .= "*FROM letter WHERE ";
 
     if ($size == 1) {
-        $query .= "{$fields[0]} ={$sanitized[0]}";
+        $query .= "{$fields[0]} ='$sanitized[0]'";
 
     } else {
         for ($j = 0; $j < $size - 1; $j++) {
-            $query .= "{$fields[$j]} = '{$sanitized[$j]}' OR ";
+            $query .= "{$fields[$j]} = '$sanitized[$j]' OR ";
 
         }
-        $query .= "{$fields[$l]} =' {$sanitized[$l]}'";
+        $query .= "{$fields[$l]} ='$sanitized[$l]'";
     }
-    //echo $query.'<br>';
 
     mysqli_set_charset($connection, 'utf8');
     //get query according to given criterias
