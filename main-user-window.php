@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,50 +13,53 @@
     </div>
     <div id="menuTop"></div>
     <div id="columnleft">
-        <div class="actBtn1"><button style="background-color:powderblue  ; width: 250px; height: 80px;"  onclick="">යවන්න</button>
-            <Script>
+        <br>
+        <button id="btn1" style="background-color:powderblue  ; width: 250px; height: 80px;" >යවන්න</button>
+        <button id="btn2" style="background-color: powderblue; width: 250px; height: 80px;" >නව අංශය ඇතුලත් කිරීම</button>
+        <button id="btn3" style="background-color: powderblue; width: 250px; height: 80px;" >සොයන්න</button>
+        <button id="btn4" style="background-color: powderblue; width: 250px; height: 80px;" >වාර්තා ලබා ගැනීම</button>
+        <button id="btn5" style="background-color: powderblue; width: 250px; height: 80px;" >සැකසුම්</button>
+        <form action="<?php $_PHP_SELF ?>" method="get">
 
-                function openSendDataSheet() {
-                     var page = "send";
-//                    window.open("send.php");
-                }
-            </Script>
-        </div>
-        <div class ="actbtn2"><button style="background-color: powderblue; width: 250px; height: 80px;" onclick="openAddSec()">නව අංශය ඇතුලත් කිරීම</button>
             <Script>
-                function openAddSec() {
-                      var page = "add-new-section";
-//                    window.open("add-new-section.php");
+                var page = "";
+                var btn1 = document.getElementById("btn1");
+                var btn2 = document.getElementById("btn2");
+                var btn3 = document.getElementById("btn3");
+                var btn4 = document.getElementById("btn4");
+                var btn5 = document.getElementById("btn5");
+                btn1.onclick = function () {
+                    page = "send";
+
+
                 }
-            </Script>
-        </div>
-        <div class="actbtn3"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openSearch()">සොයන්න</button>
-            <Script>
-                function openSearch() {
-                         var page = "search";
-//                    window.open("search.php");
+
+                btn2.onclick = function () {
+                    page = "add-new-section";
+
                 }
-            </Script>
-        </div>
-        <div class="actbtn4"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openReport()">වාර්තා ලබා ගැනීම</button>
-            <Script>
-                function openReport() {
-                       var page = "report_main_user";
-//                    window.open("report_main_user.php");
+                btn3.onclick = function () {
+
+                    page = "search";
+
                 }
-            </Script>
-        </div>
-        <div class="actbtn5"><button style="background-color: powderblue; width: 250px; height: 80px;"  onclick="openSettings()">සැකසුම්</button>
-            <Script>
-                function openSettings() {
-                       var page = "reset-password-section";
-//                    window.open("reset-password-section.php");
+                btn4.onclick = function () {
+                    page = "report_main_user";
+
                 }
+                btn5.onclick = function () {
+                    page = "reset-password-section";
+
+                }
+                document.getElementById("myid").value = page;
             </Script>
-        </div>
+            <input type="hidden" id="myid" name="myidnew" />
+        </form>
+
+
     </div>
     <div id="columnright">
-        <form action="post">
+        <form action="main-user-window.php" method="get">
             <fieldset>
                 <label for="lbl1"> ලිපි ගණන :</label>
                 <input type="text" id="lbl1"><br>
@@ -99,13 +101,16 @@
     </div>
     <div id="content">
         <?php
-           if(!isset($_GET['page'])){
-               include ("home.php");
-           }else{
-               $page=$_GET['page'];
+            if(!isset($_GET["myidnew"])){
+                 echo $_GET["myidnew"];
+                 include("home.php");
+            }else{
+                $page = $_GET["myidnew"];
 
-               include ("$page.php");
-           }
+                include ("$page.php");
+            }
+
+
            ?>
     </div>
     <div id="footer"></div>
