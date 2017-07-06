@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#wrapper {
+    width: 1536px;
+    height: 748px;
+    background-color: midnightblue;
+}
+#banner{
+    width: 1536px;
+    height: 100px;
+    background-color: paleturquoise;
+    text-align: center;
+}
+#menuTop{
+    width: 1536px;
+    height: 100px;
+    background-color: white;
+}
+
+#columnleft{
+    width: 300px;
+    height: 450px;
+    background-color: darkcyan;
+    float: left;
+}
+#columnright{
+    width: 300px;
+    height: 450px;
+    background-color: darkcyan;
+    float: right;
+}
+#columnright form fieldset input{
+    width: 25px;
+    height:25px;
+    margin-left: 210px;
+}
+#columnright form fieldset label{
+    height: 25px;
+    width: 200px;
+    text-align: left;
+    background-color: powderblue;
+    position: absolute;
+    border: navy;
+    border-radius: 1px;
+}
+#content{
+    width: 936px;
+    height: 548px;
+    background-color: midnightblue;
+    margin-left: 300px;
+}

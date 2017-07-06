@@ -1,7 +1,7 @@
 <?php
 $dbhost="localhost";
 $dbuser="root";
-$dbpass="yasara96";
+$dbpass="123";
 $dbname="pmms";
 $connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 if(mysqli_connect_errno()){

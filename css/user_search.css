@@ -1,13 +1,13 @@
-.wrapper{
+.wrapper {
     margin: auto;
 }
 
-.top-bar-search{
+.top-bar-search {
     width: 1100px;
     height: 50px;
     margin-left: 100px;
     text-align: start;
-    background-color:navajowhite;
+    background-color: navajowhite;
     padding: 10px 10px 10px 10px;
     border-style: inset;
     border-color: navajowhite;
@@ -23,15 +23,15 @@
 }
 
 .txtLetterNo, .dDate, .txtSection, .txtSubject, .lstSender {
-    width: 200px;
+    width: 250px;
     height: 50px;
     padding: 5px 20px 5px 0px;
     align-content: center;
     display: table-cell;
 }
 
-.criteria1, .criteria2, .criteria3, .criteria4, .criteria5 {
-    width: 200px;
+.criteria1, .criteria2, .criteria3, .criteria4 {
+    width: 250px;
     height: 50px;
     padding: 5px 20px 5px 0px;
     background-color: antiquewhite;
@@ -39,7 +39,7 @@
 }
 
 input[type="text"] {
-    padding:5px 10px 5px 10px;
+    padding: 5px 10px 5px 10px;
     alignment: left;
     width: 175px;
     height: 10px;
@@ -53,14 +53,14 @@ input[type="date"] {
     height: 10px;
 }
 
-.search-button{
+.search-button {
     padding: 10px;
     border-radius: 100px;
     text-decoration: none;
     margin-left: auto;
 }
 
-.search-results{
+.search-results {
     width: 1100px;
     height: 900px;
     background-color: lightgray;
