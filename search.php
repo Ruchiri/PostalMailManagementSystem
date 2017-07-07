@@ -53,7 +53,7 @@ if (isset($_GET['btn'])) {
     <div class="top-bar-search">
         <h1>තැපැල්පත් සෙවීම</h1>
     </div>
-</div>
+
 <div class="seach-Model">
     <div class="search-bar">
         <div class="criteria1">
@@ -128,27 +128,25 @@ if (isset($_GET['btn'])) {
 
     <div class="search-results">
         <?php if (!empty($search_results)): ?>
-            <div>
+            <div class="no_result">
                 <p>ගැළපෙන ප්‍රථිපල <?php echo $search_results['count']; ?>ක් සොයා ගන්නා ලදි.</p>
             </div>
-            <hr>
-            <hr>
             <div class="result table">
-                <div clas="search_record">
-                    <?php for ($i = 0; $i < $search_results['count']; $i++): ?>
+                <?php for ($i = 0; $i < $search_results['count']; $i++): ?>
+                    <div class="search_record">
                         <?php $result = $search_results['results'][$i]; ?>
                         <ul>
-
                             <li><?php echo "ලියාපදිංචි අංකය :" . $result["reg_no"] ?></li>
                             <li><?php echo "දිනය :" . $result["date"] ?></li>
                             <li><?php echo "අංශය :" . $result["section"] ?></li>
                             <li><?php echo "විෂය :" . $result["subject"] ?></li>
                             <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result["sender"] ?></li>
-
+                            <li id="next"><a href="letter_record.php"><img src="img/next (1).png"/></a></li>
                         </ul>
-                        <hr>
-                    <?php endfor; ?>
-                </div>
+                    </div>
+                    <br/>
+                <?php endfor; ?>
+
             </div>
         <?php elseif (isset($_GET['btn'])): ?>
             <div>
@@ -157,7 +155,7 @@ if (isset($_GET['btn'])) {
         <?php endif; ?>
     </div>
 
-
+</div>
 </div>
 
 </body>
