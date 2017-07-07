@@ -4,7 +4,6 @@
 
 function getText(id) {
     var ele = document.getElementById(id).value;
-    //alert("Function called "+ele);
     return ele;
 }
 
@@ -17,6 +16,7 @@ function getCriterialist() {
         crt[i] = 'reg_no';
         i++;
     }
+
     if (getText('date') != '') {
         crt[i] = 'date';
         i++;
@@ -46,6 +46,25 @@ function getCriterialist() {
 
     document.getElementById('hidden1').value = crt.toString();
 
+
+}
+
+function validate_date(date) {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //because,January is 0
+    var yyyy = today.getFullYear();
+
+    if (month < 10) {
+        mm = '0' + month.toString();
+    }
+    if (day < 10) {
+        dd = '0' + day.toString();
+    }
+
+    var maxDate = yyyy + '-' + mm + '-' + dd;
+    alert(maxDate);
+    document.getElementsByName("date").max = maxDate;
 
 }
 

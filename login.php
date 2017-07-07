@@ -52,9 +52,15 @@
                     <option value="ප්‍රධාන නිලධාරී"> ප්‍රධාන නිලධාරී</option>
                 </datalist>
                 <input id="password" name="password" type="password" placeholder="මුරපදය ඇතුලත් කරන්න">
-                <input id="button" type="submit" value="" name="submit"> <br>
+                <input id="button" type="submit" value="යොමු කරන්න" name="submit" > <br>
             </ul>
-            <a href="#"> Forgot Password?</a>
+            <a href="#"><br>Forgot Password?  <br></a>
+            <p>
+            <?php include "inc/login.inc.php";
+            session_start();
+            echo $_SESSION['invalid'];
+            $_SESSION['invalid']="";
+            ?></p>
         </form>
 
 

@@ -1,6 +1,8 @@
 
 <?php
  $page;
+ $invalid= " ";
+
 function SignIn()
 {
 
@@ -23,7 +25,8 @@ function SignIn()
         if(!empty($row['username']) AND !empty($row['password']))
         {
             $_SESSION['username'] = $row['password'];
-
+            $_SESSION['invalid']="";
+            $_SESSION['empty']="";
             session_start();
             $_SESSION['page'] = $row['username'];
             if ( $row['username']=="ප්‍රධාන පරිශීලක"){
@@ -31,6 +34,7 @@ function SignIn()
             }
             else {
                 header('Location:..\section.php');
+
                 //echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
             }
 
@@ -38,20 +42,24 @@ function SignIn()
         else
         {
            // echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
+            session_start();
+            $_SESSION['invalid']= "පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
             header('Location:..\login.php');
 
         }
     }
     else{
         //echo"Any field cannot be empty";
-        header('Location:..\login.php');
 
+        session_start();
+        $_SESSION['invalid']="පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
+        header('Location:..\login.php');
     }
 
 }
 if(isset($_GET['submit']))
 {
-   $page= SignIn();
+  SignIn();
 }
 
 
