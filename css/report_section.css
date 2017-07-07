@@ -8,7 +8,7 @@
 }
 .Choose-date{
     background: rgba(165,118,143,0.76);
-    width: 700px;
+    width: 600px;
     height: 160px;
     margin: auto;
 
@@ -16,32 +16,24 @@
 .Start-date{
     float: left;
     background: rgba(143,157,165,0.76);
-    width: 300px;
+    width: 250px;
     height: 80px;
 
 }
 .End-date{
     background: rgba(143,157,165,0.76);
-    width: 300px;
+    width: 250px;
     height: 80px;
     float: right;
 }
-.generate{
-    background: rgba(165,118,143,0.76);
-    width: 700px;
-    height: 60px;
-    margin: auto;
-}
-.generate button{
+.generate input{
+    margin-top: 20px;
     float: right;
-    border-radius: 10px;
-    width: 150px;
-    height: 30px;
-    color: darkorchid;
 }
 .Report-results{
     width: 1000px;
     height: 700px;
     margin: auto;
+    margin-top: 20px;
     background: rgba(198,176,186,0.76);
 }

@@ -1,7 +1,7 @@
 .heading{
     width: 1000px;
     height: 90px;
-    background:rgba(131,265,165,0.56);
+    background: #d30c83;
     margin: auto;
     font-size: xx-large;
     text-align: center;
@@ -52,20 +52,25 @@
     height: 60px;
     margin: auto;
 }
-.generate button{
+.generate input{
     margin-right: 40px;
     float: right;
     border-radius: 10px;
     width: 150px;
     height: 30px;
-    color: darkred;
+    color: #333333;
     text-decoration-style: solid;
     font-size: medium;
-    background-color: lightcoral;
+    background-color: #f0615b;
 }
 .Report-results{
     width: 1000px;
     height: 700px;
     margin: auto;
-    background: rgba(198,176,186,0.76);
+    background: rgba(233, 109, 142, 0.76);
+}
+.Report-results table {
+    margin-left:10px;
+
+
 }
