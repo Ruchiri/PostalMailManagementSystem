@@ -1,0 +1,84 @@
+.wrapper {
+    margin: auto;
+}
+
+.top-bar {
+    width: 1000px;
+    color: white;
+    padding: 10px 5px 5px 2px;
+    margin-left: 100px;
+    background-color: #333333;
+
+}
+
+.letter_img {
+    width: 100px;
+    height: 30px;
+    padding: 30px 0px 5px 20px;
+}
+
+.title {
+    width: 900px;
+    height: 50px;
+
+}
+
+.letter_img, .title {
+    display: table-cell;
+}
+
+.content {
+    width: 990px;
+    margin-left: 100px;
+    background-color: gainsboro;
+    padding: 10px 5px 5px 2px;
+    border-style: double;
+    border-width: 5px;
+    border-color: #333333;
+}
+
+.reg_no, .date, .subject, .sender, .section {
+    height: 30px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+.scan_copy {
+    padding: 5px 5px 5px 5px;
+}
+
+#line1, #ll1 {
+    display: inline;
+}
+
+#line2, #ll2 {
+    display: inline;
+}
+
+#line3, #ll3 {
+    display: inline;
+}
+
+#line4, #ll4 {
+    display: inline;
+}
+
+#line5, #ll5 {
+    display: inline;
+}
+
+input[type='submit'] {
+    width: 200px;
+    geight: 40px
+}
+
+.letter_reply, .history_reco {
+    display: table-cell;
+    align-content: flex-end;
+    width: 250px;
+}
+
+.bottom-bar {
+    width: 550px;
+    margin-left: 500px;
+}
