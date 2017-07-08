@@ -34,6 +34,7 @@
     </div>
 
 
+
     <div class="search-bottom-bar">
         <form action="<?php $_PHP_SELF ?>" method="GET">
             <div class="txtLetterNo">

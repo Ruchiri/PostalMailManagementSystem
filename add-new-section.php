@@ -1,18 +1,7 @@
 <?php
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="123";
-$dbname="pmms";
-$connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-if(mysqli_connect_errno()){
-    die("database connection failed:".
-        mysqli_connect_error().
-        "(".mysqli_connect_errno().")"
-
-    );
-
-}
+include ("connect.php");
 ?>
+
 <?php
     if(isset($_GET['submit'])){
         $message='';
@@ -31,6 +20,24 @@ if(mysqli_connect_errno()){
                 }else{
                     die("database query failed ".mysqli_error($connection));
                 }
+                $query1="CREATE TABLE $name (";
+                $query1 .="id INT(10) NOT NULL AUTO_INCREMENT,";
+                $query1 .="reg_no VARCHAR(15),";
+                $query1 .="ref_id INT(10) NOT NULL,";
+                $query1 .="date DATE NOT NULL,";
+                $query1 .="sender VARCHAR(100) NOT NULL,";
+                $query1 .="subject VARCHAR(300) NOT NULL,";
+                $query1 .="rec_letter VARCHAR(100) NOT NULL,";
+                $query1 .="replied TINYINT(1),";
+                $query1 .="rep_letter VARCHAR(100),";
+                $query1 .="visible TINYINT(1),";
+                $query1 .="PRIMARY KEY(id))";
+                $result1=mysqli_query($connection,$query1);
+                if($result1){
+                    $message="Successfully added to the database!";
+                }else{
+                    die("database query failed ".mysqli_error($connection));
+                }
             }else{
                 $message="Please confirm the password again!";
             }
@@ -40,6 +47,7 @@ if(mysqli_connect_errno()){
 
         }
     }
+
     if(!empty($message)){
         echo $message;
     }
