@@ -39,17 +39,19 @@ include ("connect.php");
                     die("database query failed ".mysqli_error($connection));
                 }
             }else{
-                $message="Please confirm the password again!";
+                $message="මුර පද සමානදැයි පරීක්ෂා කරන්න";
             }
 
         }else{
-            $message="Please check your name and password!";
+            $message="අවශ්‍ය දත්ත ඇතුලත් කර ඇත්දැයි පරීක්ෂා කරන්න";
 
         }
     }
 
     if(!empty($message)){
-        echo $message;
+        echo "<script language='javascript'>";
+        echo "alert('$message')";
+        echo "</script>";
     }
 ?>
 

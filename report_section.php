@@ -73,11 +73,13 @@ include ("connect.php");
                         die("database query failed " . mysqli_error($connection));
                     }
                 } else {
-                    $message = "Please enter the relevant time period!";
+                    $message = "අවශ්‍ය කාල පරාසය තෝරා ඇත්දැයි පරීක්ෂා කරන්න";
                 }
             }
             if(!empty($message)){
-                echo $message;
+                echo "<script language='javascript'>";
+                echo "alert('$message')";
+                echo "</script>";
             }
             ?>
         </table>
