@@ -1,33 +1,21 @@
 <?php
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="yasara96";
-$dbname="pmms";
-$connection=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-if(mysqli_connect_errno()){
-    die("database connection failed:".
-        mysqli_connect_error().
-        "(".mysqli_connect_errno().")"
-
-    );
-
-}
+include ("connect.php");
 ?>
-
-
 <!DOCTYPE html>
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
     <title>වාර්තා ලබා ගැනීම</title>
     <link rel="stylesheet" href="css/report_section.css">
-
-
 </head>
 <body>
+<div class="Background">
+    <div class="system">
+        <img src="img/new.jpg" alt="new">
+    </div>
     <div class="heading">
         <p><strong>වාර්තා ලබා ගැනීම</strong></p>
     </div><!--Heading-->
-
     <div class="Choose-date">
         <form action="" method="get">
         <ul>
@@ -70,6 +58,7 @@ if(mysqli_connect_errno()){
                     $date1=$_GET['date1'];
                     $date2=$_GET['date2'];
                     $query ="SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE date BETWEEN  '$date1' AND '$date2' ";
+                    mysqli_set_charset($connection, 'utf8');
                     $result = mysqli_query($connection, $query);
                     if ($result) {
                         while ($row=mysqli_fetch_array($result)){
@@ -85,14 +74,22 @@ if(mysqli_connect_errno()){
                         die("database query failed " . mysqli_error($connection));
                     }
                 } else {
-                    $message = "Please enter the relevant time period!";
+                    $message = "අවශ්‍ය කාල පරාසය තෝරා ඇත්දැයි පරීක්ෂා කරන්න";
                 }
             }
             if(!empty($message)){
-                echo $message;
+                echo "<script language='javascript'>";
+                echo "alert('$message')";
+                echo "</script>";
             }
             ?>
         </table>
     </div><!--Search-results-->
+    <div class="Send-head">
+        <form action="">
+            <input type="button" name="send" value="වාර්තාව ප්‍රධාන නිලධාරිට යැවීම">
+        </form>
+    </div>
+</div><!--Background-->
 </body>
 </html>

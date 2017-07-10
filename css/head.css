@@ -5,25 +5,23 @@
 }
 .Background{
     width: 1350px;
-    height: 680px;
+    height: 1000px;
     margin: auto;
     background-color: #CCCCCC;
 }
-.wrapper {
-    margin: auto;
-    background-color:rgba(120,140,198,0.76);
-    width: 1000px;
+.heading{
+    width: 700px;
     height: 50px;
+    background:rgba(131,165,165,0.76);
+    margin: auto;
+    font-size: xx-large;
     text-align: center;
-    color: rgba(55,68,130,0.92);
     margin-bottom: 10px;
-
 }
-
-.history{
-    width: 1000px;
-    height: 500px;
-    background-color:lightsteelblue;
+.Report{
+    background: rgba(216,189,216,0.92);
+    width: 900px;
+    height: 600px;
     margin: auto;
 
 }

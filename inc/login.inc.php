@@ -5,16 +5,8 @@
 
 function SignIn()
 {
-
-    define('DB_HOST', 'localhost');
-    define('DB_NAME', 'pmms');
-    define('DB_USER','root');
-    define('DB_PASSWORD','123');
-
-    $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysqli_error());
-    $db=mysqli_select_db($con,DB_NAME) or die("Failed to connect to MySQL: " . mysqli_error());
-
-
+    include '../connect.php';
+    $con=connect();
 
     session_start();   //starting the session for user profile page
     if(!empty($_GET['username']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
@@ -26,7 +18,7 @@ function SignIn()
         {
             $_SESSION['username'] = $row['password'];
             $_SESSION['invalid']="";
-            $_SESSION['empty']="";
+
             session_start();
             $_SESSION['page'] = $row['username'];
             if ( $row['username']=="ප්‍රධාන පරිශීලක"){
@@ -52,7 +44,7 @@ function SignIn()
         //echo"Any field cannot be empty";
 
         session_start();
-        $_SESSION['invalid']="පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
+       $_SESSION['invalid']="පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
         header('Location:..\login.php');
     }
 
