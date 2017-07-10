@@ -10,7 +10,7 @@ function search($fields, $terms)
 {
     $dbhost = "localhost";
     $dbuser = "root";
-    $dbpass = "yasara96";
+    $dbpass = "123";
     $dbname = "pmms";
 
     //connection established
