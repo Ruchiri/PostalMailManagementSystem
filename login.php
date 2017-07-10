@@ -37,20 +37,20 @@
     <ul>
         <form method="GET" ACTION=inc/login.inc.php>
             <ul>
-                <input type="text" name="username" list="username" placeholder="අංශය තෝරන්න">
-                <datalist id="username">
-                    <option value="ප්‍රධාන පරිශීලක"> ප්‍රධාන පරිශීලක</option>
-                    <option value="ආයතන"> ආයතන</option>
-                    <option value="ගිණුම් අංශය"> ගිණුම් අංශය</option>
-                    <option value="සංවර්ධන අංශය"> සංවර්ධන අංශය</option>
-                    <option value="ඉඩම් අංශය"> ඉඩම් අංශය</option>
-                    <option value="සමාජ සේවා අංශය"> සමාජ සේවා අංශය</option>
-                    <option value="දිවි නැගුම අංශය"> දිවි නැගුම අංශය</option>
-                    <option value="ක්ෂේත්‍ර"> ක්ෂේත්‍ර</option>
-                    <option value="ලියාපදිංචි අංශය"> ලියාපදිංචි අංශය</option>
-                    <option value="මුදල් හා චෙක්පත් අංශය"> මුදල් හා චෙක්පත් අංශය</option>
-                    <option value="ප්‍රධාන නිලධාරී"> ප්‍රධාන නිලධාරී</option>
-                </datalist>
+
+                <?php
+                include 'connect.php';
+                $con=connect();
+                $result = mysqli_query($con,'SELECT username FROM login');
+
+                echo "<select  name='username' >";
+                    echo "<option hidden >අදාල අංශය තෝරන්න </option>>";
+                    while ($row = mysqli_fetch_array($result)) {
+                    echo "<option value='" . $row['username'] ."'>" . $row['username'] ."</option>";
+                    }
+                    echo "</select>";
+                    ?>
+
                 <input id="password" name="password" type="password" placeholder="මුරපදය ඇතුලත් කරන්න">
                 <input id="button" type="submit" value="යොමු කරන්න" name="submit" > <br>
             </ul>
