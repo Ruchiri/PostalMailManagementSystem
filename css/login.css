@@ -22,13 +22,14 @@ a{
     font-size: 300%;
 }
 .login{
+    font-size: 15px;
     margin-left: 10px;
     width :400px;
     height: 270px;
     background: rgba(53,58,61,0.76);
     position: relative;
     left: 650px;
-    top: 150px;
+    top: 130px;
 }
 
 .login ul form{
@@ -36,14 +37,18 @@ a{
     text-align: left;
 
 }
-.login ul form input{
+
+.login ul form select,input{
+    font-size: 16px;
     width: 200px;
     height: 40px;
     border-radius: 5px;
     margin-top: 20px;
     margin-left: 20px;
-
 }
+
+
+
 
 .login ul form p{
     color: crimson;
