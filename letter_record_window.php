@@ -6,13 +6,13 @@
  * Time: 5:20 PM
  */
 
-$reg_no = '123';
-$date = 2017 - 07 - 06;
-$section = 'සමාජ සේවා අංශය';
-$subject = 'ඩෙංගු මර්ධනය හා සම්බන්ධයි';
-$sender = 'ප්‍රාදේශීය සභාව';
+$reg_no = $_GET['reg_no'];
+$date = $_GET['date'];;
+$section = $_GET['section'];
+$subject = $_GET['subject'];
+$sender = $_GET['sender'];
 $replied_no = 0;
-
+$scan_copy;
 ?>
 
 <!DOCTYPE html>

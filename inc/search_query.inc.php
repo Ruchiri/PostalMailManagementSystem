@@ -6,8 +6,10 @@
  * Time: 11:28 AM
  */
 
+
 function search($fields, $terms)
 {
+    include "inc/letter_record.php";
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "123";
@@ -69,7 +71,11 @@ function search($fields, $terms)
     //take search results as array of rows
     $rows = [];
     while ($row = $results->fetch_array()) {
-        $rows[] = $row;
+        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id']);
+        if (!empty($row['reg_no'])) {
+            $reco_obj->setRegNo($row['reg_no']);
+        }
+        $rows[] = $reco_obj;
 
     }
     $search_results = array('count' => $results->num_rows, 'results' => $rows);

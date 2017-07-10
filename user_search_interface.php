@@ -1,3 +1,9 @@
+<?php
+include "inc/section_query.inc.php";
+$sections = get_sections();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

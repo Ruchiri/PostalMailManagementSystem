@@ -1,4 +1,7 @@
 <?php
+include "inc/section_query.inc.php";
+$sections = get_sections();
+
 $search_results = [];
 if (isset($_GET['btn'])) {
     if ($_GET['hidden2'] == "YES") {
@@ -27,6 +30,7 @@ if (isset($_GET['btn'])) {
             $terms[$i] = $_GET['sender'];
             $i++;
         }
+
 
         $search_results = search($fields, $terms);
 
@@ -93,18 +97,12 @@ if (isset($_GET['btn'])) {
 
                 <input type="text" list="sections" name="section" id="section"/>
                 <datalist id="sections">
-                    <option> ප්‍රධාන පරිශීලක</option>
-                    <option> ආයතන</option>
-                    <option> ගිනුම් අංශය</option>
-                    <option> සංවර්ධන අංශය</option>
-                    <option> ඉඩම් අංශය</option>
-                    <option> සමාජ සේවා අංශය</option>
-                    <option> දිවි නැගුම අංශය</option>
-                    <option> ක්ෂේත්‍ර</option>
-                    <option> ලියාපදිංචි අංශය</option>
-                    <option> මුදල් හා චෙක්පත් අංශය</option>
-                    <option> ප්‍රධාන නිලධාරී</option>
+                    <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+                        <option><?php echo $sections[$j]; ?></option>
+                    <?php endfor; ?>
+
                 </datalist>
+
 
 
             </div>
@@ -136,12 +134,15 @@ if (isset($_GET['btn'])) {
                     <div class="search_record">
                         <?php $result = $search_results['results'][$i]; ?>
                         <ul>
-                            <li><?php echo "ලියාපදිංචි අංකය :" . $result["reg_no"] ?></li>
-                            <li><?php echo "දිනය :" . $result["date"] ?></li>
-                            <li><?php echo "අංශය :" . $result["section"] ?></li>
-                            <li><?php echo "විෂය :" . $result["subject"] ?></li>
-                            <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result["sender"] ?></li>
-                            <li id="next"><a href="letter_record.php"><img src="img/next (1).png"/></a></li>
+                            <li><?php echo "ලියාපදිංචි අංකය :" . $result->getRegNo(); ?></li>
+                            <li><?php echo "දිනය :" . $result->getDate(); ?></li>
+                            <li><?php echo "අංශය :" . $result->getSection(); ?></li>
+                            <li><?php echo "විෂය :" . $result->getSubject(); ?></li>
+                            <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result->getSender(); ?></li>
+                            <li id="next">
+                                <a href="letter_record_window.php?reg_no=<?php echo $result->getRegNo(); ?>&date=<?php echo $result->getDate(); ?>&subject=<?php echo $result->getSubject(); ?>&section=<?php echo $result->getSection() ?>&sender=<?php echo $result->getSender() ?>&scan_copy=<?php echo $result->getScanCopy() ?>"><img
+                                            src="img/next (1).png"/>
+                                </a></li>
                         </ul>
                     </div>
                     <br/>
