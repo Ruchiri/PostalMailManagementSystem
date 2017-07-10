@@ -5,7 +5,6 @@
 
 function SignIn()
 {
-
     define('DB_HOST', 'localhost');
     define('DB_NAME', 'pmms');
     define('DB_USER','root');

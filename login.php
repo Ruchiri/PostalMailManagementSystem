@@ -62,9 +62,6 @@
             $_SESSION['invalid']="";
             ?></p>
         </form>
-
-
-
     </ul>
 </div>
 

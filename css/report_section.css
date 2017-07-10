@@ -1,3 +1,14 @@
+.Background{
+    width: 1350px;
+    height: 1200px;
+    margin: auto;
+    background-color: #CCCCCC;
+}
+.system img{
+    width: 1350px;
+    height: 100px;
+    margin: auto;
+}
 .heading{
     width: 1000px;
     height: 70px;
@@ -36,4 +47,9 @@
     margin: auto;
     margin-top: 20px;
     background: rgba(198,176,186,0.76);
+    margin-bottom: 20px;
+}
+.Send-head{
+    float: right;
+    margin-right: 50px;
 }
