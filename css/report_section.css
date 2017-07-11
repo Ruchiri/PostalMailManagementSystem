@@ -1,3 +1,14 @@
+.Background{
+    width: 1350px;
+    height: 1200px;
+    margin: auto;
+    background-color: #CCCCCC;
+}
+.system img{
+    width: 1350px;
+    height: 100px;
+    margin: auto;
+}
 .heading{
     width: 1000px;
     height: 70px;
@@ -8,7 +19,7 @@
 }
 .Choose-date{
     background: rgba(165,118,143,0.76);
-    width: 600px;
+    width: 650px;
     height: 160px;
     margin: auto;
 
@@ -26,9 +37,16 @@
     height: 80px;
     float: right;
 }
+
 .generate input{
-    margin-top: 20px;
-    float: right;
+    margin-top: 10px;
+    float: left;
+}
+.Send-head input{
+    margin-top: 10px;
+}
+.Take-pdf input{
+    margin-top: 10px;
 }
 .Report-results{
     width: 1000px;
@@ -36,4 +54,16 @@
     margin: auto;
     margin-top: 20px;
     background: rgba(198,176,186,0.76);
+    margin-bottom: 20px;
+}
+.Send-head{
+    float: right;
+    margin-right: 50px;
+    border-radius: 20px;
+}
+.Take-pdf{
+    float: right;
+    margin-right: 50px;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
