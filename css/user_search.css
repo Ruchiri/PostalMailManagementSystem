@@ -1,11 +1,12 @@
 .wrapper {
     margin: auto;
+    width: 1100px;
+    background-color: lightyellow;
 }
 
 .top-bar-search {
-    width: 1100px;
+    width: 1070px;
     height: 50px;
-    margin-left: 100px;
     text-align: start;
     background-color: navajowhite;
     padding: 10px 10px 10px 10px;
@@ -14,7 +15,6 @@
 }
 
 .seach-Model {
-    margin-left: 100px;
     width: 1100px;
 }
 
@@ -34,14 +34,15 @@
     width: 250px;
     height: 50px;
     padding: 5px 20px 5px 0px;
-    background-color: antiquewhite;
+    text-align: center;
+    background: linear-gradient(antiquewhite, #ffe6cc, antiquewhite);
     display: table-cell;
 }
 
 input[type="text"] {
     padding: 5px 10px 5px 10px;
     alignment: left;
-    width: 175px;
+    width: 200px;
     height: 10px;
     font-family: Madura;
 }
@@ -49,7 +50,7 @@ input[type="text"] {
 input[type="date"] {
     padding: 5px 10px 5px 10px;
     alignment: left;
-    width: 175px;
+    width: 200px;
     height: 10px;
 }
 
@@ -62,15 +63,31 @@ input[type="date"] {
 
 .search-results {
     width: 1100px;
-    height: 900px;
-    background-color: lightgray;
+
+}
+
+.no_result {
+    margin-left: 50px;
+}
+
+.search_record {
+    width: 1000px;
+    height: auto;
+    border-radius: 8px;
+    padding: 10px 5px 20px 5px;
+    background-color: antiquewhite;
+    margin: 0 auto;
 }
 
 ul {
     list-style-type: none;
 }
 
-
+#next {
+    float: right;
+    padding-bottom: 20px;
+    padding-right: 10px;
+}
 
 
 

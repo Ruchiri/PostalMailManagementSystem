@@ -1,5 +1,7 @@
 <?php
-    include ("connect.php");
+include "connect.php";
+$connection = connect();
+$ref_id = $_GET['ref_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@
     </div>
     <div class="history">
         <?php
-            $query ="SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE ref_id=1";
+        $query = "SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE ref_id='$ref_id'";
             mysqli_set_charset($connection, 'utf8');
             $result=mysqli_query($connection,$query);
         ?>

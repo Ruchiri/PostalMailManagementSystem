@@ -1,3 +1,39 @@
+<?php
+$section = "ගිනුම් අංශය";
+$thisSection = "su";
+include 'inc/search_query.inc.php';
+
+if (isset($_GET['btn'])) {
+    if ($_GET['hidden2'] == "YES") {
+        $fields = explode(',', $_GET['hidden1']);
+        $terms = [];
+        $i = 0;
+        if ($_GET['reg_no'] != '') {
+            $terms[$i] = $_GET['reg_no'];
+            $i++;
+        }
+        if ($_GET['date'] != '') {
+            $terms[$i] = $_GET['date'];
+            $i++;
+        }
+
+        if ($_GET['subject'] != '') {
+            $terms[$i] = $_GET['subject'];
+            $i++;
+        }
+        if ($_GET['sender'] != '') {
+            $terms[$i] = $_GET['sender'];
+            $i++;
+        }
+
+
+        $search_results = search($fields, $terms, 'letter');
+
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +49,6 @@
     <div class="top-bar-search">
         <h1>තැපැල්පත් සෙවීම</h1>
     </div>
-</div>
 <div class="seach-Model">
     <div class="search-bar">
         <div class="criteria1">
@@ -55,7 +90,7 @@
             <input type="hidden" name="hidden2" id="hidden2" value=""/>
 
             <div class="search-button" type="button">
-                <input type="submit" name="btn" id="btn" onclick="return getCriterialist()" value="සොයන්න">
+                <input type="submit" name="btn" id="btn" onclick="return user_criteriaList()" value="සොයන්න">
 
             </div>
             <br>
@@ -68,23 +103,25 @@
             <div>
                 <p>ගැළපෙන ප්‍රථිපල <?php echo $search_results['count']; ?>ක් සොයා ගන්නා ලදි.</p>
             </div>
-            <hr>
-            <hr>
+
             <div class="result table">
-                <div clas="search_record">
-                    <?php for ($i = 0; $i < $search_results['count']; $i++): ?>
+                <?php for ($i = 0; $i < $search_results['count']; $i++): ?>
+                    <div class="search_record">
                         <?php $result = $search_results['results'][$i]; ?>
                         <ul>
-
-                            <li><?php echo "ලියාපදිංචි අංකය :" . $result["reg_no"] ?></li>
-                            <li><?php echo "දිනය :" . $result["date"] ?></li>
-                            <li><?php echo "විෂය :" . $result["subject"] ?></li>
-                            <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result["sender"] ?></li>
-
+                            <li><?php echo "ලියාපදිංචි අංකය :" . $result->getRegNo(); ?></li>
+                            <li><?php echo "දිනය :" . $result->getDate(); ?></li>
+                            <li><?php echo "අංශය :" . $result->getSection(); ?></li>
+                            <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result->getSender(); ?></li>
+                            <li id="next">
+                                <a href="letter_record_window.php?reg_no=<?php echo $result->getRegNo(); ?>&date=<?php echo $result->getDate(); ?>&subject=<?php echo $result->getSubject(); ?>&section=<?php echo $section ?>&sender=<?php echo $result->getSender() ?>&scan_copy=<?php echo $result->getScanCopy() ?>&ref_id=<?php echo $result->getRefId() ?>&thisSection=<?php echo $thisSection ?>"><img
+                                            src="img/next (1).png"/>
+                                </a></li>
                         </ul>
-                        <hr>
-                    <?php endfor; ?>
-                </div>
+                    </div>
+                    <br/>
+                <?php endfor; ?>
+
             </div>
         <?php elseif (isset($_GET['btn'])): ?>
             <div>
@@ -95,6 +132,6 @@
 
 
 </div>
-
+</div>
 </body>
 </html>

@@ -6,8 +6,10 @@
  * Time: 11:28 AM
  */
 
-function search($fields, $terms)
+
+function search($fields, $terms, $tbl)
 {
+    include "inc/letter_record.php";
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "123";
@@ -34,7 +36,7 @@ function search($fields, $terms)
 
     //creating sql command according to the searching criterias & values
     $query = "SELECT ";
-    $query .= "*FROM letter WHERE ";
+    $query .= "*FROM $tbl WHERE ";
 
     if ($size == 1) {
         $query .= "{$fields[0]} ='$sanitized[0]'";
@@ -47,15 +49,14 @@ function search($fields, $terms)
         $query .= "{$fields[$l]} ='$sanitized[$l]'";
     }
 
+
     mysqli_set_charset($connection, 'utf8');
     //get query according to given criterias
     $results = mysqli_query($connection, $query);
 
     //echo mysqli_character_set_name($connection);
 
-    if ($results) {
-        // echo "sucess!!!";
-    } else {
+    if (!$results) {
         die("database query failed." .
             mysqli_error($connection));
     }
@@ -69,13 +70,17 @@ function search($fields, $terms)
     //take search results as array of rows
     $rows = [];
     while ($row = $results->fetch_array()) {
-        $rows[] = $row;
+        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id']);
+        if (!empty($row['reg_no'])) {
+            $reco_obj->setRegNo($row['reg_no']);
+        }
+
+        $rows[] = $reco_obj;
 
     }
     $search_results = array('count' => $results->num_rows, 'results' => $rows);
     return $search_results;
 }
-
 
 ?>
 
