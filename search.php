@@ -1,6 +1,7 @@
 <?php
 include "inc/section_query.inc.php";
 $sections = get_sections();
+$thisSection = "mu";
 
 $search_results = [];
 if (isset($_GET['btn'])) {
@@ -32,7 +33,7 @@ if (isset($_GET['btn'])) {
         }
 
 
-        $search_results = search($fields, $terms);
+        $search_results = search($fields, $terms, 'letter');
 
     }
 }
@@ -140,7 +141,7 @@ if (isset($_GET['btn'])) {
                             <li><?php echo "විෂය :" . $result->getSubject(); ?></li>
                             <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result->getSender(); ?></li>
                             <li id="next">
-                                <a href="letter_record_window.php?reg_no=<?php echo $result->getRegNo(); ?>&date=<?php echo $result->getDate(); ?>&subject=<?php echo $result->getSubject(); ?>&section=<?php echo $result->getSection() ?>&sender=<?php echo $result->getSender() ?>&scan_copy=<?php echo $result->getScanCopy() ?>"><img
+                                <a href="letter_record_window.php?reg_no=<?php echo $result->getRegNo(); ?>&date=<?php echo $result->getDate(); ?>&subject=<?php echo $result->getSubject(); ?>&section=<?php echo $result->getSection() ?>&sender=<?php echo $result->getSender() ?>&scan_copy=<?php echo $result->getScanCopy() ?>&ref_id=<?php echo $result->getRefId() ?>&thisSection=<?php echo $thisSection ?>"><img
                                             src="img/next (1).png"/>
                                 </a></li>
                         </ul>

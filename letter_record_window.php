@@ -11,7 +11,10 @@ $date = $_GET['date'];;
 $section = $_GET['section'];
 $subject = $_GET['subject'];
 $sender = $_GET['sender'];
+$ref_id = $_GET['ref_id'];
+$thisSection = $_GET['thisSection'];
 $replied_no = 0;
+
 $scan_copy;
 ?>
 
@@ -72,15 +75,26 @@ $scan_copy;
             <p id="line5"><?php echo $replied_no ?></p>
         </div>
 
-        <div class="bottom-bar">
-            <div class="letter_reply">
-                <p><input type="submit" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"></p>
-            </div>
+        <form action="" method="get">
+            <?php if ($thisSection == 'su'): ?>
+                <div class="letter_reply">
+                    <p><input type="button" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"
+                              onclick="document.location.href='letter-history-su.php?ref_id=<?php echo $ref_id ?>'"/>
+                    </p>
+                </div>
+            <?php else: ?>
+                <div class="letter_reply">
+                    <p><input type="button" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"
+                              onclick="document.location.href='letter-history-mu.php?ref_id=<?php echo $ref_id ?>'"/>
+                    </p>
+                </div>
+            <?php endif; ?>
 
             <div class="history_reco">
-                <p><input type="submit" name="records" id="records" value="පිළිතුරු ලිපි යොමු කිරීම"></p>
+                <p><input type="button" name="records" id="records" value="පිළිතුරු ලිපි යොමු කිරීම"
+                          onclick="document.location.href='replyLetter.php'"/></p>
             </div>
-        </div>
+        </form>
 
 
     </div>
