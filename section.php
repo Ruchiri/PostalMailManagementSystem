@@ -9,7 +9,6 @@ $_SESSION['section'] = $_SESSION['page'];
       <head>
           <meta charset="UTF-8">
           <title><?php include "inc/login.inc.php";
-              session_start();
               echo $_SESSION['page'];
               ?> </title>
           <link rel="stylesheet" type="text/css" href="css/account-section.css">

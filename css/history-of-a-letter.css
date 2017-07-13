@@ -1,11 +1,11 @@
 .system img{
     width: 1350px;
-    height: 100px;
+    height: auto;
     margin: auto;
 }
 .Background{
     width: 1350px;
-    height: 680px;
+    height: auto;
     margin: auto;
     background-color: #CCCCCC;
 }

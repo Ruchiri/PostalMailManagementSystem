@@ -1,11 +1,10 @@
 .wrapper {
-    margin: auto;
+    margin-left: 150px;
 }
 
 .top-bar {
     width: 1000px;
     height: 50px;
-    margin-left: 100px;
     background-color: darkmagenta;
     color: white;
     text-align: center;
@@ -16,7 +15,6 @@
 .reply-letter-model {
     width: 1000px;
     background-color: beige;
-    margin-left: 100px;
     padding: 5px 5px 5px 2px;
 
 }

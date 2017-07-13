@@ -55,74 +55,79 @@ if (isset($_GET['btn'])) {
 </head>
 <body>
 <div class="wrapper">
+
+    <div class="top_bar_img">
+        <img src="img/new.jpg" alt="new" width="1350">
+    </div>
+
     <div class="top-bar-search">
         <h1>තැපැල්පත් සෙවීම</h1>
     </div>
 
-<div class="seach-Model">
-    <div class="search-bar">
-        <div class="criteria1">
-            <h3>ලියාපදිංචි අංකය</h3>
+    <div class="seach-Model">
+        <div class="search-bar">
+            <div class="criteria1">
+                <h3>ලියාපදිංචි අංකය</h3>
+            </div>
+
+            <div class="criteria2">
+                <h3>දිනය</h3>
+            </div>
+
+
+            <div class="criteria3">
+                <h3>අංශය</h3>
+            </div>
+
+
+            <div class="criteria4">
+                <h3>විෂය</h3>
+            </div>
+
+            <div class="criteria5">
+                <h3>ලිපිය එවූ පාර්ශවය</h3>
+            </div>
         </div>
 
-        <div class="criteria2">
-            <h3>දිනය</h3>
+
+        <div class="search-bottom-bar">
+            <form action="<?php $_PHP_SELF ?>" method="GET">
+                <div class="txtLetterNo">
+                    <input type="text" name="reg_no" id="reg_no"/>
+                </div>
+                <div class="dDate">
+                    <script>validate_date();</script>
+                    <input type="date" name="date" id="date"/>
+                </div>
+                <div class="txtSection">
+
+                    <input type="text" list="sections" name="section" id="section"/>
+                    <datalist id="sections">
+                        <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+                            <option><?php echo $sections[$j]; ?></option>
+                        <?php endfor; ?>
+
+                    </datalist>
+
+
+                </div>
+                <div class="txtSubject">
+                    <input type="text" name="subject" id="subject"/>
+                </div>
+                <div class="lstSender">
+                    <input type="text" name="sender" id="sender"/>
+                </div>
+                <br>
+                <input type="hidden" name="hidden1" id="hidden1" value=""/>
+                <input type="hidden" name="hidden2" id="hidden2" value=""/>
+                <div class="search-button" type="button">
+                    <input type="submit" name="btn" id="btn" onclick="return getCriterialist()" value="සොයන්න">
+
+                </div>
+                <br>
+
+            </form>
         </div>
-
-
-        <div class="criteria3">
-            <h3>අංශය</h3>
-        </div>
-
-
-        <div class="criteria4">
-            <h3>විෂය</h3>
-        </div>
-
-        <div class="criteria5">
-            <h3>ලිපිය එවූ පාර්ශවය</h3>
-        </div>
-    </div>
-
-
-    <div class="search-bottom-bar">
-        <form action="<?php $_PHP_SELF ?>" method="GET">
-            <div class="txtLetterNo">
-                <input type="text" name="reg_no" id="reg_no"/>
-            </div>
-            <div class="dDate">
-                <script>validate_date();</script>
-                <input type="date" name="date" id="date"/>
-            </div>
-            <div class="txtSection">
-
-                <input type="text" list="sections" name="section" id="section"/>
-                <datalist id="sections">
-                    <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
-                        <option><?php echo $sections[$j]; ?></option>
-                    <?php endfor; ?>
-
-                </datalist>
-
-
-
-            </div>
-            <div class="txtSubject">
-                <input type="text" name="subject" id="subject"/>
-            </div>
-            <div class="lstSender">
-                <input type="text" name="sender" id="sender"/>
-            </div>
-            <br>
-            <input type="hidden" name="hidden1" id="hidden1" value=""/>
-            <input type="hidden" name="hidden2" id="hidden2" value=""/>
-            <div class="search-button" type="button">
-                <input type="submit" name="btn" id="btn" onclick="return getCriterialist()" value="සොයන්න">
-
-            </div>
-            <br>
-
-        </form>
     </div>
 
     <div class="search-results">
@@ -142,7 +147,7 @@ if (isset($_GET['btn'])) {
                             <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result->getSender(); ?></li>
                             <li id="next">
                                 <a href="letter_record_window.php?reg_no=<?php echo $result->getRegNo(); ?>&date=<?php echo $result->getDate(); ?>&subject=<?php echo $result->getSubject(); ?>&section=<?php echo $result->getSection() ?>&sender=<?php echo $result->getSender() ?>&scan_copy=<?php echo $result->getScanCopy() ?>&ref_id=<?php echo $result->getRefId() ?>&thisSection=<?php echo $thisSection ?>"><img
-                                            src="img/next (1).png"/>
+                                            src="img/export-arrow.png"/>
                                 </a></li>
                         </ul>
                     </div>
@@ -158,7 +163,7 @@ if (isset($_GET['btn'])) {
     </div>
 
 </div>
-</div>
+
 
 </body>
 </html>
