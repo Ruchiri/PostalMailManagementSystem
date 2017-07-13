@@ -31,12 +31,8 @@ include ("connect.php");
                 if ($result) {
                     while ($row=mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td>".$row['id']."</td>";
-                        echo "<td>".$row['reg_no']."</td>";
                         echo "<td>".$row['date']."</td>";
-                        echo "<td>".$row['sender']."</td>";
-                        echo "<td>".$row['subject']."</td>";
-                        echo "<td>".$row['replied']."</td>";
+                        echo "<td>".$row['report']."</td>";
                     }
                 } else {
                     die("database query failed " . mysqli_error($connection));

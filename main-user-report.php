@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
     die("Database connection failed:" . mysqli_connect_error() . "(" . mysqli_connect_error() . ")");
 
 }
-    if(isset($_GET['btn'])){
+    if(isset($_GET['btn']))
 
         $start_date = $_GET['start_date'];
 $end_date = $_GET['end_date'];
