@@ -35,12 +35,13 @@
 
 <div class="login">
     <ul>
-        <form method="GET" ACTION=inc/login.inc.php>
+        <form method="get" ACTION=inc/login.inc.php>
             <ul>
 
                 <?php
                 include 'connect.php';
                 $con=connect();
+                mysqli_set_charset($con, 'utf8');
                 $result = mysqli_query($con,'SELECT username FROM login');
 
                 echo "<select  name='username' >";

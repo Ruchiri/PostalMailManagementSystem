@@ -33,7 +33,7 @@ if (isset($_GET['btn'])) {
         }
 
 
-        $search_results = search($fields, $terms, 'letter');
+        $search_results = search($fields, $terms);
 
     }
 }

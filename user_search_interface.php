@@ -1,7 +1,8 @@
 <?php
-$section = "ගිනුම් අංශය";
 $thisSection = "su";
 include 'inc/search_query.inc.php';
+session_start();
+$section = $_SESSION['section'];
 
 if (isset($_GET['btn'])) {
     if ($_GET['hidden2'] == "YES") {
@@ -27,7 +28,7 @@ if (isset($_GET['btn'])) {
         }
 
 
-        $search_results = search($fields, $terms, 'letter');
+        $search_results = search_su($fields, $terms, $section);
 
     }
 }
