@@ -43,7 +43,6 @@ $section= $_SESSION['page'];
          </tr>';
 
                 foreach ($data as $row) {
-
                     echo '<tr>  
              <td>' . $row["ref_id"] . '</td>
              <td>' . $row["date"] . '</td>  
