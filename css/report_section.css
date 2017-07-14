@@ -18,7 +18,7 @@
     text-align: center;
 }
 .Choose-date{
-    background: rgba(165,118,143,0.76);
+    background: rgba(41, 165, 160, 0.76);
     width: 650px;
     height: 160px;
     margin: auto;
@@ -26,13 +26,13 @@
 }
 .Start-date{
     float: left;
-    background: rgba(143,157,165,0.76);
+    background: rgba(81, 147, 165, 0.76);
     width: 250px;
     height: 80px;
 
 }
 .End-date{
-    background: rgba(143,157,165,0.76);
+    background: rgba(86, 152, 165, 0.76);
     width: 250px;
     height: 80px;
     float: right;
@@ -52,7 +52,7 @@
     height: 700px;
     margin: auto;
     margin-top: 20px;
-    background: rgba(198,176,186,0.76);
+    background: #0cb0ff;
     margin-bottom: 20px;
 }
 .Send-head{

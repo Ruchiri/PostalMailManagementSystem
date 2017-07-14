@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
 #wrapper {
-    width: 1536px;
+    width: 1336px;
     height: 748px;
     background-color: midnightblue;
 }
 #banner{
-    width: 1536px;
+    width: 1336px;
     height: 100px;
     background-color: paleturquoise;
     text-align: center;
 }
 #menuTop{
-    width: 1536px;
+    width: 1336px;
     height: 100px;
     background-color: white;
 }
@@ -49,7 +49,7 @@
     border-radius: 1px;
 }
 #content{
-    width: 936px;
+    width: 736px;
     height: 548px;
     background-color: midnightblue;
     margin-left: 300px;
