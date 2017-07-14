@@ -1,19 +1,13 @@
 <?php
 function connect()
 {
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "123";
-    $dbname = "pmms";
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'pmms');
+    define('DB_USER','root');
+    define('DB_PASSWORD','123');
 
-//connection established
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    if (mysqli_connect_errno()) {
-        die("Database connection failed:" . mysqli_connect_error() . "(" . mysqli_connect_error() . ")");
-
-    }
-    return $connection;
+    $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD) or die("Failed to connect to MySQL: " . mysqli_error());
+    $db=mysqli_select_db($con,DB_NAME) or die("Failed to connect to MySQL: " . mysqli_error());
+    return $con;
 }
-
 ?>
