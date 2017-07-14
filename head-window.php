@@ -1,5 +1,6 @@
 <?php
 include ("connect.php");
+$connection=connect();
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@ include ("connect.php");
                     while ($row=mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>".$row['date']."</td>";
-                        echo "<td>".$row['report']."</td>";
+                        echo "<td><a href=''>".$row['report']."</a></td>";
                     }
                 } else {
                     die("database query failed " . mysqli_error($connection));

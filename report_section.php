@@ -18,19 +18,19 @@ $connection=connect();
         <p><strong>වාර්තා ලබා ගැනීම</strong></p>
     </div><!--Heading-->
     <div class="Choose-date">
-        <form action="inc/section_user_report.inc.php" method="get">
+        <form action="report.php" method="get">
          <ul>
             <p><strong>අදාල කාල පරාසය තෝරන්න</strong></p>
             <div class=" Start-date">
                 <ul>
                     <p>ආරම්භක සෙවුම් දිනය</p>
-                    <input type="date" name="date1"/>
+                    <input type="date" name="date1" id="date1"/>
                 </ul>
             </div><!--start-date-->
             <div class="End-date">
                 <ul>
                     <p>අවසාන සෙවුම් දිනය</p>
-                    <input type="date" name="date2"/>
+                    <input type="date" name="date2" id="date2"/>
                 </ul>
             </div><!--End-date-->
 
@@ -40,14 +40,16 @@ $connection=connect();
         </ul>
         </form>
     </div><!--Choose-date-->
-
-
-    <div class="Report-results">
-
-    </div><!--Search-results-->
     <div class="Send-head">
-        <input type="submit" name="send" value="වාර්තාව ප්‍රධාන නිලධාරිට යැවීම">
-
+        <form action="inc/head_report.inc.php" method="get">
+        <div class="attach">
+            <label for="choose">වාර්තාව අමුනන්න</label>
+        </div>
+        <div class="send">
+            <input type="file" name="choose" value="වාර්තාව අමුනන්න" accept=".pdf,.doc">
+            <input type="submit" name="submit" value="වාර්තාව ප්‍රධාන නිලධාරිට යැවීම">
+        </div>
+        </form>
     </div>
 </div><!--Background-->
 </body>
