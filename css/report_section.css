@@ -40,14 +40,13 @@
 
 .generate input{
     margin-top: 10px;
-    float: left;
+    float: right;
+    margin-right: 70px;
 }
 .Send-head input{
     margin-top: 10px;
 }
-.Take-pdf input{
-    margin-top: 10px;
-}
+
 .Report-results{
     width: 1000px;
     height: 700px;

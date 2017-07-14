@@ -1,18 +1,21 @@
 <?php
-    $date1 = $_GET['date1'];
-    $date2 = $_GET['date2'];
-    require ("../pdf/fpdf.php");
-    $pdf = new FPDF();
-    $pdf->AddPage();
-    $pdf->SetFont("Arial", "", "14");
-    $pdf->Header();
-    $pdf->SetMargins(20, 20, 15);
-    $pdf->Ln();
-    $pdf->MultiCell(0, 6, $date1, 0);
-    $pdf->Cell(0, 6, $date2, 0);
-    $pdf->Ln();
+$html = '
+<html>
+<head>
+    <h1><a name="top"></a>mPDF</h1>
+</head>
+<body>
+    <h2>මුර පදය තහවුරු කරන්න</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+</body>
+</html>
+';
 
-    $pdf->Footer();
-    $pdf->Output();
-
+require ("../mpdf/mpdf.php");
+$mpdf=new mPDF('UTF-8','A4',9,'kaputaunicode');
+$mpdf->WriteHTML($html);
+$mpdf->Output();
 ?>

@@ -19,6 +19,9 @@
         <button id="btn3" style="background-color: powderblue; width: 250px; height: 80px;" >සොයන්න</button>
         <button id="btn4" style="background-color: powderblue; width: 250px; height: 80px;" >වාර්තා ලබා ගැනීම</button>
         <button id="btn5" style="background-color: powderblue; width: 250px; height: 80px;" >සැකසුම්</button>
+        <form action="notification_list.php">
+            <input type="submit" name="notification" value="නිවේදන">
+        </form>
         <form action="<?php $_PHP_SELF ?>" method="get">
 
             <Script>
