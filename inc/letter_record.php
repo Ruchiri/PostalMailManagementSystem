@@ -215,13 +215,21 @@ class letter_record
 
 }
 
-?>
 
-<script>
+
     function showRecord() {
-        echo
-        '<a href="PostMailManagementSystem/letter_record_window.php?reg_no=".urlencode($red_no)."&date=".urlencode($date)."&section=".urlencode($section)."&subject=".urlencode($sender)."&sender=".urlencode($sender)."&scan_copy=".urlencode($scan_copy)."></a>';
+        include_once "../letter_record_window.php";
+        session_start();
+        $_SESSION['reg_no'] = $this->getRegNo();
+        $_SESSION['date'] = $this->getDate();
+        $_SESSION['section'] = $this->getSection();
+        $_SESSION['subject'] = $this->getSubject();
+        $_SESSION['sender'] = $this->getSender();
+        $_SESSION['ref_id'] = $this->getRefId();
+        $_SESSION['replied'] = $this->getReplied();
+        $_SESSION['scan_copy'] = $this->getScanCopy();
 
     }
 
-</script>
+
+?>
