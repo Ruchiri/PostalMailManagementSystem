@@ -73,4 +73,36 @@ button{
     padding: 10px;
     text-align: right;
 }
+#wholeLetter{
+    display: none;
+    height: 600px;
+    width: 500px;
+    position:fixed;
+    background-color: rgba(16,3,12,0.95);
+    border-radius:7px;
+}
+#topPartLetter{
 
+    background: #666;;
+    width:500px;
+    height: 50px;
+    color: #CCC;
+    font-size: small;
+}
+#contentLetter{
+    background: #333;
+    width: 500px;
+    height: 500px;
+    color: #FFF;
+}
+#contentLetter table {
+    border: 1px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-color: #FFF;
+}
+#bottomPartLetter{
+    background: #666;
+    width: 500px;
+    height: 50px;
+}

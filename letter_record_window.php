@@ -26,15 +26,19 @@ $scan_copy;
 </head>
 <body>
 <div class="wrapper">
+
+    <div class="top_bar_img">
+        <img src="img/new.jpg" alt="new" width="1350">
+    </div>
+
     <div class="top-bar">
 
-        <div class="letter_img">
+        <!--div class="letter_img">
             <img src="img/letter.png" alt="letter">
-        </div>
+        </div-->
 
-        <div class="title">
-            <h1>ලිපි වාර්තාව</h1>
-        </div>
+        <h3>ලිපි වාර්තාව</h3>
+
 
     </div>
     <div class="content">
@@ -76,6 +80,11 @@ $scan_copy;
         </div>
 
         <form action="" method="get">
+
+            <div class="reject_btn">
+                <p><input type="button" name="reject" id="reject" value="අදාළ නොවේ"></p>
+            </div>
+
             <?php if ($thisSection == 'su'): ?>
                 <div class="letter_reply">
                     <p><input type="button" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"
@@ -94,6 +103,7 @@ $scan_copy;
                 <p><input type="button" name="records" id="records" value="පිළිතුරු ලිපි යොමු කිරීම"
                           onclick="document.location.href='replyLetter.php'"/></p>
             </div>
+
         </form>
 
 

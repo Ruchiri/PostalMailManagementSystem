@@ -61,12 +61,11 @@
         <p>ප්‍රතිඵල...</p>
 
             <?php
-
                   include ('report-main-user-query.php');
             ?>
 
 
-        </table>
+
     </div><!--Search-results-->
 
 

@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+$_SESSION['section'] = $_SESSION['page'];
+?>
 
       <!DOCTYPE html>
 
@@ -6,7 +9,6 @@
       <head>
           <meta charset="UTF-8">
           <title><?php include "inc/login.inc.php";
-              session_start();
               echo $_SESSION['page'];
               ?> </title>
           <link rel="stylesheet" type="text/css" href="css/account-section.css">
@@ -23,9 +25,10 @@
                   echo $_SESSION['page'];
                   ?></h1>
               <div class="site-search">
-                  <form method="get" action=section.php>
-                      <input type="search" name="search-box" title="සොයන්න">
-                      <button type="submit">සොයන්න</button>
+                  <form method="get" action="inc/search_query.inc.php">
+                      <button type="button" id="btn" name="btn"
+                              onclick="document.location.href='user_search_interface.php'">සොයන්න
+                      </button>
                   </form>
 
               </div><!--site-search-->
@@ -58,3 +61,4 @@
       </div><!-- Wrapper-->
       </body>
       </html>
+

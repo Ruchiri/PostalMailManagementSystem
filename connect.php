@@ -1,14 +1,19 @@
 <?php
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "yasara96";
-$dbname = "pmms";
+function connect()
+{
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "123";
+    $dbname = "pmms";
 
 //connection established
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-if (mysqli_connect_errno()) {
-    die("Database connection failed:" . mysqli_connect_error() . "(" . mysqli_connect_error() . ")");
+    if (mysqli_connect_errno()) {
+        die("Database connection failed:" . mysqli_connect_error() . "(" . mysqli_connect_error() . ")");
 
+    }
+    return $connection;
 }
+
 ?>
