@@ -19,9 +19,14 @@
 
 #columnleft{
     width: 300px;
-    height: 450px;
+    height: 550px;
     background-color: darkcyan;
     float: left;
+}
+#columnleft input{
+    width: 250px;
+    height: 80px;
+    background-color: powderblue;
 }
 #columnright{
     width: 300px;
