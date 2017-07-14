@@ -1,7 +1,6 @@
 <?php
 
-
-class letter_record
+class Letter_record
 {
     private static $letter_count = 0;
     private static $ref_count = 0;
@@ -9,58 +8,21 @@ class letter_record
     private $reg_no;
     private $date;
     private $section;
-    private $subject;
-    private $sender;
+    private $subjetct;
     private $scan_copy;
     private $ref_id;
     private $replied;
-    private $rep_letter;
 
-    /**
-     * letter_record constructor.
-     */
-    public function __construct($id, $date, $section, $subject, $sender, $scan_copy, $ref_id)
+    function _constructed($id, $reg_no, $date, $section, $subject, $scan_copy, $ref_id)
     {
         $this->id = $id;
+        $this->reg_no = $reg_no;
         $this->date = $date;
         $this->section = $section;
         $this->subject = $subject;
-        $this->sender = $sender;
         $this->scan_copy = $scan_copy;
         $this->ref_id = $ref_id;
-    }
 
-
-    /**
-     * @return mixed
-     */
-    public function getSender()
-    {
-        return $this->sender;
-    }
-
-    /**
-     * @param mixed $sender
-     */
-    public function setSender($sender)
-    {
-        $this->sender = $sender;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRepLetter()
-    {
-        return $this->rep_letter;
-    }
-
-    /**
-     * @param mixed $rep_letter
-     */
-    public function setRepLetter($rep_letter)
-    {
-        $this->rep_letter = $rep_letter;
     }
 
     function _destruct()
@@ -98,22 +60,6 @@ class letter_record
     public function setRegNo($reg_no)
     {
         $this->reg_no = $reg_no;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * @param mixed $subject
-     */
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
     }
 
     /**
@@ -214,22 +160,5 @@ class letter_record
 
 
 }
-
-
-
-    function showRecord() {
-        include_once "../letter_record_window.php";
-        session_start();
-        $_SESSION['reg_no'] = $this->getRegNo();
-        $_SESSION['date'] = $this->getDate();
-        $_SESSION['section'] = $this->getSection();
-        $_SESSION['subject'] = $this->getSubject();
-        $_SESSION['sender'] = $this->getSender();
-        $_SESSION['ref_id'] = $this->getRefId();
-        $_SESSION['replied'] = $this->getReplied();
-        $_SESSION['scan_copy'] = $this->getScanCopy();
-
-    }
-
 
 ?>

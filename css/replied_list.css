@@ -1,0 +1,16 @@
+.wrapper{
+    width: 1000px;
+
+}
+
+.main-img{
+    image-resolution: from-image;
+    margin-left:1px;
+    margin-right: 1px;
+}
+
+
+.content{
+    margin-top: 30px;
+    margin-left: 100px;
+}

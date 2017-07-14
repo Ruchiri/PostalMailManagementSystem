@@ -1,11 +1,12 @@
 .wrapper {
-    margin-left: 150px;
+    margin: auto;
 }
 
 .top-bar {
-    width: 1000px;
+    width: 800px;
     height: 50px;
-    background-color: darkmagenta;
+    margin-left: 300px;
+    background-color: #6095ff;
     color: white;
     text-align: center;
     padding: 10px 5px 20px 2px;
@@ -13,8 +14,9 @@
 }
 
 .reply-letter-model {
-    width: 1000px;
-    background-color: beige;
+    width: 800px;
+    background-color: #a8f6ff;
+    margin-left: 300px;
     padding: 5px 5px 5px 2px;
 
 }
@@ -60,4 +62,7 @@ input[name="txtend"] {
     height: 50px;
     padding-top: 10px;
     padding-bottom: 5px;
+}
+input button{
+    background: #4cff1b;
 }

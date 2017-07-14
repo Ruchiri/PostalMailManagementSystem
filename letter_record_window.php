@@ -6,6 +6,7 @@
  * Time: 5:20 PM
  */
 
+
 $reg_no = $_GET['reg_no'];
 $date = $_GET['date'];;
 $section = $_GET['section'];
@@ -85,7 +86,7 @@ $scan_copy;
                 <p><input type="button" name="reject" id="reject" value="අදාළ නොවේ"></p>
             </div>
 
-            <?php if ($thisSection == 'su'): ?>
+            <?php if ($section != 'ප්‍රධාන පරිශීලක'): ?>
                 <div class="letter_reply">
                     <p><input type="button" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"
                               onclick="document.location.href='letter-history-su.php?ref_id=<?php echo $ref_id ?>'"/>

@@ -3,6 +3,9 @@ $thisSection = "su";
 include 'inc/search_query.inc.php';
 session_start();
 $section = $_SESSION['section'];
+$msg = '';
+$msg1 = '';
+$msg2 = '';
 
 if (isset($_GET['btn'])) {
     if ($_GET['hidden2'] == "YES") {
@@ -19,17 +22,33 @@ if (isset($_GET['btn'])) {
         }
 
         if ($_GET['subject'] != '') {
-            $terms[$i] = $_GET['subject'];
-            $i++;
+            $str = str_replace(array(' ', ',', '.', '/', '*', '-', '@', '%', '+'), '', $_GET['subject']);
+            if (ctype_digit($str) || $str == '') {
+                $msg1 = 'වළංගු විශයක් ඇතුලත් කරන්න.';
+                $terms[$i] = '';
+                $i++;
+            } else {
+                $terms[$i] = $_GET['subject'];
+                $i++;
+            }
         }
         if ($_GET['sender'] != '') {
-            $terms[$i] = $_GET['sender'];
-            $i++;
+            $str = str_replace(array(' ', ',', '.', '/', '*', '-', '@', '%', '+'), '', $_GET['sender']);
+            if (ctype_digit($str) || $str == '') {
+                $msg2 = 'වළංගු නාමයක් ඇතුලත් කරන්න.';
+                $terms[$i] = '';
+                $i++;
+            } else {
+                $terms[$i] = $_GET['sender'];
+                $i++;
+            }
         }
 
 
         $search_results = search_su($fields, $terms, $section);
 
+    } else {
+        $msg = "වළංගු නිර්ණායකයක් ඇතුලත් කරන්න.";
     }
 }
 ?>
@@ -83,17 +102,45 @@ if (isset($_GET['btn'])) {
                 </div>
                 <div class="dDate">
                     <input type="date" name="date" id="date"/>
+                    <script type="text/javascript">
+                        var today = new Date();
+                        var dd = today.getDate();
+                        var mm = today.getMonth() + 1; //because,January is 0
+                        var yyyy = today.getFullYear();
+
+                        if (dd < 10) {
+                            dd = '0' + dd
+                        }
+                        if (mm < 10) {
+                            mm = '0' + mm
+                        }
+
+                        today = yyyy + '-' + mm + '-' + dd;
+                        document.getElementById("date").setAttribute("max", today);
+                    </script>
                 </div>
 
                 <div class="txtSubject">
                     <input type="text" name="subject" id="subject"/>
+                    <label for="msg1">
+                        <h5><?php echo $msg1; ?></h5>
+                    </label>
                 </div>
+
                 <div class="lstSender">
                     <input type="text" name="sender" id="sender"/>
+                    <label for="msg2">
+                        <h5><?php echo $msg2; ?></h5>
+                    </label>
                 </div>
                 <br>
+
                 <input type="hidden" name="hidden1" id="hidden1" value=""/>
                 <input type="hidden" name="hidden2" id="hidden2" value=""/>
+
+                <label for="msg">
+                    <h5><?php echo $msg; ?></h5>
+                </label>
 
                 <div class="search-button" type="button">
                     <input type="submit" name="btn" id="btn" onclick="return user_criteriaList()" value="සොයන්න">
@@ -108,7 +155,7 @@ if (isset($_GET['btn'])) {
     <div class="search-results">
         <?php if (!empty($search_results)): ?>
             <div>
-                <p>ගැළපෙන ප්‍රථිපල <?php echo $search_results['count']; ?>ක් සොයා ගන්නා ලදි.</p>
+                <h4>ගැළපෙන ප්‍රථිපල <?php echo $search_results['count']; ?>ක් සොයා ගන්නා ලදි.</h4>
             </div>
 
             <div class="result table">
@@ -130,9 +177,9 @@ if (isset($_GET['btn'])) {
                 <?php endfor; ?>
 
             </div>
-        <?php elseif (isset($_GET['btn'])): ?>
+        <?php elseif (isset($_GET['btn']) && $_GET['hidden2'] == "YES"): ?>
             <div>
-                <p>ගැළපෙන ප්‍රථිපල නොමැත.</p>
+                <h4>ගැළපෙන ප්‍රථිපල නොමැත.</h4>
             </div>
         <?php endif; ?>
     </div>
