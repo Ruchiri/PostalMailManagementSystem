@@ -7,6 +7,7 @@ $connection=connect();
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="30">
     <title>Notifications</title>
     <link rel="stylesheet" href="css/notification_list.css">
 </head>
@@ -21,7 +22,7 @@ $connection=connect();
 
     <div class="Details">
         <?php
-        $query = "SELECT section,letter_id,date FROM notification WHERE unread=1 ORDER BY date DESC LIMIT 100";
+        $query = "SELECT section,letter_id,date FROM notification WHERE unread=1 ORDER BY date DESC LIMIT 50";
         mysqli_set_charset($connection, 'utf8');
         $result=mysqli_query($connection,$query);
         ?>
@@ -36,7 +37,6 @@ $connection=connect();
                 }
             }
             ?>
-
             </tbody>
         </table>
     </div><!--Details-->

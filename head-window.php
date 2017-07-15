@@ -1,51 +1,70 @@
 <?php
-include ("connect.php");
-$connection=connect();
+include "inc/section_query.inc.php";
+$sections = get_sections();
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/head.css">
+    <title>වාර්තා ලබා ගැනීම</title>
+    <link rel="stylesheet" href="css/head-window.css">
+
 </head>
 <body>
 <div class="Background">
-    <div class="system">
-        <img src="img/new.jpg" alt="bope">
-    </div>
+<div class="system">
+    <img src="img/new.jpg" alt="bope">
+</div>
+<form action="<?php $_PHP_SELF ?>" method="GET">
     <div class="heading">
-        <p>ලැබී ඇති වාර්තා ලැයිස්තුව</p>
+        <p><strong>වාර්තා ලබා ගැනීම <br>ප්‍රධාන අංශය</strong></p>
     </div><!--Heading-->
-    <div class="Report">
-        <table border="=1" cellpadding="10" cellspacing="3" width="100%">
-            <tr>
-                <th>දිනය</th>
-                <th>වාර්තාව</th>
-            </tr>
-            <tbody>
-            <?php
-                $query ="SELECT date,report FROM head";
-                $result = mysqli_query($connection, $query);
-                if ($result) {
-                    while ($row=mysqli_fetch_array($result)){
-                        echo "<tr>";
-                        echo "<td>".$row['date']."</td>";
-                        echo "<td><a href=''>".$row['report']."</a></td>";
-                    }
-                } else {
-                    die("database query failed " . mysqli_error($connection));
-                }
-            if(!empty($message)){
-                echo "<script language='javascript'>";
-                echo "alert('$message')";
-                echo "</script>";
-            }
-            ?>
-        </table>
-    </div><!--Report-->
-</div><!--Background-->
+    <div class="selection">
+        <div class="Choose-date">
+            <ul>
+                <div class=" Start-date">
+                    <ul>
+                        <p>ආරම්භක සෙවුම් දිනය</p>
+                        <input type="date" id="start_date" name="start_date"/>
+                    </ul>
+                </div><!--start-date-->
+                <div class="End-date">
+                    <ul>
+                        <p>අවසාන සෙවුම් දිනය</p>
+                        <input type="date" id="end_date" name="end_date"/>
+                    </ul>
+                </div><!--End-date-->
+            </ul>
+        </div><!--Choose-date-->
+        <div class="Section">
+            <ul>
+                <p>අංශය</p>
+                <input type="text" list="sections" id = "selectSec" name="selectSec">
+                <datalist id="sections">
+                    <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+                        <option><?php echo $sections[$j]; ?></option>
+                    <?php endfor; ?>
+                </datalist>
+            </ul>
+
+        </div><!--Section-->
+    </div>    <!--Selection-->
+    <div class="generate">
+        <br>
+        <input type="submit" name="btn" id="btn" value="වාර්තා ලබා ගැනීම" onclick="">
+
+
+    </div>
+    <div class="Report-results">
+        <p>ප්‍රතිඵල...</p>
+
+        <?php
+        include ('report-head-query.php');
+        ?>
+
+    </div><!--Search-results-->
+
+</form>
+</div>
 </body>
 </html>

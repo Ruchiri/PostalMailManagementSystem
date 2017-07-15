@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 ?>
 
       <!DOCTYPE html>
@@ -10,7 +8,6 @@ session_start();
       <head>
           <meta charset="UTF-8">
           <title><?php include "inc/login.inc.php";
-
               echo $_SESSION['page'];
               ?> </title>
           <style>
@@ -63,14 +60,16 @@ session_start();
                       $con=connect();
                       $section= $_SESSION['page'];
                       $_SESSION['section'] = $section;
-                      try{
+
                           mysqli_set_charset($con, 'utf8');
                           $query = "select * from letter where section='$section' and replied=0";
                           mysqli_set_charset($con, 'utf8');
                           $data =mysqli_query($con,$query);
 
 
-                          echo '<table width="100%" border="2" cellpadding="6" cellspacing="5">
+
+
+                             echo '<table width="100%" border="2" cellpadding="6" cellspacing="5">
          <tr>
              <th>ලියාපදිංචි අංකය</th>
              <th>දිනය</th>
@@ -79,25 +78,20 @@ session_start();
              <th>ලිපිය</th>
          </tr>';
 
-                          foreach($data as $row)
+                             foreach ($data as $row) {
 
-                          {
-
-                              echo '<tr>  
-             <td>'.$row["ref_id"].'</td>
-             <td>'.$row["date"].'</td>  
-             <td>'.$row["sender"].'</td>
-             <td>'.$row["subject"].'</td>
-             <td> '?> <a href="letter_record_window.php?reg_no=<?php echo $row["reg_no"]; ?>&date=<?php echo $row["date"]; ?>&subject=<?php echo $row["subject"]; ?>&section=<?php echo $row["section"]; ?>&sender=<?php echo $row["sender"]; ?>&scan_copy=<?php echo $row["rec_letter"]; ?>&ref_id=<?php echo $row["ref_id"]; ?>&thisSection=<?php echo $thisSection ?> "> <img src="img/twitter.png"></a>  <?php '</td>
+                                 echo '<tr>  
+             <td>' . $row["ref_id"] . '</td>
+             <td>' . $row["date"] . '</td>  
+             <td>' . $row["sender"] . '</td>
+             <td>' . $row["subject"] . '</td>
+             <td> ' ?>
+                                 <a href="letter_record_window.php?reg_no=<?php echo $row["reg_no"]; ?>&date=<?php echo $row["date"]; ?>&subject=<?php echo $row["subject"]; ?>&section=<?php echo $row["section"]; ?>&sender=<?php echo $row["sender"]; ?>&scan_copy=<?php echo $row["rec_letter"]; ?>&ref_id=<?php echo $row["ref_id"]; ?>&thisSection=<?php echo $thisSection ?> ">
+                                     <img src="img/letter.png"></a>  <?php '</td>
            </tr>';
-                          }
-                          echo '</table>';
-                      }
+                             }
+                             echo '</table>';
 
-                      catch(Exception $error) {
-                          $error->getMessage();
-
-                      }
                       ?>
                   </div> <!-- content-->
               </div><!--   tobereply-->

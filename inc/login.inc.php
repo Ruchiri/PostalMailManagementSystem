@@ -35,7 +35,7 @@ function SignIn()
         {
            // echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...";
             session_start();
-            $_SESSION['invalid']= "පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
+            $_SESSION['invalid']=" පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
             header('Location:..\login.php');
 
         }
