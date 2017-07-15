@@ -1,5 +1,6 @@
 <?php
-include ("connect.php");
+include "connect.php";
+$connection=connect();
 ?>
 
 <?php
@@ -17,25 +18,6 @@ include ("connect.php");
                 mysqli_set_charset($connection, 'utf8');
                 $result=mysqli_query($connection,$query);
                 if($result){
-                    $message="Successfully added to the database!";
-                }else{
-                    die("database query failed ".mysqli_error($connection));
-                }
-                $query1="CREATE TABLE $name (";
-                $query1 .="id INT(10) NOT NULL AUTO_INCREMENT,";
-                $query1 .="reg_no VARCHAR(15) COLLATE utf8_general_ci,";
-                $query1 .="ref_id INT(10) NOT NULL,";
-                $query1 .="date DATE NOT NULL,";
-                $query1 .="sender VARCHAR(100) NOT NULL COLLATE utf8_general_ci,";
-                $query1 .="subject VARCHAR(300) NOT NULL COLLATE utf8_general_ci,";
-                $query1 .="rec_letter VARCHAR(100) NOT NULL COLLATE latin1_swedish_ci,";
-                $query1 .="replied TINYINT(1),";
-                $query1 .="rep_letter VARCHAR(100) COLLATE latin1_swedish_ci,";
-                $query1 .="visible TINYINT(1),";
-                $query1 .="PRIMARY KEY(id))";
-                mysqli_set_charset($connection, 'utf8');
-                $result1=mysqli_query($connection,$query1);
-                if($result1){
                     $message="Successfully added to the database!";
                 }else{
                     die("database query failed ".mysqli_error($connection));

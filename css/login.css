@@ -1,9 +1,11 @@
 img{
-    margin: 10px;
+    margin: 0px;
 }
 a{
-    text-decoration: none;
+    margin-left: 30px;
+    text-decoration: double;
     color: blueviolet;
+
 }
 
 .wrapper{
@@ -15,21 +17,24 @@ a{
 }
 .top-bar-links ul{
     list-style: none;
+    text-align: center;
 
 }
 .top-bar-links ul li a{
-    color: gold;
+    color: rgb(255, 63, 67);
     font-size: 300%;
+    font-family:"Wijesekara Layout";
 }
 .login{
     font-size: 15px;
-    margin-left: 10px;
+    border-radius: 50px;
+    margin-left: 120px;
     width :400px;
-    height: 270px;
-    background: rgba(53,58,61,0.76);
+    height: 250px;
+    background: rgb(255, 252, 92);
     position: relative;
     left: 650px;
-    top: 130px;
+    top: 180px;
 }
 
 .login ul form{
@@ -42,9 +47,10 @@ a{
     font-size: 16px;
     width: 200px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 20px;
     margin-left: 20px;
+
 }
 
 
@@ -52,7 +58,7 @@ a{
 
 .login ul form p{
     color: crimson;
-    font-style: italic;
+    font-style: oblique;
 }
 
 .logo{

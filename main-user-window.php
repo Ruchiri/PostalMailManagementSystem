@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,9 +17,20 @@
         <br>
         <button id="btn1" style="background-color:powderblue  ; width: 250px; height: 80px;" >යවන්න</button>
         <button id="btn2" style="background-color: powderblue; width: 250px; height: 80px;" >නව අංශය ඇතුලත් කිරීම</button>
-        <button id="btn3" style="background-color: powderblue; width: 250px; height: 80px;" >සොයන්න</button>
+        <button id="btn3" style="background-color: powderblue; width: 250px; height: 80px;" onclick="openSearch()">
+            සොයන්න
+        </button>
+        <script type="text/javascript">
+            var searchWindow;
+            function openSearch() {
+                searchWindow = window.open('search.php');
+            }
+        </script>
         <button id="btn4" style="background-color: powderblue; width: 250px; height: 80px;" >වාර්තා ලබා ගැනීම</button>
         <button id="btn5" style="background-color: powderblue; width: 250px; height: 80px;" >සැකසුම්</button>
+        <form action="notification_list.php">
+            <input type="submit" name="notification" value="නිවේදන">
+        </form>
         <form action="<?php $_PHP_SELF ?>" method="get">
 
             <Script>

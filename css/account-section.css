@@ -2,53 +2,59 @@
 
 
 .Wrapper{
-    margin: 0 auto;
+    margin: 10px ;
     width: 1000px;
+
+}
+
+.main-img{
+    image-resolution: from-image;
+    margin-left:1px;
+    margin-right: 1px;
+    margin-bottom: 0px;
 }
 
 .topbar h1{
-    color:blueviolet;
+    color: #121bfe;
     text-align: center;
+    margin-left: 200px;
+    margin-top: 0px;
+    font-size: 38px;
 }
 
 .site-search{
     padding: 3px 5px 3px 10px;
-    margin: 15px;
+    margin: 0px;
     float: right;
-    background: magenta;
+    background: #0cb0ff;
     border-radius: 10px;
 }
 
-.site-search input{
-    padding: 2px 2px;
-    margin: 2px;
-    border: 0;
-    float:left;
-}
+
 
 .site-search button{
+    margin-right: 0px;
     padding: 2px 2px;
-    margin:2px;
     float: right;
-    width: 70px;
-    height: 18px;
+    width: 100px;
     border:0;
-    background-color: burlywood;
+    background-color: #b5c8de;
 
 }
+
 .core{
-    margin-top:150px;
+    margin-top:120px;
     margin-left: 10px;
-    width:950px;
-    background: #ffd4ff;
+    width:1000px;
+    background: #cac2ff;
 }
 
 .tobereply{
+
     float: right;
-    width: 630px;
-    height:800px;
-    background: #9fff99;
-    text-align: center;
+    width: 670px;
+    background: #82c9ff;
+
 }
 
 .buttons{
@@ -66,12 +72,8 @@
     height: 50px;
     padding: 30px;
     border-radius: 10px;
-    background-color:bisque;
+    background-color: #4eff99;
     font-size: 18px;
     display: table-column;
-
-}
-
-.buttons script{
 
 }

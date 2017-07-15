@@ -38,7 +38,6 @@ function getCriterialist() {
     }
     //when user does not give any searching criteria
     if (crt.length == 0) {
-        alert("Give valied searching criteria");
         document.getElementById('hidden2').value = "NO";
     }
     else {
@@ -77,7 +76,6 @@ function user_criteriaList() {
     }
     //when user does not give any searching criteria
     if (crt.length == 0) {
-        alert("Give valied searching criteria");
         document.getElementById('hidden2').value = "NO";
     }
     else {
@@ -90,22 +88,4 @@ function user_criteriaList() {
 
 }
 
-function validate_date(date) {
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //because,January is 0
-    var yyyy = today.getFullYear();
-
-    if (month < 10) {
-        mm = '0' + month.toString();
-    }
-    if (day < 10) {
-        dd = '0' + day.toString();
-    }
-
-    var maxDate = yyyy + '-' + mm + '-' + dd;
-    alert(maxDate);
-    document.getElementsByName("date").max = maxDate;
-
-}
 

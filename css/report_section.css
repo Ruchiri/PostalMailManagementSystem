@@ -40,30 +40,30 @@
 
 .generate input{
     margin-top: 10px;
-    float: left;
+    float: right;
+    margin-right: 70px;
 }
 .Send-head input{
     margin-top: 10px;
 }
-.Take-pdf input{
-    margin-top: 10px;
-}
-.Report-results{
-    width: 1000px;
-    height: 700px;
-    margin: auto;
-    margin-top: 20px;
-    background: rgba(198,176,186,0.76);
-    margin-bottom: 20px;
-}
 .Send-head{
-    float: right;
-    margin-right: 50px;
-    border-radius: 20px;
+    margin: auto;
+    width: 400px;
+    height: 130px;
+    background: rgba(219,165,213,0.92);
+    margin-top: 20px;
 }
-.Take-pdf{
-    float: right;
-    margin-right: 50px;
-    border-radius: 20px;
-    margin-bottom: 10px;
+.attach{
+    width: 150px;
+    height: 10px;
+    margin: auto;
+}
+.send{
+    width: 250px;
+    height: 70px;
+    float: left;
+}
+.send input{
+    margin-top: 30px;
+    margin-left: 20px;
 }

@@ -1,41 +1,44 @@
 .wrapper {
     margin: auto;
+    width: 1350px;
+    min-height: 700px;
+    background-color: gainsboro;
+}
+
+.top_bar_img {
+    width: 1350px;
+    height: 100px;
+    margin: auto;
+
 }
 
 .top-bar {
-    width: 1000px;
     color: white;
-    padding: 10px 5px 5px 2px;
-    margin-left: 100px;
+    padding: 10px 10px 5px 2px;
     background-color: #333333;
 
 }
 
 .letter_img {
     width: 100px;
-    height: 30px;
     padding: 30px 0px 5px 20px;
 }
 
-.title {
-    width: 900px;
-    height: 50px;
-
-}
 
 .letter_img, .title {
     display: table-cell;
 }
 
 .content {
-    width: 990px;
-    margin-left: 100px;
-    background-color: gainsboro;
     padding: 10px 5px 5px 2px;
-    border-style: double;
-    border-width: 5px;
-    border-color: #333333;
+    margin-left: 50px;
+    background-color: gainsboro;
 }
+
+.marked {
+    color: red;
+}
+
 
 .reg_no, .date, .subject, .sender, .section {
     height: 30px;
@@ -67,9 +70,9 @@
     display: inline;
 }
 
-input[type='submit'] {
+input[type='button'] {
     width: 200px;
-    geight: 40px
+    height: 30px;
 }
 
 .letter_reply, .history_reco {
@@ -78,7 +81,60 @@ input[type='submit'] {
     width: 250px;
 }
 
-form {
-    width: 550px;
-    margin-left: 500px;
+.btn_set {
+    float: right;
+
+}
+
+ul li {
+    display: table-cell;
+}
+
+ul li:nth-child(1) {
+    position: relative;
+    left: 50px;
+}
+
+ul li:nth-child(2) {
+    position: relative;
+    left: 1020px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/*css for drop down list*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    height: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: black;
+}
+
+.dropdown-content button {
+    margin-left: 5px;
+    margin-top: 40px;
+}
+
+.dropdown-content p {
+    margin-left: 15px;
+    font-size: small;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.show {
+    display: block;
 }

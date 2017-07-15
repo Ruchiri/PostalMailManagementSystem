@@ -1,0 +1,76 @@
+.heading{
+    width: 1000px;
+    height: 90px;
+    background:rgba(219,154,190,0.92);
+    margin: auto;
+    font-size: xx-large;
+    text-align: center;
+}
+.selection{
+    float: inherit;
+    background:rgba(165,118,143,0.76);
+    width:730px;
+    height:230px;
+    margin:auto;
+}
+
+.Choose-date{
+    background: rgba(165,118,143,0.76);
+    width: 730px;
+    height: 160px;
+    margin: auto;
+
+}
+.Start-date{
+    float: left;
+    background: rgba(143,157,165,0.76);
+    width: 300px;
+    height: 80px;
+    margin:auto;
+
+}
+.End-date{
+    background: rgba(143,157,165,0.76);
+    width: 290px;
+    height: 80px;
+    float: right;
+    margin:auto;
+    margin-right: 40px;
+}
+
+.section{
+    float: left;
+    background: rgba(143,157,165,0.76);
+    width: 300px;
+    height: 80px;
+    margin:auto;
+}
+
+.generate{
+    background: rgba(165,118,143,0.76);
+    width: 730px;
+    height: 60px;
+    margin: auto;
+}
+.generate input{
+    margin-right: 40px;
+    float: right;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    color: #333333;
+    text-decoration-style: solid;
+    font-size: medium;
+    background-color: #f0615b;
+}
+.Report-results{
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    background: rgba(233, 109, 142, 0.76);
+}
+.Report-results table {
+    margin-left:10px;
+
+
+}

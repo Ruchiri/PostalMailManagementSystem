@@ -4,10 +4,10 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
-    <title>Postal Managemnet System</title>
+    <title>තැපැල් ලිපි කළමනාකරණ පද්ධතිය</title>
     <style>
         body {
-            background-image: url("img/image5.jpg");
+            background-image: url("img/wallpaper.jpg");
             background-size: 100%;
             border-width: 20px;
         }
@@ -22,9 +22,11 @@
         <div class="top-bar">
             <div class="top-bar-links">
                 <ul>
-                    <li><a href="#">Bope-Poddala Divisional Secretariat</a></li>
-                    <li><a href="#">බෝපෙ පෝද්දල ප්‍රාදේශීය ලේකම් කාර්යාලය</a></li>
-                    <li><a href="#">Postal Mail Management System</a></li>
+                    <!--<li><a href="#"><strong>Bope-Poddala Divisional Secretariat</strong></a></li>
+                    <li><a href="#"><strong>  Postal Mail Management System</strong></a></li>-->
+                    <li><a href="#"><strong>බෝපෙ පෝද්දල ප්‍රාදේශීය ලේකම් කාර්යාලය</strong></a></li>
+                    <li><a href="#"><strong>  තැපැල් ලිපි කළමනාකරණ පද්ධතිය</strong></a></li>
+
                 </ul>
             </div> <!--top-bar-links-->
         </div><!--top-bar-->
@@ -35,12 +37,13 @@
 
 <div class="login">
     <ul>
-        <form method="GET" ACTION=inc/login.inc.php>
+        <form method="get" ACTION=inc/login.inc.php>
             <ul>
 
                 <?php
                 include 'connect.php';
                 $con=connect();
+                mysqli_set_charset($con, 'utf8');
                 $result = mysqli_query($con,'SELECT username FROM login');
 
                 echo "<select  name='username' >";
@@ -54,7 +57,7 @@
                 <input id="password" name="password" type="password" placeholder="මුරපදය ඇතුලත් කරන්න">
                 <input id="button" type="submit" value="යොමු කරන්න" name="submit" > <br>
             </ul>
-            <a href="#"><br>Forgot Password?  <br></a>
+
             <p>
             <?php include "inc/login.inc.php";
             session_start();
