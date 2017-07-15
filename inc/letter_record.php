@@ -14,7 +14,7 @@ class letter_record
     private $scan_copy;
     private $ref_id;
     private $replied;
-    private $rep_letter;
+    private $marked;
 
     /**
      * letter_record constructor.
@@ -28,6 +28,9 @@ class letter_record
         $this->sender = $sender;
         $this->scan_copy = $scan_copy;
         $this->ref_id = $ref_id;
+        $this->replied = 0;
+        $this->marked = 0;
+        self::$letter_count++;
     }
 
 
@@ -47,26 +50,6 @@ class letter_record
         $this->sender = $sender;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getRepLetter()
-    {
-        return $this->rep_letter;
-    }
-
-    /**
-     * @param mixed $rep_letter
-     */
-    public function setRepLetter($rep_letter)
-    {
-        $this->rep_letter = $rep_letter;
-    }
-
-    function _destruct()
-    {
-
-    }
 
     /**
      * @return mixed
@@ -212,24 +195,47 @@ class letter_record
         $this->replied = $replied;
     }
 
+    /**
+     * @return int
+     */
+    public function getMarked()
+    {
+        return $this->marked;
+    }
+
+    /**
+     * @param int $marked
+     */
+    public function setMarked($marked)
+    {
+        $this->marked = $marked;
+    }
+
 
 }
 
-
-
-    function showRecord() {
-        include_once "../letter_record_window.php";
-        session_start();
-        $_SESSION['reg_no'] = $this->getRegNo();
-        $_SESSION['date'] = $this->getDate();
-        $_SESSION['section'] = $this->getSection();
-        $_SESSION['subject'] = $this->getSubject();
-        $_SESSION['sender'] = $this->getSender();
-        $_SESSION['ref_id'] = $this->getRefId();
-        $_SESSION['replied'] = $this->getReplied();
-        $_SESSION['scan_copy'] = $this->getScanCopy();
-
+function find_recoDb($id)
+{
+    include "section_query.inc.php";
+    $connection = connect();
+    $cmd = "SELECT *FROM letter WHERE id='$id'";
+    mysqli_set_charset($connection, 'utf8');
+    $record = mysqli_query($connection, $cmd);
+    $reco = $record->fetch_array();
+    $reco_obj = new letter_record($reco['id'], $reco['date'], $reco['section'], $reco['subject'], $reco['sender'], $reco['rec_letter'], $reco['ref_id']);
+    if ($reco['reg_no'] != null) {
+        $reco_obj->setRegNo($reco['reg_no']);
     }
+    $n_cmd = "SELECT letter_id from notification WHERE letter_id='$id'";
+    $result = mysqli_query($connection, $n_cmd);
+    $notice = $result->fetch_array();
+    if (empty($notice)) {
+        $reco_obj->setMarked(0);
+    } else {
+        $reco_obj->setMarked(1);
+    }
+    return $reco_obj;
+}
 
 
 ?>

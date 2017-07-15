@@ -2,7 +2,7 @@
 <?php
  $page;
  $invalid= " ";
-
+ session_start();
 function SignIn()
 {
     include '../connect.php';
@@ -18,7 +18,7 @@ function SignIn()
         {
             $_SESSION['username'] = $row['password'];
             $_SESSION['invalid']="";
-
+            $_SESSION['empty'] = "";
             session_start();
             $_SESSION['page'] = $row['username'];
             if ( $row['username']=="ප්‍රධාන පරිශීලක"){
