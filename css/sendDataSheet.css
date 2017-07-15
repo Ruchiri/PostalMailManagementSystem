@@ -9,25 +9,25 @@ button{
     font-size:100%; margin-left:20px; margin-bottom:10px; margin-top:10px;
 }
 #whole{
-    background-color: lightsalmon;
+    background-color: #abb0ff;
     width: 936px;
     height: 548px;
 }
 #titlebar {
-    background: black;
+    background: #210033;
     width: 936px;
     height: 20px;
 
 }
 #body{
-    background: sandybrown;
+    background: #c8dcf4;
     width: 936px;
     height: 300px;
 }
 #sendSection{
-    background: #dc7a95;
+    background: #41bddc;
     width: 936px;
-    height: 50px;
+    height: 100px;
 
 }
 
@@ -52,57 +52,67 @@ button{
     z-index:10;
 }
 
- #dialogbox >div {
+#dialogbox >div {
     background:#FFF; margin: 8px;
 }
 
 #dialogbox > div > #dialogboxhead{
-    background: #666;
+    background: #8a8ed2;
+    font-size: 19px;
+    padding: 10px;
+    color: #060333;
+
+}
+#dialogbox > div > #dialogboxbody {
+    background: #060333;
+    padding: 20px;
+    color: #FFF;
+}
+#dialogbox > div > #dialogboxfoot {
+    background: #578ca4;
+    padding: 10px;
+    text-align: right;
+}
+
+#letterOverlay{
+    display: none;
+    opacity: 8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: white;
+    width: 100%;
+    z-index: 10;
+}
+
+#wholeLetter{
+    display:none;
+    position:fixed;
+    background: #0d61ac;
+    border-radius:7px;
+    width:800px;
+    z-index:10;
+}
+
+#wholeLetter >div {
+    background: #e1f0ff; margin: 8px;
+}
+
+#wholeLetter > div > #topPartLetter{
+    background: #660d0b;
     font-size: 19px;
     padding: 10px;
     color: #CCC;
 
 }
-#dialogbox > div > #dialogboxbody {
-    background: #333;
+#wholeLetter > div > #contentLetter {
+    background: #38ddb4;
     padding: 20px;
     color: #FFF;
 }
-#dialogbox > div > #dialogboxfoot {
-    background: #666;
+#wholeLetter > div > #bottomPartLetter {
+    background: #eea283;
     padding: 10px;
     text-align: right;
 }
-#wholeLetter{
-    display: none;
-    height: 600px;
-    width: 500px;
-    position:fixed;
-    background-color: rgba(16,3,12,0.95);
-    border-radius:7px;
-}
-#topPartLetter{
 
-    background: #666;;
-    width:500px;
-    height: 50px;
-    color: #CCC;
-    font-size: small;
-}
-#contentLetter{
-    background: #333;
-    width: 500px;
-    height: 500px;
-    color: #FFF;
-}
-#contentLetter table {
-    border: 1px;
-    margin-left: 10px;
-    margin-top: 10px;
-    border-color: #FFF;
-}
-#bottomPartLetter{
-    background: #666;
-    width: 500px;
-    height: 50px;
-}
