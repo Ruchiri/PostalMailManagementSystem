@@ -166,9 +166,10 @@ if (isset($_GET['btn'])) {
                             <li><?php echo "ලියාපදිංචි අංකය :" . $result->getRegNo(); ?></li>
                             <li><?php echo "දිනය :" . $result->getDate(); ?></li>
                             <li><?php echo "අංශය :" . $result->getSection(); ?></li>
+                            <li><?php echo "විෂය :" . $result->getSubject(); ?></li>
                             <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result->getSender(); ?></li>
                             <li id="next">
-                                <a href="letter_record_window.php?reg_no=<?php echo $result->getRegNo(); ?>&date=<?php echo $result->getDate(); ?>&subject=<?php echo $result->getSubject(); ?>&section=<?php echo $section ?>&sender=<?php echo $result->getSender() ?>&scan_copy=<?php echo $result->getScanCopy() ?>&ref_id=<?php echo $result->getRefId() ?>&thisSection=<?php echo $thisSection ?>"><img
+                                <a href="letter_record_window.php?id=<?php echo $result->getId() ?>"><img
                                             src="img/export-arrow.png"/>
                                 </a></li>
                         </ul>
@@ -180,6 +181,7 @@ if (isset($_GET['btn'])) {
         <?php elseif (isset($_GET['btn']) && $_GET['hidden2'] == "YES"): ?>
             <div>
                 <h4>ගැළපෙන ප්‍රථිපල නොමැත.</h4>
+                <br>
             </div>
         <?php endif; ?>
     </div>

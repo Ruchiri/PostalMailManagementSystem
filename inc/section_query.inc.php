@@ -43,7 +43,7 @@ function get_sections()
         $sections[] = $section["username"];
         //echo mysqli_fetch_assoc($sections);
     }
-    return $sections;
+    return array_slice($sections, 2);
 
 
 }

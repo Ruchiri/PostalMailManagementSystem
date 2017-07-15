@@ -1,6 +1,7 @@
 .wrapper {
     margin: auto;
     width: 1350px;
+    min-height: 700px;
     background-color: gainsboro;
 }
 
@@ -13,7 +14,6 @@
 
 .top-bar {
     color: white;
-    text-align: center;
     padding: 10px 10px 5px 2px;
     background-color: #333333;
 
@@ -30,10 +30,15 @@
 }
 
 .content {
-    height: 400px;
     padding: 10px 5px 5px 2px;
     margin-left: 50px;
+    background-color: gainsboro;
 }
+
+.marked {
+    color: red;
+}
+
 
 .reg_no, .date, .subject, .sender, .section {
     height: 30px;
@@ -70,13 +75,66 @@ input[type='button'] {
     height: 30px;
 }
 
-.letter_reply, .history_reco, .reject_btn {
+.letter_reply, .history_reco {
     display: table-cell;
     align-content: flex-end;
     width: 250px;
 }
 
-form {
-    width: 550px;
-    margin-left: 650px;
+.btn_set {
+    float: right;
+
+}
+
+ul li {
+    display: table-cell;
+}
+
+ul li:nth-child(1) {
+    position: relative;
+    left: 50px;
+}
+
+ul li:nth-child(2) {
+    position: relative;
+    left: 1020px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/*css for drop down list*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    height: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: black;
+}
+
+.dropdown-content button {
+    margin-left: 5px;
+    margin-top: 40px;
+}
+
+.dropdown-content p {
+    margin-left: 15px;
+    font-size: small;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.show {
+    display: block;
 }

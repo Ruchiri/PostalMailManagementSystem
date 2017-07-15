@@ -5,23 +5,36 @@
  * Date: 7/6/2017
  * Time: 5:20 PM
  */
+include "inc/letter_record.php";
+
+$id = $_GET['id'];
+$reco = find_recoDb($id);
+
+$reg_no = $reco->getRegNo();
+$date = $reco->getDate();
+$section = $reco->getSection();
+$subject = $reco->getSubject();
+$sender = $reco->getSender();
+$ref_id = $reco->getRefId();
+$replied = $reco->getReplied();
+$scan_copy = $reco->getScanCopy();
+$marked = $reco->getMarked();
+
+if ($marked == 0) {
+    $msg = "";
+} else {
+    $msg = "මෙම වාර්තාව අංශයට අදාළ නොවන බවට සළකුණුකර ඇත. ";
+}
 
 
-$reg_no = $_GET['reg_no'];
-$date = $_GET['date'];;
-$section = $_GET['section'];
-$subject = $_GET['subject'];
-$sender = $_GET['sender'];
-$ref_id = $_GET['ref_id'];
-$thisSection = $_GET['thisSection'];
-$replied_no = 0;
-
-$scan_copy;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF8">
+    <meta charset="UTF-8">
+    <A HREF="javascript:history.go()"></A>
     <title>Letter record</title>
     <link rel="stylesheet" href="css/letter_record.css">
 </head>
@@ -30,19 +43,35 @@ $scan_copy;
 
     <div class="top_bar_img">
         <img src="img/new.jpg" alt="new" width="1350">
+
     </div>
 
     <div class="top-bar">
-
-        <!--div class="letter_img">
-            <img src="img/letter.png" alt="letter">
-        </div-->
-
-        <h3>ලිපි වාර්තාව</h3>
-
+        <ul>
+            <li><h3>ලිපි වාර්තාව</h3></li>
+            <li>
+                <div class="dropdown">
+                    <img src="img/settings (2).png" alt="setting_icon" height="24" width="24" onclick="show_settings()"
+                         class="dropbtn">
+                    <div id="myDropdown" class="dropdown-content">
+                        <p><strong>මෙම ලියුම් වාර්තාව අදාල නොවේ.</strong></p>
+                        <form action="inc/notification.inc.php" method="get">
+                            <button id="report" name="report" onclick=""><strong>වාර්තා කරන්න.</strong></button>
+                            <?php session_start();
+                            $_SESSION['id'] = $id;
+                            ?>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
 
     </div>
+
     <div class="content">
+        <div class="marked">
+            <h4><?php echo $msg; ?></h4>
+        </div>
 
         <div class="reg_no">
             <label for="reg_no" id="ll1"><strong>ලියාපදිංචි අංකය :</strong></label>
@@ -76,16 +105,16 @@ $scan_copy;
         </div>
 
         <div name="replied">
-            <label for="replid" id="ll5"><strong>යැවූ පිළිතුරු ලිපි සංඛ්‍යාව :</strong></label>
-            <p id="line5"><?php echo $replied_no ?></p>
+            <?php if ($replied == 0): ?>
+                <label for="replid" id="ll5"><strong>පිළිතුරු ලිපි යවා නොමැත.</strong></label>
+            <?php else: ?>
+                <label for="replid" id="ll5"><strong>පිළිතුරු ලිපි යවා ඇත.</strong></label>
+            <?php endif; ?>
         </div>
+        <br>
+        <br>
 
-        <form action="" method="get">
-
-            <div class="reject_btn">
-                <p><input type="button" name="reject" id="reject" value="අදාළ නොවේ"></p>
-            </div>
-
+        <div class="btn_set">
             <?php if ($section != 'ප්‍රධාන පරිශීලක'): ?>
                 <div class="letter_reply">
                     <p><input type="button" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"
@@ -105,13 +134,36 @@ $scan_copy;
                           onclick="document.location.href='replyLetter.php'"/></p>
             </div>
 
-        </form>
-
+        </div>
 
     </div>
-
 
 </div>
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+    //when user click on the image display the drop down content
+    function show_settings() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown content if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+
