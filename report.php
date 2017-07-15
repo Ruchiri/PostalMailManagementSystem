@@ -1,6 +1,8 @@
 <?php
 include "connect.php";
 $connection=connect();
+session_start();
+$section = $_SESSION['section'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +36,7 @@ $connection=connect();
                     $date2=$_GET['date2'];
                     echo "$date1 සහ $date2 කාල පරාසය තුල වාර්තව";
 
-                    $query ="SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE date BETWEEN  '$date1' AND '$date2' ";
+                    $query ="SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE section='$section' AND date BETWEEN  '$date1' AND '$date2'";
                     mysqli_set_charset($connection, 'utf8');
                     $result = mysqli_query($connection, $query);
                     if ($result) {

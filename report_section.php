@@ -1,7 +1,10 @@
 <?php
 include "connect.php";
 $connection=connect();
+session_start();
+$section = $_SESSION['section'];
 ?>
+
 <!DOCTYPE html>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
@@ -41,12 +44,12 @@ $connection=connect();
         </form>
     </div><!--Choose-date-->
     <div class="Send-head">
-        <form action="inc/head_report.inc.php" method="get">
+        <form enctype="multipart/form-data" action="inc/head_report.inc.php" method="get">
         <div class="attach">
             <label for="choose">වාර්තාව අමුනන්න</label>
         </div>
         <div class="send">
-            <input type="file" name="choose" value="වාර්තාව අමුනන්න" accept=".pdf,.doc">
+            Send this file :<input type="file" name="userfile" value="වාර්තාව අමුනන්න" accept=".pdf,.doc">
             <input type="submit" name="submit" value="වාර්තාව ප්‍රධාන නිලධාරිට යැවීම">
         </div>
         </form>

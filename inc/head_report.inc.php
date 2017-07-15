@@ -2,21 +2,22 @@
 include "../connect.php";
 $connection=connect();
 if(isset($_GET['submit'])){
-    $message='';
-    if(!($_GET['choose']=="")){
-            $pdf=$_GET['choose'];
-            $query ="INSERT INTO head (date,report) VALUES (CURRENT_DATE,$pdf)";
-            mysqli_set_charset($connection, 'utf8');
-            $result=mysqli_query($connection,$query);
-            if($result){
-                $message="Successfully added to the database!";
-            }else{
-                die("database query failed ".mysqli_error($connection));
-            }
-    }else{
-        $message="අවශ්‍ය දත්ත ඇතුලත් කර ඇත්දැයි පරීක්ෂා කරන්න";
+    $uploaddir = '../pdf/';
+    $uploadfile = $uploaddir . basename($_GET['userfile']['name']);
 
+    echo "<p>";
+
+    if (move_uploaded_file($_GET['userfile']['tmp_name'], $uploadfile)) {
+        echo "File is valid, and was successfully uploaded.\n";
+    } else {
+        echo "Upload failed";
     }
+
+    echo "</p>";
+    echo '<pre>';
+    echo 'Here is some more debugging info:';
+    print_r($_GET);
+    print "</pre>";
 }
 
 if(!empty($message)){

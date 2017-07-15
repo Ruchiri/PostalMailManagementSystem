@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 ?>
 
       <!DOCTYPE html>
@@ -10,7 +8,6 @@ session_start();
       <head>
           <meta charset="UTF-8">
           <title><?php include "inc/login.inc.php";
-
               echo $_SESSION['page'];
               ?> </title>
           <style>

@@ -21,7 +21,7 @@ $connection=connect();
 
     <div class="Details">
         <?php
-        $query = "SELECT section,letter_id,date FROM notification WHERE unread=1 ORDER BY date DESC LIMIT 100";
+        $query = "SELECT section,letter_id,date FROM notification WHERE unread=1 ORDER BY date DESC LIMIT 50";
         mysqli_set_charset($connection, 'utf8');
         $result=mysqli_query($connection,$query);
         ?>
@@ -36,7 +36,6 @@ $connection=connect();
                 }
             }
             ?>
-
             </tbody>
         </table>
     </div><!--Details-->
