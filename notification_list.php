@@ -7,6 +7,7 @@ $connection=connect();
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="30">
     <title>Notifications</title>
     <link rel="stylesheet" href="css/notification_list.css">
 </head>

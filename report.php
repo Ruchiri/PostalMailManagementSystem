@@ -64,9 +64,16 @@ $section = $_SESSION['section'];
 
             ?>
         </table>
-        <form method="post" action="" >
-            <input type="button" onclick="window.print()" name="print" value="මුද්‍රනය කිරීම" >
-        </form>
+        <script type="text/javascript">
+            var report;
+            function printReport() {
+                report = this.print();
+            }
+        </script>
+        <script>
+            printReport();
+        </script>
+
     </div><!--Details-->
 </body>
 </html>

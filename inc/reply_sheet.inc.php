@@ -11,7 +11,7 @@
 <div class="content">
 
 <?php
-function getPrint (){
+
 if(isset($_GET['submit'])) {
 
     $senderAddress = $_GET['txtsenderAddress'];
@@ -30,7 +30,7 @@ if(isset($_GET['submit'])) {
     echo $letterBody ; ?> <br><?php
     echo $end ; ?> <br><?php
 
-    ?>
+?>
     <script type="text/javascript">
         var reply;
         function printReply() {
@@ -42,7 +42,7 @@ if(isset($_GET['submit'])) {
     </script>
 
     <?php
-}
+
 }
 ?>
 

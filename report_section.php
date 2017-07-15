@@ -38,7 +38,7 @@ $section = $_SESSION['section'];
             </div><!--End-date-->
 
             <div class="generate">
-                <input type="submit" name="report"  value="වාර්තා ලබා ගැනීම">
+                <input type="submit" name="report"  value="වාර්තා ලබා ගැනීම" onclick="openReport()">
             </div>
         </ul>
         </form>
