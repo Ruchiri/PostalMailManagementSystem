@@ -1,3 +1,7 @@
+<?php
+include "inc/section_query.inc.php";
+$sections = get_sections();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +21,9 @@
             <fieldset>
                 <label for = "cmbSelect">අංශය තේරීම :
                     <select id = "cmbSelect" name="cmbSelect">
-                        <option> ප්‍රධාන පරිශීලක</option>
-                        <option> ආයතන</option>
-                        <option> ගිනුම් අංශය</option>
-                        <option> සංවර්ධන අංශය</option>
-                        <option> ඉඩම් අංශය</option>
-                        <option> සමාජ සේවා අංශය</option>
-                        <option> දිවි නැගුම අංශය</option>
-                        <option> ක්ෂේත්‍ර</option>
-                        <option> ලියාපදිංචි අංශය</option>
-                        <option> මුදල් හා චෙක්පත් අංශය</option>
-                        <option> ප්‍රධාන නිලධාරී</option>
+                        <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+                            <option><?php echo $sections[$j]; ?></option>
+                        <?php endfor; ?>
                     </select>
                 </label><br>
 
