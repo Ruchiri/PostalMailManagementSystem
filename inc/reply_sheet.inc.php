@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reply_sheet.inc.css">
     <title>  </title>
 </head>
 <body>
@@ -44,9 +45,6 @@ if(isset($_GET['submit'])) {
 }
 }
 ?>
-
-
-
 
 </body>
 </html>
