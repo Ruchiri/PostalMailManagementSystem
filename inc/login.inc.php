@@ -2,7 +2,7 @@
 <?php
  $page;
  $invalid= " ";
-
+ session_start();
 function SignIn()
 {
     include '../connect.php';
