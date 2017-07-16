@@ -19,7 +19,7 @@
            <form method="GET" ACTION="inc/reply_sheet.inc.php" name="letter_fields">
             <li>
                 <label > <strong>යවන්නාගේ ලිපිනය</strong></label> <br/>
-                <textarea id="senderAddress" name="txtsenderAddress" cols="60" rows="8" oninvalid="this.setCustomValidity('යවන්නාගේ ලිපිනය ඇතුලත් කරන්න')" required title="යවන්නාගේ ලිපිනය"></textarea >
+                <textarea id="senderAddress" name="txtsenderAddress" cols="60" rows="8"  oninvalid="this.setCustomValidity('යවන්නාගේ ලිපිනය ඇතුලත් කරන්න')" required title="යවන්නාගේ ලිපිනය" ></textarea >
 
             </li>
 
@@ -52,7 +52,7 @@
                 <label> <strong>අවසානය</strong></label><br/>
                 <textarea name="txtend" cols="60" rows="5" oninvalid="this.setCustomValidity('අවසානය ඇතුලත් කරන්න')" title="අවසානය" required></textarea>
             </li>
-        </ul>
+
 
         <input id="button" type="submit" value="ඇතුලත් කරන්න" name="submit" onclick="openReply()" >
       <script type="text/javascript">
@@ -63,15 +63,13 @@
         </script>
 
         <FORM>
-            <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh">
+            <INPUT ID="refresh" TYPE="button" onClick="history.go(0)" VALUE="නැවුම් කරන්න">
+            <INPUT name="cancel" TYPE="button" onClick="history.go(-1)" VALUE="අවලංගු කරන්න">
         </FORM>
 
-        <FORM>
-            <INPUT TYPE="button" onClick="history.go(-1)" VALUE="Cancel">
-        </FORM>
 
         </form>
-
+        </ul>
 </div>
 </div>
 
