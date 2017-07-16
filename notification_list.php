@@ -28,18 +28,24 @@ $connection=connect();
         ?>
         <table border="=1" cellpadding="10"  width="100%">
             <tbody>
-            <?php
-            if($result){
-                while ($row=mysqli_fetch_array($result)){
-                    echo "<tr>";
-                    echo "<td>".$row['section']." අංශයට යවන ලඳ ".$row['letter_id']." අනු අංකය සහිත ලිපියෙහි වරදක් ඇත."."</td>";
-                    echo "<td>".$row['date']."</td>";
-                }
-            }
-            ?>
+
+            <?php if ($result): ?>
+                <?php while ($row = mysqli_fetch_array($result)): ?>
+                    <tr>
+                        <td>
+                            <a href="resend.php?letter_id=<?php echo $row['letter_id']; ?>"><?php echo $row['section'] . " අංශයට යවන ලඳ " . $row['letter_id'] . " අනු අංකය සහිත ලිපියෙහි වරදක් ඇත."; ?></a>
+                        </td>
+                        <td><?php echo $row['date']; ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            <?php endif; ?>
+
             </tbody>
         </table>
     </div><!--Details-->
+    <br><br>
 </div><!--Background-->
 </body>
 </html>
+
+

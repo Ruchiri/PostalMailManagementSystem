@@ -6,9 +6,11 @@
  * Time: 5:20 PM
  */
 include "inc/letter_record.php";
+include "connect.php";
+$con = connect();
 
 $id = $_GET['id'];
-$reco = find_recoDb($id);
+$reco = find_recoDb($id, $con);
 
 $reg_no = $reco->getRegNo();
 $date = $reco->getDate();
@@ -35,7 +37,7 @@ if ($marked == 0) {
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
     <A HREF="javascript:history.go()"></A>
-    <title>Letter record</title>
+    <title>ලිපි වාර්තාව</title>
     <link rel="stylesheet" href="css/letter_record.css">
 </head>
 <body>

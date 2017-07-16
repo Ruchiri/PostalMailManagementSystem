@@ -5,7 +5,7 @@
 }
 .Background{
     width: 1350px;
-    height: 1500px;
+    min-height: 750px;
     margin: auto;
     background-color: #CCCCCC;
 }
@@ -20,7 +20,7 @@
 
 .Details{
     width:1000px;
-    height: 700px;
+    height: auto;
     background:rgba(162,134,174,0.92);
     margin: auto;
 }

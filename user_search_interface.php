@@ -1,5 +1,4 @@
 <?php
-$thisSection = "su";
 include 'inc/search_query.inc.php';
 session_start();
 $section = $_SESSION['section'];
@@ -59,7 +58,7 @@ if (isset($_GET['btn'])) {
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
-    <title>Search</title>
+    <title>තැපැල්පත් සෙවීම</title>
     <link rel="stylesheet" href="css/user_search.css">
     <script type="text/javascript" src="js/searchFunctions.js"></script>
 

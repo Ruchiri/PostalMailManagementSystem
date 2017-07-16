@@ -1,7 +1,8 @@
 <?php
 include "inc/section_query.inc.php";
-$sections = get_sections();
-$thisSection = "mu";
+include "connect.php";
+$con = connect();
+$sections = get_sections($con);
 $msg = '';
 $msg1 = '';
 $msg2 = '';
@@ -78,7 +79,7 @@ if (isset($_GET['btn'])) {
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
-    <title>Search</title>
+    <title>තැපැල්පත් සෙවීම</title>
     <link rel="stylesheet" href="css/search.css">
     <script type="text/javascript" src="js/searchFunctions.js"></script>
 
