@@ -6,6 +6,12 @@
     font-size: xx-large;
     text-align: center;
 }
+.Background{
+    width: 1350px;
+    height: 630px;
+    margin: auto;
+    background-color: #CCCCCC;
+}
 .selection{
     float: inherit;
     background:rgba(165,118,143,0.76);
