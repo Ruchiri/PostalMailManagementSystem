@@ -7,29 +7,8 @@
  */
 
 
-function connect()
+function get_sections($connection)
 {
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "123";
-    $dbname = "pmms";
-
-    //connection established
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    if (mysqli_connect_errno()) {
-        die("Database connection failed:" . mysqli_connect_error() . "(" . mysqli_connect_error() . ")");
-
-    }
-
-    return $connection;
-
-}
-
-
-function get_sections()
-{
-    $connection = connect();
     mysqli_set_charset($connection, 'utf8');
     $section_query = mysqli_query($connection, "SELECT username from login");
 

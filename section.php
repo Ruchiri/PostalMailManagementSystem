@@ -86,7 +86,7 @@ session_start();
              <td>' . $row["sender"] . '</td>
              <td>' . $row["subject"] . '</td>
              <td> ' ?>
-                                 <a href="letter_record_window.php?reg_no=<?php echo $row["reg_no"]; ?>&date=<?php echo $row["date"]; ?>&subject=<?php echo $row["subject"]; ?>&section=<?php echo $row["section"]; ?>&sender=<?php echo $row["sender"]; ?>&scan_copy=<?php echo $row["rec_letter"]; ?>&ref_id=<?php echo $row["ref_id"]; ?>&thisSection=<?php echo $thisSection ?> ">
+                                 <a href="letter_record_window.php?id=<?php echo $row["id"]; ?>">
                                      <img src="img/letter.png"></a>  <?php '</td>
            </tr>';
                              }

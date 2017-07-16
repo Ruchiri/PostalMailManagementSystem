@@ -214,10 +214,9 @@ class letter_record
 
 }
 
-function find_recoDb($id)
+function find_recoDb($id, $connection)
 {
-    include "section_query.inc.php";
-    $connection = connect();
+
     $cmd = "SELECT *FROM letter WHERE id='$id'";
     mysqli_set_charset($connection, 'utf8');
     $record = mysqli_query($connection, $cmd);
