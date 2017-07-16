@@ -23,15 +23,8 @@ function set_notification($connection, $id, $section, $date)
         if (!$result2) {
             die("database query failed--------------." .
                 mysqli_error($connection));
-        } else {
-            $added = "Y";
         }
-
-    } else {
-        $added = "N";
-
     }
-    return $added;
 
 }
 
@@ -61,7 +54,8 @@ if (isset($_GET['report'])) {
     $replied_no = $row['replied'];
     $scan_copy = $row['rec_letter'];
 
-    $added = set_notification($connection, $id, $section, $date);
+    $notify_date = date('Y-m-d');
+    set_notification($connection, $id, $section, $notify_date);
     header("Location:..\letter_record_window.php?id=" . $id);
 }
 

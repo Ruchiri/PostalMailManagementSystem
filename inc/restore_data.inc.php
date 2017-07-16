@@ -38,7 +38,6 @@ if (isset($_GET['done'])) {
 
     }
     $query1 = "UPDATE letter SET section='{$section1}',reg_no='{$regNo1}',subject='{$subject1}',date='{$date}',sender='{$sender1}',ref_id='{$ref_id1}' WHERE id='{$id}'";
-    //$query1 = "insert into letter (section, reg_no, subject, date, sender, visible, replied,ref_id) values ('{$section1}','{$regNo1}','{$subject1}','{$date}','{$sender1}','1','0','{$ref_id1}')";
     mysqli_query($connection, $query1);
     exit();
 }

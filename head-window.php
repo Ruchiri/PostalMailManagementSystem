@@ -1,5 +1,5 @@
 <?php
-include "inc/section_query.inc.php";
+include "inc/section.php";
 $sections = get_sections();
 ?>
 <!DOCTYPE html>

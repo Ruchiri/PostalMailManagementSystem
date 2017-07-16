@@ -5,7 +5,7 @@
  * Date: 7/15/2017
  * Time: 11:34 PM
  */
-include "inc/section_query.inc.php";
+include "inc/section.php";
 include "inc/letter_record.php";
 include "connect.php";
 $con = connect();
@@ -47,7 +47,7 @@ $_SESSION['id'] = $id;
             <fieldset>
                 <label for="section">අංශය තේරීම :
 
-                    <select id="section" name="section" value=<?php echo $section ?>>
+                    <select id="section" name="section">
                         <option disabled selected value> -- නිවරැදි අංශය තොරන්න.--</option>
                         <?php foreach ($sections as $sec): ?>
                             <option value=<?php echo $sec; ?>><?php echo $sec; ?></option>

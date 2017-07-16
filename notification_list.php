@@ -35,7 +35,9 @@ $connection=connect();
                         <td>
                             <a href="resend.php?letter_id=<?php echo $row['letter_id']; ?>"><?php echo $row['section'] . " අංශයට යවන ලඳ " . $row['letter_id'] . " අනු අංකය සහිත ලිපියෙහි වරදක් ඇත."; ?></a>
                         </td>
-                        <td><?php echo $row['date']; ?></td>
+                        <td>
+                            <?php echo $row['date']; ?>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             <?php endif; ?>
