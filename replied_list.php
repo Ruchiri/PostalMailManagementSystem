@@ -1,6 +1,5 @@
 <?php
 include 'inc/login.inc.php';
-session_start();
 $section= $_SESSION['page'];
 ?>
 
@@ -9,6 +8,7 @@ $section= $_SESSION['page'];
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
     <meta charset="UTF-8">
+    <!--<META HTTP-EQUIV="refresh" CONTENT="30">-->
     <title>පිළිතුරු සපයන ලද ලිපි</title>
     <link rel="stylesheet" href="css/replied_list.css">
 </head>
@@ -27,10 +27,12 @@ $section= $_SESSION['page'];
             $query = "select * from letter where replied=1 and section='$section' ";
             mysqli_set_charset($con, 'utf8');
             $data = mysqli_query($con, $query);
-
-            if(empty($query)){
-              ?> <?php
+            $array=mysqli_fetch_array($data);
+            if(empty($array)){
+                 echo "පිළිතුරු සැපයූ ලිපි නොමැත!";
             }
+
+
             else {
                 echo '<table width="120%" border="2" cellpadding="6" cellspacing="5">
          <tr>
@@ -48,14 +50,16 @@ $section= $_SESSION['page'];
              <td>' . $row["sender"] . '</td>
              <td>' . $row["subject"] . '</td>
              <td> ' ?>
-                    <a href="letter_record_window.php?reg_no=<?php echo $row["reg_no"]; ?>&date=<?php echo $row["date"]; ?>&subject=<?php echo $row["subject"]; ?>&section=<?php echo $row["section"]; ?>&sender=<?php echo $row["sender"]; ?>&scan_copy=<?php echo $row["rec_letter"]; ?>&ref_id=<?php echo $row["ref_id"]; ?>&thisSection=<?php echo $thisSection ?> ">
-                        <img src="img/letter.png"></a>  <?php '</td>
+                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>"><img
+                                src="img/letter.png"/>
+                    </a>  <?php '</td>
            </tr>';
                 }
                 echo '</table>';
             }
         ?>
     </div> <!-- content-->
+
 </div> <!-- wrapper -->
 
 
