@@ -3,6 +3,8 @@
 <head>
     <title>පිළිතුරු ලිපිය</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF8">
+    <A HREF="javascript:history.go()"></A>
+
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/replyletter.css">
 </head>
@@ -11,12 +13,13 @@
     <div class="top-bar">
         <h1>පිළිතුරු ලිපිය</h1>
     </div>
+
     <div class="reply-letter-model">
         <ul>
-            <form method="GET" ACTION="inc/reply_sheet.inc.php">
+           <form method="GET" ACTION="inc/reply_sheet.inc.php" name="letter_fields">
             <li>
                 <label > <strong>යවන්නාගේ ලිපිනය</strong></label> <br/>
-                <textarea name="txtsenderAddress" cols="60" rows="8" oninvalid="this.setCustomValidity('යවන්නාගේ ලිපිනය ඇතුලත් කරන්න')" required title="යවන්නාගේ ලිපිනය"></textarea >
+                <textarea id="senderAddress" name="txtsenderAddress" cols="60" rows="8" oninvalid="this.setCustomValidity('යවන්නාගේ ලිපිනය ඇතුලත් කරන්න')" required title="යවන්නාගේ ලිපිනය"></textarea >
 
             </li>
 
@@ -50,15 +53,24 @@
                 <textarea name="txtend" cols="60" rows="5" oninvalid="this.setCustomValidity('අවසානය ඇතුලත් කරන්න')" title="අවසානය" required></textarea>
             </li>
         </ul>
+
         <input id="button" type="submit" value="ඇතුලත් කරන්න" name="submit" onclick="openReply()" >
-     <script type="text/javascript">
+      <script type="text/javascript">
             var replyWindow;
             function openReply() {
-                replyWindow = window.open('inc/reply_sheet.inc.php' ,'blank','');
+                replyWindow = window.display('inc/reply_sheet.inc.php' );
             }
-</script>
+        </script>
 
-</form>
+        <FORM>
+            <INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh">
+        </FORM>
+
+        <FORM>
+            <INPUT TYPE="button" onClick="history.go(-1)" VALUE="Cancel">
+        </FORM>
+
+        </form>
 
 </div>
 </div>

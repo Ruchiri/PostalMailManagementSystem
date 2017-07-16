@@ -41,9 +41,7 @@ $sections = get_sections();
                 <p>අංශය</p>
                 <input type="text" list="sections" id = "selectSec" name="selectSec">
                 <datalist id="sections">
-                    <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
-                        <option><?php echo $sections[$j]; ?></option>
-                    <?php endfor; ?>
+
                 </datalist>
             </ul>
 

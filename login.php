@@ -59,16 +59,16 @@
             </ul>
 
             <p>
-            <?php include "inc/login.inc.php";
-            session_start();
-            echo $_SESSION['invalid'];
-            $_SESSION['invalid']="";
+            <?php
+            if(isset($_GET['submit'])) {
+
+                echo $_SESSION['invalid'];
+                $_SESSION['invalid'] = "";
+            } else
             ?></p>
         </form>
     </ul>
 </div>
-
-
 
 </body>
 </html>
