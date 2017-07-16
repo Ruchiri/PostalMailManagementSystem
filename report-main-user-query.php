@@ -12,9 +12,10 @@ if(isset($_GET['btn'])){
     echo "<br> <br> <br>";
     $count = 1;
     $hasResults = FALSE;
-    foreach($daterange as $date)  {  
+    foreach($daterange as $date)  {
 
-        include ('dbconnectedPiyu.php');
+//        include ('connect.php');
+//        $connection = connect();
         mysqli_set_charset($connection, 'utf8');
 
         $dateString = $date->format('Y-m-d');

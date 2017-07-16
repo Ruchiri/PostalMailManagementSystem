@@ -23,7 +23,7 @@ $subject1 =mysqli_real_escape_string($connection,$_GET['subject']) ;
 if(isset($_GET['done'])){
 
     $ref_id1 = mysqli_real_escape_string($connection,$_GET['ref_id']);
-    if(""=== $ref_id1){
+    if((""=== $ref_id1)or("noRadioChecked" === $ref_id1)){
         $query3 = "SELECT MAX(ref_id) AS ref FROM letter";
         $result3 = mysqli_query($connection,$query3);
         if($result){
@@ -36,6 +36,7 @@ if(isset($_GET['done'])){
     }
     $query1 = "insert into letter (section, reg_no, subject, date, sender, visible, replied,ref_id) values ('{$section1}','{$regNo1}','{$subject1}','{$date}','{$sender1}','1','0','{$ref_id1}')";
     mysqli_query($connection, $query1);
+
     exit();
 }
 
@@ -47,17 +48,23 @@ if(isset($_GET['display'])){
     $output='';
     $output = "<form action='' method=\"get\" id=\"form1\" name = \"form1\"> <table border=\"2px\" style='color: #060333'>
     <tr>
-        <th >select</th>
-        <th >id</th>
-        <th >date</th>
-        <th >sender</th>
-        <th >subject</th>
-        <th >ref_id</th>
-        <th >scancopy</th>
+        <th >තෝරන්න</th>
+        <th >අනු අංකය</th>
+        <th >දිනය</th>
+        <th >ලිපිය එවූ පාර්ශවය</th>
+        <th >විෂයය</th>
+        <th >සම්බන්ධක අංකය</th>
+        <th >ඡායා පිටපත</th>
+        
+        
     </tr>";
     while ($letter_row = $letter_result->fetch_array()) {
+        $value = $letter_row['ref_id'];
+        if($value==""){
+            $value="null";
+        }
 
-        $output .=  '<tr><td ><input type="radio" class = "radiobtn"  value= '. ($letter_row["ref_id"]).' name="radio" id="radio"/>'.'</td> <td>'. $letter_row["id"].'</td> <td>' . $letter_row["date"].'</td> <td>' .$letter_row["sender"] .
+        $output .=  '<tr><td ><input type="radio" class = "radiobtn"  value= '. $value.' name="radio" id="radio"/>'.'</td> <td>'. $letter_row["id"].'</td> <td>' . $letter_row["date"].'</td> <td>' .$letter_row["sender"] .
             '</td> <td>' .$letter_row["subject"] .'</td><td>' .$letter_row["ref_id"] . '</td>';
 
 

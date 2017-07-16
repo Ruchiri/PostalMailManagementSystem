@@ -16,7 +16,7 @@ function set_notification($connection, $id, $section, $date)
     $row1 = $result1->fetch_array();
     //if this record has not marked as irrelevent, add to notification table
     if (empty($row1)) {
-        $cmd2 = "INSERT INTO notification (section,unread,letter_id,date) VALUES ('$section','0','$id','$date')";
+        $cmd2 = "INSERT INTO notification (section,unread,letter_id,date) VALUES ('$section','1','$id','$date')";
         mysqli_set_charset($connection, 'utf8');
         $result2 = mysqli_query($connection, $cmd2);
         //if query is failed
