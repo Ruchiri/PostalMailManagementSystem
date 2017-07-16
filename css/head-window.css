@@ -1,10 +1,16 @@
 .heading{
     width: 1000px;
-    height: 90px;
+    height: 50px;
     background:rgba(219,154,190,0.92);
     margin: auto;
     font-size: xx-large;
     text-align: center;
+}
+.Background{
+    width: 1350px;
+    height: 630px;
+    margin: auto;
+    background-color: #CCCCCC;
 }
 .selection{
     float: inherit;
@@ -22,6 +28,7 @@
 
 }
 .Start-date{
+    margin-top: 20px;
     float: left;
     background: rgba(143,157,165,0.76);
     width: 300px;
@@ -30,6 +37,7 @@
 
 }
 .End-date{
+    margin-top: 20px;
     background: rgba(143,157,165,0.76);
     width: 290px;
     height: 80px;

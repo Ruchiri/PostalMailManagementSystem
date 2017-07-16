@@ -1,0 +1,11 @@
+.system img{
+    width: 1350px;
+    height: 100px;
+    margin: auto;
+}
+.Background{
+    width: 1350px;
+    height: auto;
+    margin: auto;
+    background-color: #CCCCCC;
+}

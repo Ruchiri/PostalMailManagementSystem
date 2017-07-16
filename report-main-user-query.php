@@ -1,51 +1,65 @@
 <?php
-if(isset($_GET['btn'])){
+include "connect.php";
+$connection=connect();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF8">
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <link rel="stylesheet" href="css/report.css">
+</head>
+<body>
 
-    $start_date = $_GET['start_date'];
-    $dateStart = new DateTime($start_date);
-    $end_date = $_GET['end_date'];
-    $dateEnd = new DateTime($end_date);
-    $section = $_GET['selectSec'];
-    $daterange = new DatePeriod($dateStart, new DateInterval('P1D'), $dateEnd);
-    $display =  $section." :-  ". $start_date ." සිට " . $end_date . " දක්වා  " ;
-    echo $display;
-    echo "<br> <br> <br>";
-    $count = 1;
-    $hasResults = FALSE;
-    foreach($daterange as $date)  {
+<div class="Details">
+    <table border="=1" cellpadding="10" cellspacing="1" width="100%">
+        <tr>
+            <th>අනු අංකය</th>
+            <th>ලියාපදිංචි අංකය</th>
+            <th>දිනය</th>
+            <th>ලිපිය එවූ පාර්ශවය</th>
+            <th>විෂය</th>
+            <th>පිලිතුරු සපයා ඇතිද යන වග</th>
+        </tr>
+        <tbody>
+        <?php
+        if(isset($_GET['report'])) {
+            $date1 = $_GET['date1'];
+            $date2 = $_GET['date2'];
+            $section=$_GET['section'];
+            echo "$date1 සහ $date2 කාල පරාසය තුල වාර්තව - $section ";
 
-//        include ('connect.php');
-//        $connection = connect();
-        mysqli_set_charset($connection, 'utf8');
-
-        $dateString = $date->format('Y-m-d');
-        $queryReport = "select letter.id,letter.date,letter.subject,letter.sender  from letter  where letter.date = '$dateString' and letter.section = '$section'";
-        $result = mysqli_query($connection, $queryReport);
-        while ($row = $result->fetch_array()) {
-            if($count==1){
-                $count = $count+1;
-                $hasResults = TRUE;
-                echo "<table border=\"3\" class=\"table\" style='background-color: mistyrose' id = 'datatable'>
-            <tr>
-                <th>අනු අංකය</th>
-                <th>දිනය</th>
-                <th>ලිපිය එවූ පාර්ශවය</th>
-                <th>විෂය</th>
-            </tr>";
+            $query = "SELECT id,reg_no,date,sender,subject,replied FROM letter WHERE section='$section' AND date BETWEEN  '$date1' AND '$date2'";
+            mysqli_set_charset($connection, 'utf8');
+            $result = mysqli_query($connection, $query);
+            if ($result) {
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['id'] . "</td>";
+                    echo "<td>" . $row['reg_no'] . "</td>";
+                    echo "<td>" . $row['date'] . "</td>";
+                    echo "<td>" . $row['sender'] . "</td>";
+                    echo "<td>" . $row['subject'] . "</td>";
+                    echo "<td>" . $row['replied'] . "</td>";
+                }
+            } else {
+                die("database query failed " . mysqli_error($connection));
             }
-            $output =  "<tr> <td>". $row['id']."</td> <td>" . $row['date']."</td> <td>" .$row['sender'] .
-                "</td> <td>" .$row['subject'] ."</td></tr>";
-            echo "$output";
+
         }
+        ?>
+    </table>
+    <script type="text/javascript">
+        var report;
+        function printReport() {
+            report = this.print();
+        }
+    </script>
+    <script>
+        printReport();
+    </script>
 
-
-    }
-    echo ('</table>');
-    if($hasResults){
-        echo "<script> var Table = document.getElementById(datatable);
-                                       Table.style.display='table';
-                          </script>";
-    }else{
-        echo "ගැළපෙන ප්‍රථිපල නොමැත";
-    }
-}
+</div><!--Details-->
+</body>
+</html>

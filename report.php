@@ -13,10 +13,6 @@ $section = $_SESSION['section'];
     <link rel="stylesheet" href="css/report.css">
 </head>
 <body>
-    <div class="heading">
-        <p>වාර්තාව</p>
-    </div><!--Heading-->
-
     <div class="Details">
         <table border="=1" cellpadding="10" cellspacing="1" width="100%">
             <tr>
