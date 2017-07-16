@@ -1,4 +1,9 @@
-
+<?php
+include "connect.php";
+include "inc/section.php";
+$con = connect();
+$sections = get_sections($con);
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,38 +74,14 @@
     <div id="columnright">
         <form action="main-user-window.php" method="get">
             <fieldset>
-                <label for="lbl1"> ලිපි ගණන :</label>
-                <input type="text" id="lbl1"><br>
+                <label for="letter_count"> ලිපි ගණන :</label>
+                <input type="text" name="full_count" id="full_count"><br><br>
 
-                <label for="lbl2">ආයතන :</label>
-                <input type="text" id="lbl2"><br>
+                <?php foreach ($sections as $sec): ?>
+                    <label for="section"><?php echo $sec . " :"; ?></label>
+                    <input type="text" name="count"></input><br>
+                <?php endforeach; ?>
 
-                <label for="lbl3">ගිනුම් අංශය :</label>
-                <input type="text" id="lbl3"><br>
-
-                <label for="lbl4">සංවර්ධන අංශය :</label>
-                <input type="text" id="lbl4"><br>
-
-                <label for="lbl5">ඉඩම් අංශය :</label>
-                <input type="text" id="lbl5"><br>
-
-                <label for="lbl6">සමාජ සේවා අංශය :</label>
-                <input type="text" id="lbl6"><br>
-
-                <label for="lbl7">දිවි නැගුම අංශය :</label>
-                <input type="text" id="lbl7"><br>
-
-                <label for="lbl8">ක්ෂේත්‍ර :</label>
-                <input type="text" id="lbl8"><br>
-
-                <label for="lbl9">ලියාපදිංචි අංශය :</label>
-                <input type="text" id="lbl9"><br>
-
-                <label for="lbl10">මුදල් හා චෙක්පත් අංශය :</label>
-                <input type="text" id="lbl10"><br>
-
-                <label for="lbl11">ප්‍රධාන නිලධාරී :</label>
-                <input type="text" id="lbl11"><br>
 
             </fieldset>
         </form>

@@ -1,5 +1,5 @@
 <?php
-include "inc/section_query.inc.php";
+include "inc/section.php";
 include "connect.php";
 $con = connect();
 $sections = get_sections($con);
