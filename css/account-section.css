@@ -53,7 +53,7 @@
 
     float: right;
     width: 670px;
-    background: #82c9ff;
+    background: rgba(80, 118, 156, 0.69);
 
 }
 
@@ -76,4 +76,44 @@
     font-size: 18px;
     display: table-column;
 
+}
+
+.letter{
+    margin-left: 50px;
+    margin-top: 10px;
+
+}
+
+
+.model {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    background-color: #16e1ff;
+}
+
+.letter ul
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    list-style: none;
+    width:auto;
+    height: auto;
+
+}
+
+.letter ul li{
+    font-style: oblique;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+#replied,#gotoletter{
+   display: inline;
+    margin-left: 200px;
+    margin-right: 10px;
 }

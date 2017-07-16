@@ -1,5 +1,12 @@
 <?php
-session_start();
+
+include "connect.php";
+$con=connect();
+function getId($cor){
+    return $cor;
+}
+
+
 ?>
 
       <!DOCTYPE html>
@@ -7,7 +14,9 @@ session_start();
       <html lang="en">
       <head>
           <meta charset="UTF-8">
+          <!--<META HTTP-EQUIV="refresh" CONTENT="30">-->
           <title><?php include "inc/login.inc.php";
+              session_start();
               echo $_SESSION['page'];
               ?> </title>
           <style>
@@ -56,43 +65,46 @@ session_start();
                   <h2> පිළිතුරු සැපයිය යුතු ලිපි</h2>
                   <div class="content">
                       <?php
-                      include "connect.php";
-                      $con=connect();
+
                       $section= $_SESSION['page'];
                       $_SESSION['section'] = $section;
+
 
                           mysqli_set_charset($con, 'utf8');
                           $query = "select * from letter where section='$section' and replied=0";
                           mysqli_set_charset($con, 'utf8');
                           $data =mysqli_query($con,$query);
-
-
-
-
-                             echo '<table width="100%" border="2" cellpadding="6" cellspacing="5">
-         <tr>
-             <th>ලියාපදිංචි අංකය</th>
-             <th>දිනය</th>
-             <th>ලිපිය එවූ පාර්ශවය</th>
-             <th>විෂයය</th>
-             <th>ලිපිය</th>
-         </tr>';
-
-                             foreach ($data as $row) {
-
-                                 echo '<tr>  
-             <td>' . $row["ref_id"] . '</td>
-             <td>' . $row["date"] . '</td>  
-             <td>' . $row["sender"] . '</td>
-             <td>' . $row["subject"] . '</td>
-             <td> ' ?>
-                                 <a href="letter_record_window.php?id=<?php echo $row["id"]; ?>">
-                                     <img src="img/letter.png"></a>  <?php '</td>
-           </tr>';
-                             }
-                             echo '</table>';
-
+                          $array=mysqli_fetch_array($data);
+                          if(empty($array)){
+                              echo "පිළිතුරු සැපයීමට නව ලිපි නොමැත!";
+                          }
+                          else{
                       ?>
+                      <div class="letter">
+                        <?php  foreach ($data as $row) {?>
+                            <div class="model">
+                            <ul>
+                                <li><?php echo "ලියාපදිංචි අංකය :" . $row["ref_id"]; ?></li>
+                                <li><?php echo "දිනය :" . $row["date"]; ?></li>
+                                <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $row["sender"]; ?></li>
+                                <li><?php echo "විෂයය :" . $row["subject"]; ?></li>
+                                <li id="gotoletter">
+                                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>"><img
+                                                src="img/letter.png"/>
+                                    </a>
+                                </li>
+                                <li id="replied">
+                                    <a href="inc/mark_read.inc.php?id=<?php echo $row["id"] ?>"><img
+                                                src="img/rmm.png"/>
+                                    </a>
+                                </li>
+                            </ul>
+                            </div> <!--model-->
+                         <?php }?>
+
+                      </div><!--letter-->
+                  <?php }?>
+
                   </div> <!-- content-->
               </div><!--   tobereply-->
           </div> <!-- core    -->
