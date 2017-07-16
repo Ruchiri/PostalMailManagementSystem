@@ -1,18 +1,25 @@
 .heading{
     width: 1000px;
-    height: 90px;
-    background: #d30c83;
+    height: 50px;
+    background: rgba(219,132,190,0.92);
     margin: auto;
     font-size: xx-large;
     text-align: center;
 }
-.selection{
+.selection {
     float: inherit;
-    background:rgba(165,118,143,0.76);
-    width:730px;
-    height:230px;
-    margin:auto;
+    background: rgba(165, 118, 143, 0.76);
+    width: 730px;
+    height: 230px;
+    margin: auto;
 }
+.Background{
+    width: 1350px;
+    height: 630px;
+    margin: auto;
+    background-color: #CCCCCC;
+}
+
 
 .Choose-date{
     background: rgba(165,118,143,0.76);
