@@ -7,10 +7,12 @@
 
 </head>
 <body>
+<div id="entire">
 <div id="whole">
 
     <div  id = "titlebar" style = "color:white">
-        නව පණිවිඩය
+        <h1>ප්‍රධාන අංශය <br> නව පණිවිඩය</h1>
+       
     </div>
     <div  id = "body" style="color: black">
         <form action="" method="get">
@@ -38,6 +40,7 @@
                 </label><br>
                 <label for = "date">දිනය:
                     <input type="date" id = "date" name ="date" />
+
                 </label><br>
                 <label for ="sender">ලිපිය එවූ පාර්ශවය:
                     <input type="text" id = "sender" name ="sender" />
@@ -69,13 +72,13 @@
             <div id="bottomPartLetter"></div>
         </div>
         <br>
-        <input type="submit" id="btn1" name="btn1" style = "background-color: mistyrose; width: 100px; height: 30px;" onclick="msgbox.render('මෙම ලිපිය වෙනත් ලිපියක් හ සම්බන්ධද?')" value="යැවීම ">
+        <input type="submit" id="btn1" name="btn1" style = "background-color: mistyrose; width: 100px; height: 30px;" onclick="msgbox.render('මෙම ලිපිය වෙනත් ලිපියක් හා සම්බන්ධද?')" value="යැවීම ">
         <input type="submit" id="btn2" name="btn2" style="background-color: mistyrose; width: 150px; height: 30px;"    onclick = "attach()" value="ගොනු අමුනන්න">
         <input type="submit" id="btn3" name="btn3" style="background-color: mistyrose; width: 100px; height: 30px;" onclick="delData()" value="මකන්න">
 
         <script>
 
-            function messageBox() {
+            function validating(){
                 this.render = function(dialog){
                     var winW = window.innerWidth;
                     var winH = window.innerHeight;
@@ -89,8 +92,46 @@
                     dialogbox.style.background = "#FFF";
                     document.getElementById('dialogboxhead').innerHTML = "පණිවිඩය...";
                     document.getElementById('dialogboxbody').innerHTML = dialog;
-                    document.getElementById('dialogboxfoot').innerHTML = ' <button id="yesbtn" name="yesbtn" onclick = "msgbox.yes()"> ඔව් </button> <button id="nobtn" name = "nobtn" onclick="msgbox.no()">නැත</button> ';
-                }
+                    document.getElementById('dialogboxfoot').innerHTML ='<button id = "ok2" name="ok2" onclick="validate.ok()">නිවැරදිය</button>';
+                };
+                this.ok = function () {
+                    document.getElementById("dialogbox").style.display = 'none';
+                    document.getElementById('dialogoverlay').style.display = 'none';
+                };
+
+            }
+
+            function messageBox() {
+                this.render = function(dialog){
+                    if(document.getElementById('section').value =="empty") {
+                        validate.render(" ලිපිය අදාල වන අංශය ඇතුලත් කරන්න");
+                    }else if(document.getElementById('date').value == ""){
+                        validate.render("දිනය ඇතුලත් කරන්න  ");
+                    }else if(document.getElementById("sender").value == ""){
+                        validate.render("නිවැරදිව ලිපිය එවූ පාර්ශවයේ නම ඇතුලත් කරන්න");
+                    }else if(/^[0-9]+$/.test(document.getElementById('sender').value)){
+                        validate.render("නිවැරදිව ලිපිය එවූ පාර්ශවයේ නම ඇතුලත් කරන්න");
+                    }else if(document.getElementById("subject").value == ""){
+                        validate.render("නිවරැදි විෂයයක් ඇතුලත් කරන්න  ");
+                    }else if (/^[0-9]+$/.test(document.getElementById('subject').value)){
+                        validate.render("නිවරැදි විෂයයක් ඇතුලත් කරන්න  ");
+                    }else{
+                        var winW = window.innerWidth;
+                        var winH = window.innerHeight;
+                        var dialogoverlay = document.getElementById("dialogoverlay");
+                        var dialogbox = document.getElementById("dialogbox");
+                        dialogoverlay.style.display = "block";
+                        dialogoverlay.style.height = winH+"px";
+                        dialogbox.style.left = (winW/2)-(550*0.5) + "px";
+                        dialogbox.style.top = "100px";
+                        dialogbox.style.display = "block";
+                        dialogbox.style.background = "#FFF";
+                        document.getElementById('dialogboxhead').innerHTML = "පණිවිඩය...";
+                        document.getElementById('dialogboxbody').innerHTML = dialog;
+                        document.getElementById('dialogboxfoot').innerHTML = ' <button id="yesbtn" name="yesbtn" onclick = "msgbox.yes()"> ඔව් </button> <button id="nobtn" name = "nobtn" onclick="msgbox.no()">නැත</button> ';
+                    }
+
+                };
                 this.yes = function(){
                     selectRefLetter();
                     document.getElementById("dialogbox").style.display = 'none';
@@ -109,7 +150,7 @@
 
 
 
-                }
+                };
                 this.no = function(){
 
                     document.getElementById("dialogbox").style.display = 'none';
@@ -117,7 +158,7 @@
                     var radio = "";
                     storeData(radio);
 
-                }
+                };
 
 
                 this.ok = function () {
@@ -140,7 +181,7 @@
 
                     }
                     storeData(rdValue);
-                }
+                };
 
             }
 
@@ -179,8 +220,9 @@
                     }else{
                         alert(xmlhttp1.responseText);
                     }
-                }
+                };
                 xmlhttp1.send();
+                alert("you have successfully send the datasheet");
             }
 
             function selectRefLetter() {
@@ -218,7 +260,7 @@
                         alert(xmlhttp2.responseText);
                     }
 
-                }
+                };
                 xmlhttp2.send();
             }
 
@@ -231,12 +273,15 @@
 
             }
             var msgbox = new messageBox();
+            var validate = new validating();
+
 
 
         </script>
 
     </div>
 
+</div>
 </div>
 
 </body>

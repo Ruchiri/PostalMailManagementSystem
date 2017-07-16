@@ -8,15 +8,29 @@ label{
 button{
     font-size:100%; margin-left:20px; margin-bottom:10px; margin-top:10px;
 }
+#entire{
+    margin: auto;
+    width: 1350px;
+    height: 1000px;
+    background-color: #eff0f2;
+}
 #whole{
-    background-color: #abb0ff;
+
+    margin-left: 200px;
+    margin-bottom: auto;
+    background-color: #eff0f2;
     width: 936px;
-    height: 548px;
+    height: 480px;
+
 }
 #titlebar {
-    background: #210033;
+    /*margin-top: 300px;*/
+    background: #241463;
     width: 936px;
-    height: 20px;
+    height: 80px;
+    text-align: center;
+    font-size: medium;
+    color: #290a7c;
 
 }
 #body{
@@ -27,7 +41,7 @@ button{
 #sendSection{
     background: #41bddc;
     width: 936px;
-    height: 100px;
+    height: 80px;
 
 }
 
