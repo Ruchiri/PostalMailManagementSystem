@@ -1,5 +1,5 @@
 <?php
-include "inc/section_query.inc.php";
+include "inc/section.php";
 include "connect.php";
 $con = connect();
 $sections = get_sections($con);
@@ -19,11 +19,29 @@ $sections = get_sections($con);
         <img src="img/new.jpg" alt="new">
     </div>
     <div class="wrapper">
-        <h1>මාසික වාර්තාව</h1>
+        <?php
+        $curyear=2000+date("y");
+        $curmonth=date("m");
+        $month=$curmonth-01;
+        $date1;
+        $date2;
+        if($curmonth!=1){
+            $date1=$curyear."0".$month."01";
+            $date1=date('Y-m-d',strtotime($date1));
+            $date2=$curyear.$curmonth."01";
+            $date2=date('Y-m-d',strtotime($date2));
+        }else{
+            $year=$curyear-1;
+            $date1=$year."12"."01";
+            $date1=date('Y-m-d',strtotime($date1));
+            $date2=$curyear.$curmonth."01";
+            $date2=date('Y-m-d',strtotime($date2));
+        }
+        echo "<h1>$date1 සහ $date2 අතර මාසික වාර්තාව </h1>";
+        ?>
     </div><!--wrapper-->
-    <div class="report">
-        <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
-            <p><?php echo "$sections[$j] අංශයෙහි මාසික වාර්තාව"; ?></p>
+    <div class="report">        <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+            <p><?php echo "$sections[$j] අංශයෙ"; ?></p>
             <table border="=1" cellpadding="10"  width="100%">
                 <tr>
                     <th>ලියාපදිංචි අංකය</th>
@@ -43,18 +61,14 @@ $sections = get_sections($con);
                     if($curmonth!=1){
                         $date1=$curyear."0".$month."01";
                         $date1=date('Y-m-d',strtotime($date1));
-                        echo $date1;
                         $date2=$curyear.$curmonth."01";
                         $date2=date('Y-m-d',strtotime($date2));
-                        echo $date2;
                     }else{
                         $year=$curyear-1;
                         $date1=$year."12"."01";
                         $date1=date('Y-m-d',strtotime($date1));
-                        echo $date1;
                         $date2=$curyear.$curmonth."01";
                         $date2=date('Y-m-d',strtotime($date2));
-                        echo $date2;
                     }
                     $query = "SELECT reg_no,date,sender,subject,replied FROM letter WHERE section='$sections[$j]' AND date BETWEEN  '$date1' AND '$date2'";
                     $result=mysqli_query($con,$query);
