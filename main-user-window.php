@@ -33,30 +33,31 @@
                 var btn5 = document.getElementById("btn5");
                 var btn6 = document.getElementById("btn6");
                 btn1.onclick = function () {
-                    window.open("send.php");
+                    document.location.href = "send.php";
+
 
 
                 }
 
                 btn2.onclick = function () {
-                    window.open("add-new-section.php");
+                    document.location.href = "add-new-section.php";
 
                 }
                 btn3.onclick = function () {
-                    window.open("search.php");
+                    document.location.href ="search.php";
 
 
                 }
                 btn4.onclick = function () {
 
-                    window.open("report_main_user.php");
+                    document.location.href ="report_main_user.php";
                 }
                 btn5.onclick = function () {
-                    window.open("reset-password-section.php");
+                    document.location.href ="reset-password-section.php";
 
                 }
                 btn6.onclick = function () {
-                    window.open("notification_list.php")
+                    document.location.href = "notification_list.php";
                 }
 
             </Script>

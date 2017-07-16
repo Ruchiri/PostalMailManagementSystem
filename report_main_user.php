@@ -1,6 +1,8 @@
 <?php
+include ("connect.php");
+$connection = connect();
 include "inc/section_query.inc.php";
-$sections = get_sections();
+$sections = get_sections($connection);
 ?>
 <!DOCTYPE html>
 <head>
