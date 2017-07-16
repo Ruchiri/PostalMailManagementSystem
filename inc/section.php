@@ -18,6 +18,18 @@ class section
         $this->name = $name;
     }
 
+    public function getTodayLetterCount($connection)
+    {
+        $section = $this->getName();
+        $today = date('Y-m-d');
+        $cmd = "SELECT *FROM letter WHERE section='$section' AND date ='today'";
+        mysqli_set_charset($connection, 'utf8');
+        $result = mysqli_query($connection, $cmd);
+        $num_rows = mysqli_num_rows($result);
+        return $num_rows;
+
+    }
+
     /**
      * @return mixed
      */
@@ -32,12 +44,6 @@ class section
     public function setName($name)
     {
         $this->name = $name;
-    }
-
-    public function getTodayLetterCount($connection)
-    {
-        $cmd = "SELECT *from letter WHERE section='$this->getName()'  DATE(`timestamp`) = CURDATE()";
-
     }
 
 

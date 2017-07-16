@@ -103,7 +103,10 @@ if ($marked == 0) {
 
         <div class="scan_copy">
             <label for="scan_copy"><strong>ඡායා පිටපත: </strong></label><br/>
-            <img src="url" alt="some_text">
+            <img src=<? echo $scan_copy ?>/>";
+
+            <!--img src= alt="some_text"-->
+            <?php print $scan_copy; ?>
         </div>
 
         <div name="replied">
