@@ -73,7 +73,7 @@
         </div>
         <br>
         <input type="submit" id="btn1" name="btn1" style = "background-color: mistyrose; width: 100px; height: 30px;" onclick="msgbox.render('මෙම ලිපිය වෙනත් ලිපියක් හා සම්බන්ධද?')" value="යැවීම ">
-        <input type="submit" id="btn2" name="btn2" style="background-color: mistyrose; width: 150px; height: 30px;"    onclick = "attach()" value="ගොනු අමුනන්න">
+        <input type="file" id="btn2" name="btn2" style="background-color: mistyrose; width: 150px; height: 30px;"    onclick = "attach()" value="ගොනු අමුනන්න">
         <input type="submit" id="btn3" name="btn3" style="background-color: mistyrose; width: 100px; height: 30px;" onclick="delData()" value="මකන්න">
 
         <script>
