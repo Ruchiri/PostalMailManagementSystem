@@ -34,6 +34,7 @@ input[name="txtsenderAddress"] {
     height: 80px;
     padding-top: 10px;
     padding-bottom: 5px;
+    border-radius: 6px;
 }
 
 input[name="ddate"] {
@@ -66,18 +67,10 @@ input[name="txtend"] {
 }
 
 
-input[id="refresh"],[id="button"]{
+input[id="refresh"],[id="button"], [name="cancel"]{
     display:inline-block;
     margin-right:80px;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-bottom: 20px;
 
-}
-
-input [name="cancel"]{
-    margin-left: 300px;
-}
-
-input[id="refresh"]{
-    float: right;
 }

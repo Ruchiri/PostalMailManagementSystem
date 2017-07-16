@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/reply_sheet.inc.css" >
 
-    <title> . </title>
+    <title>  </title>
     <style>
         @page { size: auto;  margin: 0mm; }
     </style>
