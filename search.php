@@ -206,7 +206,7 @@ if (isset($_GET['btn'])) {
                             <li><?php echo "විෂය :" . $result->getSubject(); ?></li>
                             <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $result->getSender(); ?></li>
                             <li id="next">
-                                <a href="letter_record_window.php?id=<?php echo $result->getId() ?>"><img
+                                <a href="letter_record_window.php?id=<?php echo $result->getId() ?>&thisSection=<?php "mu" ?>"><img
                                             src="img/export-arrow.png"/>
                                 </a>
                             </li>

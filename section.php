@@ -89,7 +89,7 @@ function getId($cor){
                                 <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $row["sender"]; ?></li>
                                 <li><?php echo "විෂයය :" . $row["subject"]; ?></li>
                                 <li id="gotoletter">
-                                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>"><img
+                                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>&thisSection=<?php "su" ?>"><img
                                                 src="img/letter.png"/>
                                     </a>
                                 </li>
