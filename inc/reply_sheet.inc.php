@@ -17,13 +17,13 @@
 
 if(isset($_GET['submit'])) {
 
-    $senderAddress = $_GET['txtsenderAddress'];
+    $senderAddress = trim($_GET['txtsenderAddress']);
     $date = $_GET['ddate'];
-    $receiverAddress = $_GET['txtreceiverAddress'];
-    $salutation = $_GET['txtsalutation'];
-    $subject = $_GET['txtSubject'];
-    $letterBody = $_GET['txtletterBody'];
-    $end = $_GET['txtend'];
+    $receiverAddress = trim($_GET['txtreceiverAddress']);
+    $salutation = trim($_GET['txtsalutation']);
+    $subject = trim( $_GET['txtSubject']);
+    $letterBody = trim($_GET['txtletterBody']);
+    $end = trim($_GET['txtend']);
 
     print nl2br($senderAddress."\n");
     print nl2br($date."\n\n");
