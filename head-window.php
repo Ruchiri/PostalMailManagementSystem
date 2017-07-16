@@ -18,7 +18,7 @@ $sections = get_sections($con);
     <img src="img/new.jpg" alt="bope">
 </div>
     <div class="heading">
-        <p><strong>වාර්තා ලබා ගැනීම <br>ප්‍රධාන අංශය</strong></p>
+        <p><strong>වාර්තා ලබා ගැනීම </strong></p>
     </div><!--Heading-->
     <div class="selection">
         <form action="report-head-query.php" method="GET">
@@ -27,13 +27,13 @@ $sections = get_sections($con);
                 <div class=" Start-date">
                     <ul>
                         <p>ආරම්භක සෙවුම් දිනය</p>
-                        <input type="date" id="start_date" name="date1"/>
+                        <input type="date" id="start_date" name="date1"oninvalid="this.setCustomValidity('දිනය ඇතුලත් කරන්න')" required oninput="setCustomValidity('')"/>
                     </ul>
                 </div><!--start-date-->
                 <div class="End-date">
                     <ul>
                         <p>අවසාන සෙවුම් දිනය</p>
-                        <input type="date" id="end_date" name="date2"/>
+                        <input type="date" id="end_date" name="date2"oninvalid="this.setCustomValidity('දිනය ඇතුලත් කරන්න')" required oninput="setCustomValidity('')"/>
                     </ul>
                 </div><!--End-date-->
             </ul>
@@ -41,7 +41,7 @@ $sections = get_sections($con);
         <div class="Section">
             <ul>
                 <p>අංශය</p>
-                <input type="text" list="sections" id = "selectSec" name="section">
+                <input type="text" list="sections" id = "selectSec" name="section" oninvalid="this.setCustomValidity('අදාල අංශය ඇතුලත් කරන්න')" required oninput="setCustomValidity('')">
                 <datalist id="sections">
                     <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
                         <option><?php echo $sections[$j]; ?></option>
