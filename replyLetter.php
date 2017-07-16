@@ -6,7 +6,7 @@
     <A HREF="javascript:history.go()"></A>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/replyletter.css">
-    <script type="text/javascript">
+   <!-- <script type="text/javascript">
         function checkForm(form) {
             var fields = [txtsenderAddress, txtreceiverAddress, txtsalutation, txtSubject, txtletterBody, txtend];
             var x;
@@ -22,7 +22,7 @@
                return false;
             }
         }
-    </script>
+    </script>-->
 </head>
 <body>
 <div class="wrapper">
