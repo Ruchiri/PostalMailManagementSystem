@@ -1,6 +1,8 @@
 <?php
 include "inc/section_query.inc.php";
-$sections = get_sections();
+include "connect.php";
+$con = connect();
+$sections = get_sections($con);
 ?>
 <!DOCTYPE html>
 <head>
@@ -41,7 +43,9 @@ $sections = get_sections();
                 <p>අංශය</p>
                 <input type="text" list="sections" id = "selectSec" name="selectSec">
                 <datalist id="sections">
-
+                    <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+                        <option><?php echo $sections[$j]; ?></option>
+                    <?php endfor; ?>
                 </datalist>
             </ul>
 

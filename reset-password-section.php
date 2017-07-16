@@ -1,3 +1,45 @@
+<?php
+include "inc/section_query.inc.php";
+include "connect.php";
+$con = connect();
+$sections = get_sections($con);
+?>
+<?php
+if(isset($_GET['Submit'])){
+    $message='';
+    if(!($_GET['section']=="") && !($_GET['newpassword']=="") && !($_GET['confirmpassword']=="")){
+        if (in_array($_GET['section'], $sections)) {
+            if($_GET['newpassword']==$_GET['confirmpassword']){
+                    $section=$_GET['section'];
+                    $newpassword=$_GET['newpassword'];
+                    $confirmpassword=$_GET['confirmpassword'];
+                    $query ="UPDATE login SET password='$newpassword' WHERE username='$section'";
+
+                    $result=mysqli_query($con,$query);
+                    if($result){
+                        $message="Successfully added to the database!";
+                    }else{
+                        die("database query failed ".mysqli_error($con));
+                    }
+                }else{
+                    $message="මුර පද සමානදැයි පරීක්ෂා කරන්න";
+                }
+
+        }else{
+            $message="වලංගු අංශයක් ඇතුලත් කරන්න.";
+        }
+    }else{
+        $message="අවශ්‍ය දත්ත ඇතුලත් කර ඇත්දැයි පරීක්ෂා කරන්න";
+
+    }
+}
+
+if(!empty($message)){
+    echo "<script language='javascript'>";
+    echo "alert('$message')";
+    echo "</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,24 +53,16 @@
          <div class="core">
 
             <ul>
-                <form action="welcome.php">
+                <form action="" method="get">
                     <div class="section">
                          <label for="sections"> අංශය</label>
                          <ul>
 
-                            <input type="text" list="sections">
+                            <input type="text" list="sections" name="section">
                             <datalist id="sections">
-                                <option> ප්‍රධාන පරිශීලක</option>
-                                <option> ආයතන</option>
-                                <option> ගිනුම් අංශය</option>
-                                <option> සංවර්ධන අංශය</option>
-                                <option> ඉඩම් අංශය</option>
-                                <option> සමාජ සේවා අංශය</option>
-                                <option> දිවි නැගුම අංශය</option>
-                                <option> ක්ෂේත්‍ර</option>
-                                <option> ලියාපදිංචි අංශය</option>
-                                <option> මුදල් හා චෙක්පත් අංශය</option>
-                                <option> ප්‍රධාන නිලධාරී</option>
+                                <?php for ($j = 0; $j < sizeof($sections); $j++): ?>
+                                    <option><?php echo $sections[$j]; ?></option>
+                                <?php endfor; ?>
                             </datalist>
                          </ul>
                     </div> <!--section-->
