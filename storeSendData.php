@@ -1,32 +1,23 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "123";
-$dbname = "pmms";
+include "connect.php";
+$con = connect();
 
 
-$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-if (mysqli_connect_errno()) {
-    die("Database connection failed:" . mysqli_connect_error() . "(" . mysqli_connect_error() . ")");
-
-}
-mysqli_set_charset($connection, 'utf8');
+mysqli_set_charset($con, 'utf8');
 
 
-$section1 = mysqli_real_escape_string($connection, $_GET['section']);
-$regNo1= mysqli_real_escape_string($connection,$_GET['registeredNo']);
-$date = mysqli_real_escape_string($connection,$_GET['date']);
-$sender1 =mysqli_real_escape_string($connection,$_GET['sender']);
-$subject1 =mysqli_real_escape_string($connection,$_GET['subject']) ;
+$section1 = mysqli_real_escape_string($con, $_GET['section']);
+$regNo1= mysqli_real_escape_string($con,$_GET['registeredNo']);
+$date = mysqli_real_escape_string($con,$_GET['date']);
+$sender1 =mysqli_real_escape_string($con,$_GET['sender']);
+$subject1 =mysqli_real_escape_string($con,$_GET['subject']) ;
 
 if(isset($_GET['done'])){
 
-    $ref_id1 = mysqli_real_escape_string($connection,$_GET['ref_id']);
+    $ref_id1 = mysqli_real_escape_string($con,$_GET['ref_id']);
     if((""=== $ref_id1)or("noRadioChecked" === $ref_id1)){
         $query3 = "SELECT MAX(ref_id) AS ref FROM letter";
-        $result3 = mysqli_query($connection,$query3);
+        $result3 = mysqli_query($con,$query3);
         if($result){
             $letter_row3 = mysqli_fetch_row($result3);
             $ref_id1 = (string)((int)($letter_row3[0])+ 1);
@@ -36,7 +27,7 @@ if(isset($_GET['done'])){
 
     }
     $query1 = "insert into letter (section, reg_no, subject, date, sender, visible, replied,ref_id) values ('{$section1}','{$regNo1}','{$subject1}','{$date}','{$sender1}','1','0','{$ref_id1}')";
-    mysqli_query($connection, $query1);
+    mysqli_query($con, $query1);
 
     exit();
 }
@@ -44,7 +35,7 @@ if(isset($_GET['done'])){
 if(isset($_GET['display'])){
 
     $query1 = "select letter.id,letter.date,letter.sender,letter.subject,letter.ref_id from letter where letter.section = '$section1'";
-    $letter_result = mysqli_query($connection,$query1);
+    $letter_result = mysqli_query($con,$query1);
 
     $output='';
     $output = "<form action='' method=\"get\" id=\"form1\" name = \"form1\"> <table border=\"2px\" style='color: #060333'>
@@ -55,7 +46,7 @@ if(isset($_GET['display'])){
         <th >ලිපිය එවූ පාර්ශවය</th>
         <th >විෂයය</th>
         <th >සම්බන්ධක අංකය</th>
-        <th >ඡායා පිටපත</th>
+        
         
         
     </tr>";
