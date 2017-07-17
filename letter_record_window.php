@@ -103,8 +103,12 @@ if ($marked == 0) {
 
         <div class="scan_copy">
             <label for="scan_copy"><strong>ඡායා පිටපත: </strong></label><br/>
-            <img src=<? echo $scan_copy ?>/>";
-
+            <?php
+            $query = "SELECT rec_letter FROM letter where id=$id";
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result);
+            echo "<img src='server/" . $row['rec_letter'] . "'/>";
+            ?>
             <!--img src= alt="some_text"-->
             <?php print $scan_copy; ?>
         </div>
