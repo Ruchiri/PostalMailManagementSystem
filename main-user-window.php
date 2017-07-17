@@ -120,7 +120,7 @@ function take_records($connection)
                         <li id="resend"><a href="resend.php?letter_id=<?php echo $reco->getId(); ?>"><strong>නැවත යොමු
                                     කිරීම.</strong></a></li>
                         <li id="view"><a
-                                    href="letter_record_window.php?id=<?php echo $reco->getId() ?>"><strong>යොමුව.</strong></a>
+                                    href="letter_record_window.php?id=<?php echo $reco->getId() ?>&thisSection=<?php "mu" ?>"><strong>යොමුව.</strong></a>
                         </li>
                     </ul>
                 </div><br>
