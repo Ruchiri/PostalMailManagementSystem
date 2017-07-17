@@ -10,7 +10,6 @@ include "connect.php";
 $con = connect();
 
 $id = $_GET['id'];
-$thisSection = $_GET['thisSection'];
 $reco = find_recoDb($id, $con);
 
 $reg_no = $reco->getRegNo();
@@ -104,7 +103,14 @@ if ($marked == 0) {
 
         <div class="scan_copy">
             <label for="scan_copy"><strong>ඡායා පිටපත: </strong></label><br/>
-
+            <?php
+            $query = "SELECT rec_letter FROM letter where id=$id";
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result);
+            echo "<img src='server/" . $row['rec_letter'] . "'/>";
+            ?>
+            <!--img src= alt="some_text"-->
+            <?php print $scan_copy; ?>
         </div>
 
         <div name="replied">
@@ -119,7 +125,7 @@ if ($marked == 0) {
         <br>
 
         <div class="btn_set">
-            <?php if ($section == "su"): ?>
+            <?php if ($section != 'ප්‍රධාන පරිශීලක'): ?>
                 <div class="letter_reply">
                     <p><input type="button" name="send_rep" id="send_rep" value="පසුගිය වාර්තා බැලීම"
                               onclick="document.location.href='letter-history-su.php?ref_id=<?php echo $ref_id ?>'"/>

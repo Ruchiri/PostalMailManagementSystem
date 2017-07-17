@@ -1,7 +1,7 @@
 .wrapper {
     margin: auto;
     width: 1350px;
-    min-height: 700px;
+    height: 1700px;
     background-color: gainsboro;
 }
 
@@ -12,6 +12,10 @@
 
 }
 
+.scan_copy img {
+    width: 800px;
+    height: 1000px;
+}
 .top-bar {
     color: white;
     padding: 10px 10px 5px 2px;
