@@ -22,7 +22,7 @@ function take_records($connection)
 
     $rows = [];
     while ($row = $query->fetch_array()) {
-        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id']);
+        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id'],$row['replied']);
         if (!empty($row['reg_no'])) {
             $reco_obj->setRegNo($row['reg_no']);
         }

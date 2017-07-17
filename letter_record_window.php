@@ -108,6 +108,7 @@ if ($marked == 0) {
         </div>
 
         <div name="replied">
+            <?php echo"$replied";?>
             <?php if ($replied == 0): ?>
                 <label for="replid" id="ll5"><strong>පිළිතුරු ලිපි යවා නොමැත.</strong></label>
             <?php else: ?>

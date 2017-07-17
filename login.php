@@ -8,6 +8,7 @@ try { ?>
         <meta charset="UTF-8">
         <title>තැපැල් ලිපි කළමනාකරණ පද්ධතිය</title>
         <style>
+
             body {
                 background-image: url("img/wallpaper.jpg");
                 background-size: 100%;

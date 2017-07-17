@@ -71,7 +71,7 @@ function search($fields, $terms)
     //take search results as array of rows
     $rows = [];
     while ($row = $results->fetch_array()) {
-        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id']);
+        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id'],$row['replied']);
         if (!empty($row['reg_no'])) {
             $reco_obj->setRegNo($row['reg_no']);
         }
@@ -150,7 +150,7 @@ function search_su($fields, $terms, $section)
     //take search results as array of rows
     $rows = [];
     while ($row = $results->fetch_array()) {
-        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id']);
+        $reco_obj = new letter_record($row['id'], $row['date'], $row['section'], $row['subject'], $row['sender'], $row['rec_letter'], $row['ref_id'],$row['replied']);
         if (!empty($row['reg_no'])) {
             $reco_obj->setRegNo($row['reg_no']);
         }

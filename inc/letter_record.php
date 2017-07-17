@@ -19,7 +19,7 @@ class letter_record
     /**
      * letter_record constructor.
      */
-    public function __construct($id, $date, $section, $subject, $sender, $scan_copy, $ref_id)
+    public function __construct($id, $date, $section, $subject, $sender, $scan_copy, $ref_id,$replied)
     {
         $this->id = $id;
         $this->date = $date;
@@ -28,7 +28,7 @@ class letter_record
         $this->sender = $sender;
         $this->scan_copy = $scan_copy;
         $this->ref_id = $ref_id;
-        $this->replied = 0;
+         $this->replied = $replied;
         $this->marked = 0;
         self::$letter_count++;
     }
@@ -221,7 +221,7 @@ function find_recoDb($id, $connection)
     mysqli_set_charset($connection, 'utf8');
     $record = mysqli_query($connection, $cmd);
     $reco = $record->fetch_array();
-    $reco_obj = new letter_record($reco['id'], $reco['date'], $reco['section'], $reco['subject'], $reco['sender'], $reco['rec_letter'], $reco['ref_id']);
+    $reco_obj = new letter_record($reco['id'], $reco['date'], $reco['section'], $reco['subject'], $reco['sender'], $reco['rec_letter'], $reco['ref_id'],$reco['replied']);
     if ($reco['reg_no'] != null) {
         $reco_obj->setRegNo($reco['reg_no']);
     }

@@ -1,6 +1,7 @@
 <?php
 include 'inc/login.inc.php';
-$section= $_SESSION['page'];
+session_start();
+$section= $_SESSION['section'];
 ?>
 
 <!doctype html>
@@ -24,7 +25,7 @@ $section= $_SESSION['page'];
         $con=connect();
         //$section="ගිණුම් අංශය";
 
-            $query = "select * from letter where replied=1 and section='$se+ction' ";
+            $query = "select * from letter where replied=1 and section='$section' ";
             mysqli_set_charset($con, 'utf8');
             $data = mysqli_query($con, $query);
             $array=mysqli_fetch_array($data);
@@ -50,7 +51,7 @@ $section= $_SESSION['page'];
              <td>' . $row["sender"] . '</td>
              <td>' . $row["subject"] . '</td>
              <td> ' ?>
-                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>"><img
+                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>&thisSection=<?php "su" ?>"><img
                                 src="img/letter.png"/>
                     </a>  <?php '</td>
            </tr>';

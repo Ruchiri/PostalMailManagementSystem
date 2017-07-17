@@ -94,7 +94,7 @@ function getId($cor){
                                     </a>
                                 </li>
                                 <li id="replied">
-                                    <a href="inc/mark_read.inc.php?id=<?php echo $row["id"] ?>"><img
+                                    <a  href="inc/mark_read.inc.php?id=<?php echo $row["id"] ?>"> hhh<img
                                                 src="img/rmm.png"/>
                                     </a>
                                 </li>

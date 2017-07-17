@@ -22,7 +22,7 @@ class section
     {
         $section = $this->getName();
         $today = date('Y-m-d');
-        $cmd = "SELECT *FROM letter WHERE section='$section' AND date ='today'";
+        $cmd = "SELECT *FROM letter WHERE section='$section' AND date ='$today'";
         mysqli_set_charset($connection, 'utf8');
         $result = mysqli_query($connection, $cmd);
         $num_rows = mysqli_num_rows($result);

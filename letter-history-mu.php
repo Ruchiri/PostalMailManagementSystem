@@ -48,7 +48,11 @@ $reference = $_GET['ref_id'];
                         echo "<td>".$row['sender']."</td>";
                         echo "<td>".$row['subject']."</td>";
                         echo "<td>".$row['section']."</td>";
-                        echo "<td>".$row['replied']."</td>";
+                        if ($row['replied']==0) {
+                            echo "<td>" . "නැත" . "</td>";
+                        }else{
+                            echo "<td>" . "ඔව්" . "</td>";
+                        }
                     }
                 }
 
