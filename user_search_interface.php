@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 include 'inc/search_query.inc.php';
 session_start();
 $section = $_SESSION['section'];

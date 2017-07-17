@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 include "connect.php";
 $con = connect();
 include "inc/section.php";

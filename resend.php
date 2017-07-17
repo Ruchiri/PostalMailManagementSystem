@@ -5,6 +5,7 @@
  * Date: 7/15/2017
  * Time: 11:34 PM
  */
+error_reporting(E_ALL ^ E_NOTICE);
 include "inc/section.php";
 include "inc/letter_record.php";
 include "connect.php";

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_NOTICE);
 include "connect.php";
 $con=connect();
 function getId($cor){

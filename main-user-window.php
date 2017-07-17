@@ -34,6 +34,8 @@ function take_records($connection)
     return $rows;
 }
 
+$today = date('Y-m-d');
+
 
 ?>
 <html lang="en">
@@ -108,19 +110,19 @@ function take_records($connection)
             </form>
         </div>
 
-        <d class="mid-content">
-
-            <?php $records = take_records($con); ?>
-            <?php
-             $flag=0;
-
-            foreach ($records as $reco):
-                if(date('Y-m-d')==$reco->getDate()){
-                  $flag+=1;
+        <div class="mid-content">
+            <br>
+            <?php $records = take_records($con);
+            $flag=0;
+            ?>
+            <?php foreach ($records as $reco):
+                if($reco->getDate()!=$today){
+                    $flag++;
                 }
-                if ($flag==1 ){
-
+                if($flag==1){
+                    echo "<strong>"."පෙර වාර්තා"."</strong>";
                 }
+
                 ?>
 
                 <div class="letter-reco">
@@ -129,13 +131,6 @@ function take_records($connection)
                         <li><?php echo "අංශය :" . $reco->getSection(); ?></li>
                         <li><?php echo "විෂය :" . $reco->getSubject(); ?></li>
                         <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $reco->getSender(); ?></li>
-                        <?php
-                        if ($reco->getReplied()==1){
-                            ?>
-                            <li id="reply"> <?php echo "පිළිතුරු සපයා ඇත";?></li>
-                            <?php
-                        }
-                        ?>
                         <li id="resend"><a href="resend.php?letter_id=<?php echo $reco->getId(); ?>"><strong>නැවත යොමු
                                     කිරීම.</strong></a></li>
                         <li id="view"><a
@@ -166,8 +161,10 @@ function take_records($connection)
 
                 </fieldset>
             </form>
-            <button id="auto"  onclick="document.location.href='autogenerate-report.php'">මාසික වාර්තා</button>
-            <!--<input  id="auto" type="button" onclick="document.location.href='autogenerate-report.php'" placeholder="මාසික වාර්තා">-->
+
+            <button id="auto" name="auto" onclick="document.location.href='autogenerate-report.php'">
+                මාසික වාර්තා
+            </button>
         </div>
     </div>
     <div id="footer"></div>
