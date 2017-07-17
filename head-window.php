@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 include "connect.php";
 $con = connect();
 include "inc/section.php";
@@ -20,6 +21,9 @@ $sections = get_sections($con);
     <div class="heading">
         <p><strong>වාර්තා ලබා ගැනීම </strong></p>
     </div><!--Heading-->
+    <div class="logout">
+        <input id="logout" type="button" value="ඉවත් වන්න " onclick="document.location.href='logout.php'"/>
+    </div>
     <div class="selection">
         <form action="report-head-query.php" method="GET">
         <div class="Choose-date">

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 include "connect.php";
 include "inc/section.php";
 $con = connect();
@@ -107,16 +108,34 @@ function take_records($connection)
             </form>
         </div>
 
-        <div class="mid-content">
-            <br>
+        <d class="mid-content">
+
             <?php $records = take_records($con); ?>
-            <?php foreach ($records as $reco): ?>
+            <?php
+             $flag=0;
+
+            foreach ($records as $reco):
+                if(date('Y-m-d')==$reco->getDate()){
+                  $flag+=1;
+                }
+                if ($flag==1 ){
+
+                }
+                ?>
+
                 <div class="letter-reco">
                     <ul id="details">
                         <li><?php echo "දිනය :" . $reco->getDate(); ?></li>
                         <li><?php echo "අංශය :" . $reco->getSection(); ?></li>
                         <li><?php echo "විෂය :" . $reco->getSubject(); ?></li>
                         <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $reco->getSender(); ?></li>
+                        <?php
+                        if ($reco->getReplied()==1){
+                            ?>
+                            <li id="reply"> <?php echo "පිළිතුරු සපයා ඇත";?></li>
+                            <?php
+                        }
+                        ?>
                         <li id="resend"><a href="resend.php?letter_id=<?php echo $reco->getId(); ?>"><strong>නැවත යොමු
                                     කිරීම.</strong></a></li>
                         <li id="view"><a
@@ -147,6 +166,8 @@ function take_records($connection)
 
                 </fieldset>
             </form>
+            <button id="auto"  onclick="document.location.href='autogenerate-report.php'">මාසික වාර්තා</button>
+            <!--<input  id="auto" type="button" onclick="document.location.href='autogenerate-report.php'" placeholder="මාසික වාර්තා">-->
         </div>
     </div>
     <div id="footer"></div>

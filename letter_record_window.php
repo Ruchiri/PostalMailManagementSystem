@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Supimi
- * Date: 7/6/2017
- * Time: 5:20 PM
- */
+error_reporting(E_ALL ^ E_NOTICE);
 include "inc/letter_record.php";
 include "connect.php";
 $con = connect();
@@ -25,7 +20,7 @@ $marked = $reco->getMarked();
 if ($marked == 0) {
     $msg = "";
 } else {
-    $msg = "මෙම වාර්තාව අංශයට අදාළ නොවන බවට සළකුණුකර ඇත. ";
+    $msg = "මෙම වාර්තාව අංශයට අදාළ නොවන බවට සළකුණුකරන ලදී. ";
 }
 
 
@@ -114,7 +109,7 @@ if ($marked == 0) {
         </div>
 
         <div name="replied">
-            <?php echo"$replied";?>
+
             <?php if ($replied == 0): ?>
                 <label for="replid" id="ll5"><strong>පිළිතුරු ලිපි යවා නොමැත.</strong></label>
             <?php else: ?>

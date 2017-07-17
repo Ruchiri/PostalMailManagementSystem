@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 define("UPLOAD_DIR", "/srv/www/uploads/");
 
 if (!empty($_FILES["myFile"])) {

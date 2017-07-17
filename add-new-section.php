@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
+try {
 include "inc/section.php";
 include "connect.php";
 $con = connect();
@@ -84,3 +86,8 @@ $sections = get_sections($con);
 </div><!--Background-->
 </body>
 </html>
+<?php
+}catch(Exception $exception){
+?>
+    <script>alert("වලංගු දත්ත ඇතුලත් කරන්න");</script><?php
+}?>

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 include 'inc/login.inc.php';
 session_start();
 $section= $_SESSION['section'];
@@ -11,6 +12,13 @@ $section= $_SESSION['section'];
     <meta charset="UTF-8">
     <!--<META HTTP-EQUIV="refresh" CONTENT="30">-->
     <title>පිළිතුරු සපයන ලද ලිපි</title>
+    <style>
+        body {
+            background-color: rgba(131, 199, 226, 0.87);
+            background-size: 100%;
+            border-width: 20px;
+        }
+    </style>
     <link rel="stylesheet" href="css/replied_list.css">
 </head>
 <body>

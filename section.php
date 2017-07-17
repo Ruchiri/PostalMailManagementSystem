@@ -15,13 +15,14 @@ function getId($cor){
       <head>
           <meta charset="UTF-8">
           <!--<META HTTP-EQUIV="refresh" CONTENT="30">-->
-          <title><?php include "inc/login.inc.php";
+          <title>
+              <?php include "inc/login.inc.php";
               session_start();
               echo $_SESSION['page'];
               ?> </title>
           <style>
               body {
-                  background-color: gainsboro;
+                  background-color:rgba(131, 199, 226, 0.8);
                   background-size: 100%;
                   border-width: 20px;
               }
@@ -51,8 +52,11 @@ function getId($cor){
 
               </div><!--site-search-->
           </div> <!-- topbar-->
-
+          <div class="logout">
+          <input id="logout" type="button" value="ඉවත් වන්න " onclick="document.location.href='logout.php'"/>
+          </div>
           <div class="core">
+
               <div class="buttons">
 
                   <input type="button" value="පිළිතුරු සැපයූ ලිපි ලැයිස්තුව" onclick="document.location.href='replied_list.php'"/>
@@ -89,12 +93,12 @@ function getId($cor){
                                 <li><?php echo "ලිපිය එවූ පාර්ශවය :" . $row["sender"]; ?></li>
                                 <li><?php echo "විෂයය :" . $row["subject"]; ?></li>
                                 <li id="gotoletter">
-                                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>&thisSection=<?php "su" ?>"><img
+                                    <a href="letter_record_window.php?id=<?php echo $row["id"] ?>&thisSection=<?php "su" ?>"> <strong>යොමුව</strong> <img id="im1"
                                                 src="img/letter.png"/>
                                     </a>
                                 </li>
                                 <li id="replied">
-                                    <a  href="inc/mark_read.inc.php?id=<?php echo $row["id"] ?>"> hhh<img
+                                    <a  href="inc/mark_read.inc.php?id=<?php echo $row["id"] ?>"><strong>පිළිතුරු සපයන ලදී</strong><img id="im2"
                                                 src="img/rmm.png"/>
                                     </a>
                                 </li>

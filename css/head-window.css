@@ -82,3 +82,12 @@
 
 
 }
+
+#logout {
+    margin-left: 50px;
+    width: 100px;
+    height: 40px;
+    color: #E8F3F8;
+    background-color: rgba(150, 17, 29, 0.63);
+    border-radius: 10px;
+}
