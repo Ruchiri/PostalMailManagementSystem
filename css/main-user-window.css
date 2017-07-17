@@ -3,12 +3,11 @@
 #wrapper {
     width: 1336px;
     height: 748px;
-    background-color: midnightblue;
 }
 #banner{
     width: 1336px;
     height: 100px;
-    background-color: paleturquoise;
+    background-color: #bdedd6;
     text-align: center;
 }
 #menuTop{
@@ -17,44 +16,81 @@
     background-color: white;
 }
 
-#columnleft{
+.columnleft {
     width: 300px;
     height: 550px;
     background-color: darkcyan;
-    float: left;
+    margin-left: 20px;
+    margin: 0 auto;
 }
-#columnleft input{
+
+.columnleft input {
     width: 250px;
     height: 80px;
     background-color: powderblue;
 }
-#columnright{
+
+.columnright {
+    margin-top: 10px;
     width: 300px;
     height: 450px;
     background-color: darkcyan;
-    float: right;
 }
 
-#columnright form fieldset input{
+.columnright form fieldset input {
     width: 25px;
     height:25px;
-    margin-left: 210px;
-    padding: 10px 5px 5px 5px;
+    margin-left: 200px;
 }
 
-#columnright form fieldset label{
+.columnright form fieldset label {
     height: 25px;
     width: 200px;
     text-align: left;
-    background-color: powderblue;
     position: absolute;
     border: navy;
     border-radius: 1px;
-    padding: 10px 5px 5px 5px;
+    font-size: small;
+    font-style: oblique;
 }
-#content{
-    width: 736px;
-    height: 548px;
-    background-color: midnightblue;
-    margin-left: 300px;
+
+.columnright form {
+    width: 250px;
+    background-color: powderblue;
+    margin: 0 auto;
+}
+
+.mid-content {
+    width: 750px;
+    background-color: #b5c8de;
+}
+
+.mid-content, .columnleft, .columnright {
+    display: table-cell;
+}
+
+.content {
+    margin: 0 auto;
+}
+
+.letter-reco {
+    width: 700px;
+    height: 120px;
+    border-radius: 8px;
+    padding: 10px 5px 20px 5px;
+    background-color: #d3dae5;
+    margin: 0 auto;
+
+}
+
+ul {
+    list-style: none;
+}
+
+#view {
+    float: right;
+}
+
+#resend {
+    float: left;
 }

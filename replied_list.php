@@ -24,7 +24,7 @@ $section= $_SESSION['page'];
         $con=connect();
         //$section="ගිණුම් අංශය";
 
-            $query = "select * from letter where replied=1 and section='$section' ";
+            $query = "select * from letter where replied=1 and section='$se+ction' ";
             mysqli_set_charset($con, 'utf8');
             $data = mysqli_query($con, $query);
             $array=mysqli_fetch_array($data);

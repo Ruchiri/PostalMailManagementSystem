@@ -2,7 +2,6 @@
 <?php
  $page;
  $invalid= " ";
- session_start();
 function SignIn()
 {
     include '../connect.php';
@@ -23,13 +22,14 @@ function SignIn()
             $_SESSION['page'] = $row['username'];
             if ( $row['username']=="ප්‍රධාන පරිශීලක"){
                 header('Location:..\main-user-window.php');
+            } elseif ($row['username']=="ප්‍රධාන නිලධාරී"){
+                header('Location:..\head-window.php');
             }
             else {
                 header('Location:..\section.php');
 
                 //echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE...";
             }
-
         }
         else
         {
@@ -41,7 +41,6 @@ function SignIn()
         }
     }
     else{
-        //echo"Any field cannot be empty";
 
         session_start();
        $_SESSION['invalid']="පරිශීලක නාමය හෝ මුරපදය වලංගු නොවේ!";
