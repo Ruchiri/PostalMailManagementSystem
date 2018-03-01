@@ -1,6 +1,6 @@
 # Postal Mail Management System
 
-This is a web based application which is developed for postal mail managemnet acrivities in Divisional Secretariat Office of Bope-Poddala (Galle).
+This is a web based application which is developed for postal mail management activities in Divisional Secretariat Office of Bope-Poddala (Galle).
 
 ## Technologies used:
                     HTML
