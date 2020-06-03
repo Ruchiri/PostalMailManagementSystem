@@ -1,0 +1,84 @@
+changing pictures with time--------------------
+<html>
+<head>
+    <script type="text/javascript">
+        var image1=new Image()
+        image1.src="img/image1.jpg"
+        var image2=new Image()
+        image2.src="img/image2.jpg"
+    </script>
+    <title>Postal Managemnet System</title>
+    <link rel="stylesheet" href="css/example.css">
+</head>
+<body>
+<img src="img/image1.jpg" name="slide" width="347" height="212">
+<Script type="text/javascript">
+    var step=1
+    function slideit() {
+        document.images.slide.src = eval("image" + step + ".src")
+        if (step < 2)
+            step++
+        else
+            step = 1
+        setTimeout("slideit()", 2500)
+    }
+    slideit()
+</Script>
+<div class="wrapper">
+    <div class="main-img">
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <ul>
+                <li><a href="#">Bope-Poddala Divisional Secretariat</a></li>
+                <li><a href="#">cdef</a></li>
+                <li><a href="#">abcd</a></li>
+
+            </ul>
+        </div> <!--top-bar-links-->
+    </div><!--top-bar-->
+</div> <!-- wrapper -->
+
+
+
+
+</body>
+</html>
+
+
+----set background---------------------------------------------------
+
+
+<!doctype html>
+<html>
+<head>
+    <title>Postal Managemnet System</title>
+    <style>
+        body{
+            background-image: url("img/vector_bubbles.jpg");
+            background-size: 100%;
+            border-width: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/example.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="main-img">
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <ul>
+                <li><a href="#">Bope-Poddala Divisional Secretariat</a></li>
+                <li><a href="#">cdef</a></li>
+                <li><a href="#">abcd</a></li>
+
+            </ul>
+        </div> <!--top-bar-links-->
+    </div><!--top-bar-->
+</div> <!-- wrapper -->
+
+
+
+
+</body>
+</html>
